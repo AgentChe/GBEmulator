@@ -2,14 +2,28 @@
 //  EmulatorViewController.swift
 //  GBEmulator
 //
-//  Created by Андрей Чернышев on 22.04.2024.
+//  Created by Андрей Чернышев on 23.04.2024.
 //
 
 import UIKit
 import SwiftUI
 
-final class ViewController: UIViewController {
-    var onClose: (() -> Void)?
+final class EmulatorViewController: UIViewController {
+    deinit {
+        print("___ deinit")
+    }
+    
+    private let cartridge: Cartridge
+    
+    private init(cartridge: Cartridge) {
+        self.cartridge = cartridge
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,11 +35,11 @@ final class ViewController: UIViewController {
         let timer = Timer(mmu)
         let joypad = Joypad(mmu)
         let clock = Clock(mmu, ppu, cpu, apu, timer)
-        let glm = GameLibraryManager(clock)
+        let gameLibraryManager = GameLibraryManager(clock)
         
         clock.start()
         
-        let ui = UIHostingController(rootView: GameBoyView(lcd: ppu.view).environmentObject(joypad.buttons).environmentObject(glm))
+        let ui = UIHostingController(rootView: GameBoyView(lcd: ppu.view).environmentObject(joypad.buttons).environmentObject(gameLibraryManager))
         
         view.backgroundColor = .black
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -37,8 +51,16 @@ final class ViewController: UIViewController {
         ui.view.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive =  true
         ui.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive =  true
         
-        self.onClose = {
-            glm.inserted.saveRam()
-        }
+        gameLibraryManager.insertCartridge(cartridge)
+        
+        // TODO
+//        cartridge.saveRam()
+    }
+}
+
+// MARK: Public
+extension EmulatorViewController {
+    static func make(cartridge: Cartridge) -> EmulatorViewController {
+        EmulatorViewController(cartridge: cartridge)
     }
 }

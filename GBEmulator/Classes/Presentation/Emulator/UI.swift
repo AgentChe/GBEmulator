@@ -251,146 +251,8 @@ struct TitleView: View {
     }
 }
 
-struct GameLibraryItemView: View {
-    var game: Cartridge
-    @State private var confirmDelete = false
-    @EnvironmentObject private var gameLibraryManager: GameLibraryManager
-    @Environment(\.dismiss) private var dismissLibraryView
-    
-    private func delay(numSeconds: Double, cb: @escaping () -> Void) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + numSeconds) {
-            cb()
-        }
-    }
-    
-    func shouldHighlight(_ pressed: Bool) -> Bool {
-        return gameLibraryManager.inserted === game || pressed
-    }
-    
-    var body: some View {
-        HStack (alignment: .top) {
-            VStack {
-                PressableView { pressed in
-                    Text(game.title)
-                        .font(.title2)
-                        .fontWeight(.bold)
-                        .textCase(.uppercase)
-                        .lineLimit(1)
-                        .foregroundColor(shouldHighlight(pressed) ? .white : .black)
-                        .background(Rectangle().fill(shouldHighlight(pressed) ? .black : .black.opacity(0)))
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.trailing, 20)
-                }
-                .onReleased {
-                    pressed()
-                }
-                Text(game.type == .unsupported ? "Not Supported ❌" : "Supported")
-                    .font(.caption)
-                    .fontWeight(.bold)
-                    .textCase(.uppercase)
-                    .foregroundColor(.black.opacity(0.4))
-                    .frame(maxWidth: .infinity, alignment: .leading)
-            }
-            if game.canBeDeleted {
-                Button(role: .none, action: {
-                    if confirmDelete {
-                        gameLibraryManager.deleteCartridge(game)
-                    } else {
-                        confirmDelete = true
-                        delay(numSeconds: 5) {
-                            confirmDelete = false
-                        }
-                    }
-                }) {
-                    Label(confirmDelete ? "Confirm" : "", systemImage: "trash")
-                        .foregroundColor(confirmDelete ? .red : .black.opacity(0.4))
-                }
-                .padding(.top, 5)
-                .animation(.easeInOut, value: confirmDelete)
-            }
-        }
-        .padding([.leading, .trailing])
-    }
-    
-    func pressed() {
-        dismissLibraryView()
-        gameLibraryManager.insertCartridge(game)
-    }
-}
-
-struct GameLibraryModalView: View {
-    var landscape = false
-    @State private var showFilePicker = false
-    @EnvironmentObject private var gameLibraryManager: GameLibraryManager
-    @Environment(\.dismiss) private var dismiss
-    
-    var body: some View {
-        VStack {
-            ScrollView(.vertical, showsIndicators: true) {
-                VStack(spacing: 20) {
-                    ForEach(gameLibraryManager.library.sortedByDeletablilityAndTitle()) { game in
-                        GameLibraryItemView(game: game)
-                    }
-                }
-            }
-            .padding(.top, 20)
-            .frame(maxHeight: .infinity)
-            .animation(.easeInOut, value: gameLibraryManager.library.count)
-            
-            HStack (spacing: 10) {
-                PressableView { pressed in
-                    Text("Import Game")
-                        .fontWeight(.bold)
-                        .textCase(.uppercase)
-                        .foregroundColor(pressed ? .black : .white)
-                        .frame(maxWidth: .infinity)
-                        .frame(height: 40)
-                        .background(
-                            pressed ?
-                            AnyView(RoundedRectangle(cornerRadius: 10).stroke(.black, lineWidth: 4)) :
-                            AnyView(RoundedRectangle(cornerRadius: 10).fill(.black))
-                        )
-                }
-                .onReleased {
-                    showFilePicker = true
-                }
-                .sheet(isPresented: $showFilePicker) {
-                    FilePickerUIRepresentable(types: [.gb], allowMultiple: true) { urls in
-                        gameLibraryManager.importURLs(urls: urls)
-                    }
-                    .ignoresSafeArea()
-                }
-                
-                if landscape {
-                    PressableView { pressed in
-                        Text("Close")
-                            .fontWeight(.bold)
-                            .textCase(.uppercase)
-                            .foregroundColor(pressed ? .black : .white)
-                            .frame(maxWidth: 200)
-                            .frame(height: 40)
-                            .background(
-                                pressed ?
-                                AnyView(RoundedRectangle(cornerRadius: 10).stroke(.black, lineWidth: 4)) :
-                                AnyView(RoundedRectangle(cornerRadius: 10).fill(.black))
-                            )
-                    }
-                    .onReleased {
-                        dismiss()
-                    }
-                }
-            }
-            .padding()
-        }
-        .frame(maxHeight: .infinity)
-        .frame(maxWidth: .infinity)
-        .background(.white)
-    }
-}
-
 struct GameBoyView: View {
     private var lcd: LCDBitmapView
-    @State private var showGameLibrary: Bool = false
     @EnvironmentObject private var gameLibraryManager: GameLibraryManager
     
     init(lcd: LCDBitmapView) {
@@ -421,9 +283,8 @@ struct GameBoyView: View {
                         }
                     } else {
                         VStack{
-                            TitleView(title: gameLibraryManager.inserted.title) {
-                                showGameLibrary = true
-                            }
+                            // TODO: возможно как-то избавиться от работы с опционалом
+                            TitleView(title: gameLibraryManager.inserted?.title ?? "") {}
                             .padding(.top, 20)
                             lcd.frame(height: geometry.size.height * 0.5)
                             VStack {
@@ -440,15 +301,9 @@ struct GameBoyView: View {
                         }
                     }
                 }
-                .sheet(isPresented: $showGameLibrary) {
-                    GameLibraryModalView(landscape: geometry.size.width > geometry.size.height)
-                }
             }
             .background(.black)
         }
         .frame(width: .infinity, height: .infinity)
-        .sheet(isPresented: $showGameLibrary) {
-            GameLibraryModalView()
-        }
     }
 }

@@ -2,7 +2,7 @@ import Foundation
 
 class GameLibraryManager: ObservableObject {
     @Published private(set) var library: [Cartridge]
-    @Published private(set) var inserted: Cartridge
+    @Published private(set) var inserted: Cartridge?
     
     let clock: Clock
     
@@ -20,9 +20,7 @@ class GameLibraryManager: ObservableObject {
         let allCarts = bundledCarts + importedCarts
         
         self.library = allCarts
-        self.inserted = allCarts.first!
         self.clock = clock
-        self.insertCartridge(self.inserted)
     }
     
     func deleteCartridge(_ discarded: Cartridge) {
@@ -45,7 +43,9 @@ class GameLibraryManager: ObservableObject {
         self.inserted = next
         
         self.clock.sync { mmu, cpu, ppu, apu, timer in
-            previous.saveRam()
+            if let previous {
+                previous.saveRam()
+            }
             mmu.insertCartridge(next)
             mmu.reset()
             cpu.reset()

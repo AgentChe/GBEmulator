@@ -88,7 +88,6 @@
 		DEDF902A2BD6A02D004340C0 /* PPU.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF901C2BD6A02D004340C0 /* PPU.swift */; };
 		DEDF902B2BD6A02D004340C0 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF901D2BD6A02D004340C0 /* Timer.swift */; };
 		DEDF902C2BD6A02D004340C0 /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF901E2BD6A02D004340C0 /* UI.swift */; };
-		DEDF902F2BD6A3F4004340C0 /* EmulatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF902E2BD6A3F4004340C0 /* EmulatorViewController.swift */; };
 		DEDF90322BD6A42F004340C0 /* CartridgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF90312BD6A42F004340C0 /* CartridgesViewController.swift */; };
 		DEDF90392BD6B11E004340C0 /* FilePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF90382BD6B11E004340C0 /* FilePicker.swift */; };
 		DEDF903C2BD6C0A9004340C0 /* CartridgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF903B2BD6C0A9004340C0 /* CartridgeView.swift */; };
@@ -96,9 +95,9 @@
 		DEDF915B2BD7E6F2004340C0 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF915A2BD7E6F2004340C0 /* Appearance.swift */; };
 		DEDF915F2BD7EB13004340C0 /* CartridgesEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF915E2BD7EB13004340C0 /* CartridgesEmptyView.swift */; };
 		DEDF91612BD7F01A004340C0 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF91602BD7F01A004340C0 /* ActionButton.swift */; };
-		DEDF91642BD7F4EE004340C0 /* tetris.gb in Resources */ = {isa = PBXBuildFile; fileRef = DEDF91632BD7F4DE004340C0 /* tetris.gb */; };
 		DEDF91662BD7F63D004340C0 /* ConfirmDeleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF91652BD7F63D004340C0 /* ConfirmDeleteView.swift */; };
 		DEDF91692BD8059C004340C0 /* InstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF91682BD8059C004340C0 /* InstructionView.swift */; };
+		DEDF916B2BD82289004340C0 /* EmulatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF916A2BD82289004340C0 /* EmulatorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -183,7 +182,6 @@
 		DEDF901C2BD6A02D004340C0 /* PPU.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPU.swift; sourceTree = "<group>"; };
 		DEDF901D2BD6A02D004340C0 /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		DEDF901E2BD6A02D004340C0 /* UI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UI.swift; sourceTree = "<group>"; };
-		DEDF902E2BD6A3F4004340C0 /* EmulatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmulatorViewController.swift; sourceTree = "<group>"; };
 		DEDF90312BD6A42F004340C0 /* CartridgesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartridgesViewController.swift; sourceTree = "<group>"; };
 		DEDF90382BD6B11E004340C0 /* FilePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilePicker.swift; sourceTree = "<group>"; };
 		DEDF903B2BD6C0A9004340C0 /* CartridgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartridgeView.swift; sourceTree = "<group>"; };
@@ -191,9 +189,9 @@
 		DEDF915A2BD7E6F2004340C0 /* Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
 		DEDF915E2BD7EB13004340C0 /* CartridgesEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartridgesEmptyView.swift; sourceTree = "<group>"; };
 		DEDF91602BD7F01A004340C0 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
-		DEDF91632BD7F4DE004340C0 /* tetris.gb */ = {isa = PBXFileReference; lastKnownFileType = file; name = tetris.gb; path = GBEmulator/Classes/Presentation/tetris.gb; sourceTree = SOURCE_ROOT; };
 		DEDF91652BD7F63D004340C0 /* ConfirmDeleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmDeleteView.swift; sourceTree = "<group>"; };
 		DEDF91682BD8059C004340C0 /* InstructionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionView.swift; sourceTree = "<group>"; };
+		DEDF916A2BD82289004340C0 /* EmulatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmulatorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -533,7 +531,8 @@
 			isa = PBXGroup;
 			children = (
 				DEDF902D2BD6A030004340C0 /* Utils */,
-				DEDF902E2BD6A3F4004340C0 /* EmulatorViewController.swift */,
+				DEDF901E2BD6A02D004340C0 /* UI.swift */,
+				DEDF916A2BD82289004340C0 /* EmulatorViewController.swift */,
 			);
 			path = Emulator;
 			sourceTree = "<group>";
@@ -553,7 +552,6 @@
 				DEDF901B2BD6A02D004340C0 /* MMU.swift */,
 				DEDF901C2BD6A02D004340C0 /* PPU.swift */,
 				DEDF901D2BD6A02D004340C0 /* Timer.swift */,
-				DEDF901E2BD6A02D004340C0 /* UI.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -561,7 +559,6 @@
 		DEDF90302BD6A425004340C0 /* Cartridges */ = {
 			isa = PBXGroup;
 			children = (
-				DEDF91632BD7F4DE004340C0 /* tetris.gb */,
 				DEDF91672BD7F8D1004340C0 /* FilePicker */,
 				DEDF903A2BD6C09A004340C0 /* Views */,
 				DEDF90312BD6A42F004340C0 /* CartridgesViewController.swift */,
@@ -662,7 +659,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEDF91642BD7F4EE004340C0 /* tetris.gb in Resources */,
 				DEDF90002BD68A07004340C0 /* RobotoMono-Medium.ttf in Resources */,
 				DEDF90012BD68A07004340C0 /* RobotoMono-Regular.ttf in Resources */,
 				DEDF90022BD68A07004340C0 /* RobotoMono-SemiBold.ttf in Resources */,
@@ -775,12 +771,12 @@
 				DE664EBF2BD6866100956E9F /* SceneDelegate.swift in Sources */,
 				DE664EA82BD6866100956E9F /* UIEdgeInsets+Extension.swift in Sources */,
 				DE664EAD2BD6866100956E9F /* RestAPITransport.swift in Sources */,
-				DEDF902F2BD6A3F4004340C0 /* EmulatorViewController.swift in Sources */,
 				DE664E9A2BD6866100956E9F /* NavigationController.swift in Sources */,
 				DE664E9F2BD6866100956E9F /* PaddingLabel.swift in Sources */,
 				DEDF90212BD6A02D004340C0 /* Cartridge.swift in Sources */,
 				DE664EBC2BD6866100956E9F /* AppDelegate.swift in Sources */,
 				DE664EB52BD6866100956E9F /* NumberLaunches.swift in Sources */,
+				DEDF916B2BD82289004340C0 /* EmulatorViewController.swift in Sources */,
 				DEDF915B2BD7E6F2004340C0 /* Appearance.swift in Sources */,
 				DEDF90222BD6A02D004340C0 /* Clock.swift in Sources */,
 				DEDF90322BD6A42F004340C0 /* CartridgesViewController.swift in Sources */,

@@ -8,10 +8,9 @@
 import SwiftUI
 
 struct CartridgesView: View {
-    @ObservedObject var gameLibraryManager: GameLibraryManager
-
     let didSelect: (Cartridge) -> Void
     
+    @EnvironmentObject private var gameLibraryManager: GameLibraryManager
     @State private var showFilePicker = false
     @State private var deleteCartridge: Cartridge?
     @State private var showInstruction = false

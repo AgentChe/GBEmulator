@@ -9,8 +9,6 @@ import UIKit
 import SwiftUI
 
 final class CartridgesViewController: UIViewController {
-    var onClose: (() -> Void)?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,11 +19,13 @@ final class CartridgesViewController: UIViewController {
         let timer = Timer(mmu)
         let joypad = Joypad(mmu)
         let clock = Clock(mmu, ppu, cpu, apu, timer)
-        let glm = GameLibraryManager(clock)
+        let gameLibraryManager = GameLibraryManager(clock)
         
-        let cartridgesView = CartridgesView(gameLibraryManager: glm, didSelect: { cartridge in
-            print("select \(cartridge.title)")
-        })
+        let cartridgesView = CartridgesView { [weak self] cartridge in
+            let vc = EmulatorViewController.make(cartridge: cartridge)
+            self?.present(vc, animated: true)
+        }
+        .environmentObject(gameLibraryManager)
         
         let hostingController = UIHostingController(rootView: cartridgesView)
         addChild(hostingController)
@@ -41,20 +41,12 @@ final class CartridgesViewController: UIViewController {
         
         view.backgroundColor = Appearance.main100
         hostingController.view.backgroundColor = UIColor.clear
-        
-        // TODO
-//        clock.start()
-//        self.onClose = {
-//            glm.inserted.saveRam()
-//        }
     }
 }
 
 // MARK: Public
 extension CartridgesViewController {
     static func make() -> CartridgesViewController {
-        let vc = CartridgesViewController()
-        vc.navigationItem.title = "Cartridges.Title".localized
-        return vc
+        CartridgesViewController()
     }
 }
