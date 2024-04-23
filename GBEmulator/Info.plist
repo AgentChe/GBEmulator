@@ -2,12 +2,30 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>GB Emulator files</string>
+			<key>LSHandlerRank</key>
+			<string>Alternate</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>com.gbemulator.file</string>
+			</array>
+		</dict>
+	</array>
 	<key>FacebookAppID</key>
 	<string></string>
 	<key>FacebookClientToken</key>
 	<string></string>
 	<key>FacebookDisplayName</key>
 	<string></string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Joystix Monospace.ttf</string>
@@ -33,6 +51,29 @@
 			</array>
 		</dict>
 	</dict>
+	<key>UTImportedTypeDeclarations</key>
+	<array>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.data</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>GB Data</string>
+			<key>UTTypeIconFiles</key>
+			<array/>
+			<key>UTTypeIdentifier</key>
+			<string>com.gbemulator.file</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>gb</string>
+					<string>GB</string>
+				</array>
+			</dict>
+		</dict>
+	</array>
 	<key>branch_key</key>
 	<string></string>
 </dict>

@@ -41,7 +41,7 @@ private final class InstallRefParams {
         timer = nil
     }
     
-    private var timer: Timer?
+    private var timer: Foundation.Timer?
     
     private var tick = 0
     
@@ -49,7 +49,7 @@ private final class InstallRefParams {
         timer?.invalidate()
         tick = 0
         
-        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] timer in
+        timer = Foundation.Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] timer in
             guard let self = self else {
                 return
             }

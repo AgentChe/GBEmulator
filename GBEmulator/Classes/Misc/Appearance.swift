@@ -1,15 +1,16 @@
 //
 //  Appearance.swift
-//  Soccer
+//  GBEmulator
 //
-//  Created by Andrey Chernyshev on 23.04.2021.
+//  Created by Андрей Чернышев on 23.04.2024.
 //
 
 import UIKit
 
 struct Appearance {
-    static let darkGrey = UIColor(integralRed: 67, green: 67, blue: 67)
-    static let lightGrey = UIColor(integralRed: 143, green: 143, blue: 143)
-    static let beige = UIColor(integralRed: 221, green: 217, blue: 214)
-    static let white = UIColor.white
+    static let main100 = UIColor(integralRed: 221, green: 221, blue: 221)
+    static let main200 = UIColor(integralRed: 203, green: 203, blue: 203)
+    static let main300 = UIColor(integralRed: 160, green: 160, blue: 160)
+    static let main400 = UIColor(integralRed: 128, green: 201, blue: 120)
+    static let mono100 = UIColor.black
 }

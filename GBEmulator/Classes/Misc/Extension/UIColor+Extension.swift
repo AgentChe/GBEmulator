@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 extension UIColor {
     convenience init(integralRed red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat = 1) {
@@ -32,5 +33,11 @@ extension UIColor {
         let alpha = CGFloat(1)
         
         self.init(red: red, green: green, blue: blue, alpha: alpha)
+    }
+}
+
+extension Color {
+    init(integralRed red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat = 1.0) {
+        self.init(red: red / 255, green: green / 255, blue: blue / 255, opacity: alpha)
     }
 }

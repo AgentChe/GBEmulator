@@ -38,16 +38,9 @@ extension SplashViewController {
 // MARK: Private
 private extension SplashViewController {
     func goNext() {
-//        let nc = NavigationController(rootViewController: WhipsViewController.make())
-//        nc.setNavigationBarHidden(true, animated: false)
-//        
-//        if SessionManager().hasActiveSubscriptions() {
-//            UIApplication.shared.keyWindow?.rootViewController = nc
-//        } else {
-//            let vc = PaygateViewController.make {
-//                UIApplication.shared.keyWindow?.rootViewController = nc
-//            }
-//            present(vc, animated: true)
-//        }
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+            let nc = CartridgesViewController.make()
+            UIApplication.shared.keyWindow?.rootViewController = nc
+        }
     }
 }

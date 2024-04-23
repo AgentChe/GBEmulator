@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 extension UIEdgeInsets {
     init(value: CGFloat) {
@@ -18,5 +19,19 @@ extension UIEdgeInsets {
     
     init(t: CGFloat = 0, l: CGFloat = 0, b: CGFloat = 0, r: CGFloat = 0) {
         self = UIEdgeInsets(top: t, left: l, bottom: b, right: r)
+    }
+}
+
+extension EdgeInsets {
+    init(value: CGFloat) {
+        self.init(top: value, leading: value, bottom: value, trailing: value)
+    }
+    
+    init(vertical: CGFloat = 0, horizontal: CGFloat = 0) {
+        self.init(top: vertical, leading: horizontal, bottom: vertical, trailing: horizontal)
+    }
+    
+    init(t: CGFloat = 0, l: CGFloat = 0, b: CGFloat = 0, r: CGFloat = 0) {
+        self.init(top: t, leading: l, bottom: b, trailing: r)
     }
 }

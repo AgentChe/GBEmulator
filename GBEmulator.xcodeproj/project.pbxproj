@@ -53,7 +53,6 @@
 		DE664EBA2BD6866100956E9F /* Weak.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE664E502BD6866100956E9F /* Weak.swift */; };
 		DE664EBB2BD6866100956E9F /* XOREncryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE664E512BD6866100956E9F /* XOREncryption.swift */; };
 		DE664EBC2BD6866100956E9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE664E532BD6866100956E9F /* AppDelegate.swift */; };
-		DE664EBD2BD6866100956E9F /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE664E542BD6866100956E9F /* Appearance.swift */; };
 		DE664EBE2BD6866100956E9F /* GlobalDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE664E552BD6866100956E9F /* GlobalDefinitions.swift */; };
 		DE664EBF2BD6866100956E9F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE664E562BD6866100956E9F /* SceneDelegate.swift */; };
 		DE664ECB2BD6866100956E9F /* SplashReceiptValidationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE664E692BD6866100956E9F /* SplashReceiptValidationObserver.swift */; };
@@ -72,6 +71,34 @@
 		DEDF90022BD68A07004340C0 /* RobotoMono-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DEDF8FFF2BD689CC004340C0 /* RobotoMono-SemiBold.ttf */; };
 		DEDF90032BD68A07004340C0 /* RobotoMono-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DEDF8FFC2BD689BE004340C0 /* RobotoMono-Bold.ttf */; };
 		DEDF90042BD68A07004340C0 /* Joystix Monospace.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DEDF8FFA2BD6896F004340C0 /* Joystix Monospace.ttf */; };
+		DEDF90072BD69E46004340C0 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = DEDF90062BD69E46004340C0 /* AudioKit */; };
+		DEDF900A2BD69EDD004340C0 /* AudioKitEX in Frameworks */ = {isa = PBXBuildFile; productRef = DEDF90092BD69EDD004340C0 /* AudioKitEX */; };
+		DEDF900D2BD69FC5004340C0 /* KissFFT in Frameworks */ = {isa = PBXBuildFile; productRef = DEDF900C2BD69FC5004340C0 /* KissFFT */; };
+		DEDF90102BD69FF7004340C0 /* SoundpipeAudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = DEDF900F2BD69FF7004340C0 /* SoundpipeAudioKit */; };
+		DEDF90202BD6A02D004340C0 /* APU.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF90122BD6A02D004340C0 /* APU.swift */; };
+		DEDF90212BD6A02D004340C0 /* Cartridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF90132BD6A02D004340C0 /* Cartridge.swift */; };
+		DEDF90222BD6A02D004340C0 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF90142BD6A02D004340C0 /* Clock.swift */; };
+		DEDF90232BD6A02D004340C0 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF90152BD6A02D004340C0 /* Common.swift */; };
+		DEDF90242BD6A02D004340C0 /* CPU.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF90162BD6A02D004340C0 /* CPU.swift */; };
+		DEDF90252BD6A02D004340C0 /* FileSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF90172BD6A02D004340C0 /* FileSystem.swift */; };
+		DEDF90262BD6A02D004340C0 /* GameLibraryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF90182BD6A02D004340C0 /* GameLibraryManager.swift */; };
+		DEDF90272BD6A02D004340C0 /* Instructions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF90192BD6A02D004340C0 /* Instructions.swift */; };
+		DEDF90282BD6A02D004340C0 /* Joypad.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF901A2BD6A02D004340C0 /* Joypad.swift */; };
+		DEDF90292BD6A02D004340C0 /* MMU.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF901B2BD6A02D004340C0 /* MMU.swift */; };
+		DEDF902A2BD6A02D004340C0 /* PPU.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF901C2BD6A02D004340C0 /* PPU.swift */; };
+		DEDF902B2BD6A02D004340C0 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF901D2BD6A02D004340C0 /* Timer.swift */; };
+		DEDF902C2BD6A02D004340C0 /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF901E2BD6A02D004340C0 /* UI.swift */; };
+		DEDF902F2BD6A3F4004340C0 /* EmulatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF902E2BD6A3F4004340C0 /* EmulatorViewController.swift */; };
+		DEDF90322BD6A42F004340C0 /* CartridgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF90312BD6A42F004340C0 /* CartridgesViewController.swift */; };
+		DEDF90392BD6B11E004340C0 /* FilePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF90382BD6B11E004340C0 /* FilePicker.swift */; };
+		DEDF903C2BD6C0A9004340C0 /* CartridgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF903B2BD6C0A9004340C0 /* CartridgeView.swift */; };
+		DEDF903E2BD6C8E5004340C0 /* CartridgesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF903D2BD6C8E5004340C0 /* CartridgesView.swift */; };
+		DEDF915B2BD7E6F2004340C0 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF915A2BD7E6F2004340C0 /* Appearance.swift */; };
+		DEDF915F2BD7EB13004340C0 /* CartridgesEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF915E2BD7EB13004340C0 /* CartridgesEmptyView.swift */; };
+		DEDF91612BD7F01A004340C0 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF91602BD7F01A004340C0 /* ActionButton.swift */; };
+		DEDF91642BD7F4EE004340C0 /* tetris.gb in Resources */ = {isa = PBXBuildFile; fileRef = DEDF91632BD7F4DE004340C0 /* tetris.gb */; };
+		DEDF91662BD7F63D004340C0 /* ConfirmDeleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF91652BD7F63D004340C0 /* ConfirmDeleteView.swift */; };
+		DEDF91692BD8059C004340C0 /* InstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF91682BD8059C004340C0 /* InstructionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -125,7 +152,6 @@
 		DE664E502BD6866100956E9F /* Weak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weak.swift; sourceTree = "<group>"; };
 		DE664E512BD6866100956E9F /* XOREncryption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XOREncryption.swift; sourceTree = "<group>"; };
 		DE664E532BD6866100956E9F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DE664E542BD6866100956E9F /* Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
 		DE664E552BD6866100956E9F /* GlobalDefinitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalDefinitions.swift; sourceTree = "<group>"; };
 		DE664E562BD6866100956E9F /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DE664E692BD6866100956E9F /* SplashReceiptValidationObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashReceiptValidationObserver.swift; sourceTree = "<group>"; };
@@ -144,6 +170,30 @@
 		DEDF8FFD2BD689CC004340C0 /* RobotoMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-Regular.ttf"; sourceTree = "<group>"; };
 		DEDF8FFE2BD689CC004340C0 /* RobotoMono-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-Medium.ttf"; sourceTree = "<group>"; };
 		DEDF8FFF2BD689CC004340C0 /* RobotoMono-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-SemiBold.ttf"; sourceTree = "<group>"; };
+		DEDF90122BD6A02D004340C0 /* APU.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APU.swift; sourceTree = "<group>"; };
+		DEDF90132BD6A02D004340C0 /* Cartridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cartridge.swift; sourceTree = "<group>"; };
+		DEDF90142BD6A02D004340C0 /* Clock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
+		DEDF90152BD6A02D004340C0 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		DEDF90162BD6A02D004340C0 /* CPU.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPU.swift; sourceTree = "<group>"; };
+		DEDF90172BD6A02D004340C0 /* FileSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileSystem.swift; sourceTree = "<group>"; };
+		DEDF90182BD6A02D004340C0 /* GameLibraryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLibraryManager.swift; sourceTree = "<group>"; };
+		DEDF90192BD6A02D004340C0 /* Instructions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instructions.swift; sourceTree = "<group>"; };
+		DEDF901A2BD6A02D004340C0 /* Joypad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Joypad.swift; sourceTree = "<group>"; };
+		DEDF901B2BD6A02D004340C0 /* MMU.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMU.swift; sourceTree = "<group>"; };
+		DEDF901C2BD6A02D004340C0 /* PPU.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPU.swift; sourceTree = "<group>"; };
+		DEDF901D2BD6A02D004340C0 /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		DEDF901E2BD6A02D004340C0 /* UI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UI.swift; sourceTree = "<group>"; };
+		DEDF902E2BD6A3F4004340C0 /* EmulatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmulatorViewController.swift; sourceTree = "<group>"; };
+		DEDF90312BD6A42F004340C0 /* CartridgesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartridgesViewController.swift; sourceTree = "<group>"; };
+		DEDF90382BD6B11E004340C0 /* FilePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilePicker.swift; sourceTree = "<group>"; };
+		DEDF903B2BD6C0A9004340C0 /* CartridgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartridgeView.swift; sourceTree = "<group>"; };
+		DEDF903D2BD6C8E5004340C0 /* CartridgesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartridgesView.swift; sourceTree = "<group>"; };
+		DEDF915A2BD7E6F2004340C0 /* Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
+		DEDF915E2BD7EB13004340C0 /* CartridgesEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartridgesEmptyView.swift; sourceTree = "<group>"; };
+		DEDF91602BD7F01A004340C0 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
+		DEDF91632BD7F4DE004340C0 /* tetris.gb */ = {isa = PBXFileReference; lastKnownFileType = file; name = tetris.gb; path = GBEmulator/Classes/Presentation/tetris.gb; sourceTree = SOURCE_ROOT; };
+		DEDF91652BD7F63D004340C0 /* ConfirmDeleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmDeleteView.swift; sourceTree = "<group>"; };
+		DEDF91682BD8059C004340C0 /* InstructionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +201,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEDF900A2BD69EDD004340C0 /* AudioKitEX in Frameworks */,
+				DEDF90102BD69FF7004340C0 /* SoundpipeAudioKit in Frameworks */,
+				DEDF900D2BD69FC5004340C0 /* KissFFT in Frameworks */,
+				DEDF90072BD69E46004340C0 /* AudioKit in Frameworks */,
 				C084C4D3E5F4B1665BF99A3A /* Pods_GBEmulator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -355,9 +409,9 @@
 				DE664E452BD6866100956E9F /* PushNotifications */,
 				DE664E522BD6866100956E9F /* Utils */,
 				DE664E532BD6866100956E9F /* AppDelegate.swift */,
-				DE664E542BD6866100956E9F /* Appearance.swift */,
 				DE664E552BD6866100956E9F /* GlobalDefinitions.swift */,
 				DE664E562BD6866100956E9F /* SceneDelegate.swift */,
+				DEDF915A2BD7E6F2004340C0 /* Appearance.swift */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -383,6 +437,8 @@
 		DE664E7F2BD6866100956E9F /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				DEDF90302BD6A425004340C0 /* Cartridges */,
+				DEDF901F2BD6A02D004340C0 /* Emulator */,
 				DE664E6D2BD6866100956E9F /* Splash */,
 			);
 			path = Presentation;
@@ -473,6 +529,67 @@
 			path = RobotoMono;
 			sourceTree = "<group>";
 		};
+		DEDF901F2BD6A02D004340C0 /* Emulator */ = {
+			isa = PBXGroup;
+			children = (
+				DEDF902D2BD6A030004340C0 /* Utils */,
+				DEDF902E2BD6A3F4004340C0 /* EmulatorViewController.swift */,
+			);
+			path = Emulator;
+			sourceTree = "<group>";
+		};
+		DEDF902D2BD6A030004340C0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DEDF90122BD6A02D004340C0 /* APU.swift */,
+				DEDF90132BD6A02D004340C0 /* Cartridge.swift */,
+				DEDF90142BD6A02D004340C0 /* Clock.swift */,
+				DEDF90152BD6A02D004340C0 /* Common.swift */,
+				DEDF90162BD6A02D004340C0 /* CPU.swift */,
+				DEDF90172BD6A02D004340C0 /* FileSystem.swift */,
+				DEDF90182BD6A02D004340C0 /* GameLibraryManager.swift */,
+				DEDF90192BD6A02D004340C0 /* Instructions.swift */,
+				DEDF901A2BD6A02D004340C0 /* Joypad.swift */,
+				DEDF901B2BD6A02D004340C0 /* MMU.swift */,
+				DEDF901C2BD6A02D004340C0 /* PPU.swift */,
+				DEDF901D2BD6A02D004340C0 /* Timer.swift */,
+				DEDF901E2BD6A02D004340C0 /* UI.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		DEDF90302BD6A425004340C0 /* Cartridges */ = {
+			isa = PBXGroup;
+			children = (
+				DEDF91632BD7F4DE004340C0 /* tetris.gb */,
+				DEDF91672BD7F8D1004340C0 /* FilePicker */,
+				DEDF903A2BD6C09A004340C0 /* Views */,
+				DEDF90312BD6A42F004340C0 /* CartridgesViewController.swift */,
+				DEDF903D2BD6C8E5004340C0 /* CartridgesView.swift */,
+			);
+			path = Cartridges;
+			sourceTree = "<group>";
+		};
+		DEDF903A2BD6C09A004340C0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEDF903B2BD6C0A9004340C0 /* CartridgeView.swift */,
+				DEDF915E2BD7EB13004340C0 /* CartridgesEmptyView.swift */,
+				DEDF91602BD7F01A004340C0 /* ActionButton.swift */,
+				DEDF91652BD7F63D004340C0 /* ConfirmDeleteView.swift */,
+				DEDF91682BD8059C004340C0 /* InstructionView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DEDF91672BD7F8D1004340C0 /* FilePicker */ = {
+			isa = PBXGroup;
+			children = (
+				DEDF90382BD6B11E004340C0 /* FilePicker.swift */,
+			);
+			path = FilePicker;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -491,6 +608,12 @@
 			dependencies = (
 			);
 			name = GBEmulator;
+			packageProductDependencies = (
+				DEDF90062BD69E46004340C0 /* AudioKit */,
+				DEDF90092BD69EDD004340C0 /* AudioKitEX */,
+				DEDF900C2BD69FC5004340C0 /* KissFFT */,
+				DEDF900F2BD69FF7004340C0 /* SoundpipeAudioKit */,
+			);
 			productName = GBEmulator;
 			productReference = DE664D3B2BD681C800956E9F /* GBEmulator.app */;
 			productType = "com.apple.product-type.application";
@@ -519,6 +642,12 @@
 				Base,
 			);
 			mainGroup = DE664D322BD681C800956E9F;
+			packageReferences = (
+				DEDF90052BD69E46004340C0 /* XCRemoteSwiftPackageReference "AudioKit" */,
+				DEDF90082BD69EDD004340C0 /* XCRemoteSwiftPackageReference "AudioKitEX" */,
+				DEDF900B2BD69FC5004340C0 /* XCRemoteSwiftPackageReference "KissFFT" */,
+				DEDF900E2BD69FF7004340C0 /* XCRemoteSwiftPackageReference "SoundpipeAudioKit" */,
+			);
 			productRefGroup = DE664D3C2BD681C800956E9F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -533,6 +662,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEDF91642BD7F4EE004340C0 /* tetris.gb in Resources */,
 				DEDF90002BD68A07004340C0 /* RobotoMono-Medium.ttf in Resources */,
 				DEDF90012BD68A07004340C0 /* RobotoMono-Regular.ttf in Resources */,
 				DEDF90022BD68A07004340C0 /* RobotoMono-SemiBold.ttf in Resources */,
@@ -594,50 +724,70 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE664EB82BD6866100956E9F /* ScreenSize.swift in Sources */,
+				DEDF90292BD6A02D004340C0 /* MMU.swift in Sources */,
+				DEDF90202BD6A02D004340C0 /* APU.swift in Sources */,
+				DEDF90272BD6A02D004340C0 /* Instructions.swift in Sources */,
 				DE664EA62BD6866100956E9F /* UIColor+Extension.swift in Sources */,
 				DE664ECB2BD6866100956E9F /* SplashReceiptValidationObserver.swift in Sources */,
 				DE664EAC2BD6866100956E9F /* APIRequestBody.swift in Sources */,
 				DE664ECD2BD6866100956E9F /* SplashViewController.swift in Sources */,
 				DE664EB02BD6866100956E9F /* PushNotificationsManager.swift in Sources */,
+				DEDF90392BD6B11E004340C0 /* FilePicker.swift in Sources */,
 				DE664E9D2BD6866100956E9F /* CircleView.swift in Sources */,
 				DE664EAA2BD6866100956E9F /* UIView+RxExtension.swift in Sources */,
 				DE664EBB2BD6866100956E9F /* XOREncryption.swift in Sources */,
-				DE664EBD2BD6866100956E9F /* Appearance.swift in Sources */,
 				DE664E952BD6866100956E9F /* FirebaseManager.swift in Sources */,
+				DEDF915F2BD7EB13004340C0 /* CartridgesEmptyView.swift in Sources */,
 				DE664EE22BD6866100956E9F /* IAPManager.swift in Sources */,
 				DE664EA92BD6866100956E9F /* UITapGestureRecognizer+Extension.swift in Sources */,
 				DE664EAB2BD6866100956E9F /* DefaultRequestWrapper.swift in Sources */,
 				DE664EA72BD6866100956E9F /* UIDevice+Extension.swift in Sources */,
+				DEDF90252BD6A02D004340C0 /* FileSystem.swift in Sources */,
+				DEDF90262BD6A02D004340C0 /* GameLibraryManager.swift in Sources */,
 				DE664EDE2BD6866100956E9F /* IAPErrorHelper.swift in Sources */,
 				DE664EB22BD6866100956E9F /* NetworkError.swift in Sources */,
 				DE664EB92BD6866100956E9F /* TextAttributes.swift in Sources */,
 				DE664EAF2BD6866100956E9F /* PushNotificationsModel.swift in Sources */,
 				DE664EE32BD6866100956E9F /* PurchaseValidationObserver.swift in Sources */,
 				DE664EA42BD6866100956E9F /* String+Extension.swift in Sources */,
+				DEDF91662BD7F63D004340C0 /* ConfirmDeleteView.swift in Sources */,
 				DE664E9C2BD6866100956E9F /* CircleProgressView.swift in Sources */,
 				DE664EA02BD6866100956E9F /* PaddingTextField.swift in Sources */,
+				DEDF903E2BD6C8E5004340C0 /* CartridgesView.swift in Sources */,
 				DE664E972BD6866100956E9F /* RequestReview.swift in Sources */,
 				DE664EE02BD6866100956E9F /* IAPProduct.swift in Sources */,
 				DE664EDF2BD6866100956E9F /* IAPActionResult.swift in Sources */,
 				DE664EB72BD6866100956E9F /* Scalable.swift in Sources */,
+				DEDF90232BD6A02D004340C0 /* Common.swift in Sources */,
 				DE664EDD2BD6866100956E9F /* IAPError.swift in Sources */,
 				DE664E942BD6866100956E9F /* FacebookManager.swift in Sources */,
 				DE664E9B2BD6866100956E9F /* NavigationControllerSettings.swift in Sources */,
 				DE664EA32BD6866100956E9F /* ObservableAndSingle+Extension.swift in Sources */,
+				DEDF91612BD7F01A004340C0 /* ActionButton.swift in Sources */,
+				DEDF91692BD8059C004340C0 /* InstructionView.swift in Sources */,
 				DE664EB12BD6866100956E9F /* ContentError.swift in Sources */,
 				DE664EBE2BD6866100956E9F /* GlobalDefinitions.swift in Sources */,
 				DE664EAE2BD6866100956E9F /* PushNotificationsAuthorizationStatus.swift in Sources */,
 				DE664EE12BD6866100956E9F /* ProductPrice.swift in Sources */,
 				DE664EB42BD6866100956E9F /* Fonts.swift in Sources */,
 				DE664EA12BD6866100956E9F /* TapAreaButton.swift in Sources */,
+				DEDF90242BD6A02D004340C0 /* CPU.swift in Sources */,
 				DE664EBF2BD6866100956E9F /* SceneDelegate.swift in Sources */,
 				DE664EA82BD6866100956E9F /* UIEdgeInsets+Extension.swift in Sources */,
 				DE664EAD2BD6866100956E9F /* RestAPITransport.swift in Sources */,
+				DEDF902F2BD6A3F4004340C0 /* EmulatorViewController.swift in Sources */,
 				DE664E9A2BD6866100956E9F /* NavigationController.swift in Sources */,
 				DE664E9F2BD6866100956E9F /* PaddingLabel.swift in Sources */,
+				DEDF90212BD6A02D004340C0 /* Cartridge.swift in Sources */,
 				DE664EBC2BD6866100956E9F /* AppDelegate.swift in Sources */,
 				DE664EB52BD6866100956E9F /* NumberLaunches.swift in Sources */,
+				DEDF915B2BD7E6F2004340C0 /* Appearance.swift in Sources */,
+				DEDF90222BD6A02D004340C0 /* Clock.swift in Sources */,
+				DEDF90322BD6A42F004340C0 /* CartridgesViewController.swift in Sources */,
+				DEDF902C2BD6A02D004340C0 /* UI.swift in Sources */,
+				DEDF902A2BD6A02D004340C0 /* PPU.swift in Sources */,
 				DE664EA22BD6866100956E9F /* Collection+Extension.swift in Sources */,
+				DEDF90282BD6A02D004340C0 /* Joypad.swift in Sources */,
 				DE664EB32BD6866100956E9F /* SignError.swift in Sources */,
 				DE664E962BD6866100956E9F /* ImagePicker.swift in Sources */,
 				DE664E982BD6866100956E9F /* RxActivityIndicator.swift in Sources */,
@@ -649,6 +799,8 @@
 				DE664EA52BD6866100956E9F /* UIApplication+Extension.swift in Sources */,
 				DE664ECC2BD6866100956E9F /* SplashView.swift in Sources */,
 				DE664E932BD6866100956E9F /* BranchManager.swift in Sources */,
+				DEDF903C2BD6C0A9004340C0 /* CartridgeView.swift in Sources */,
+				DEDF902B2BD6A02D004340C0 /* Timer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -799,8 +951,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 7FN7933CDF;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GBEmulator/Info.plist;
@@ -814,8 +969,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = wed.GBEmulator;
+				PRODUCT_BUNDLE_IDENTIFIER = navisapps.autocheck.ru;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Autocheck Development Profile";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -832,8 +989,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 7FN7933CDF;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GBEmulator/Info.plist;
@@ -847,8 +1007,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = wed.GBEmulator;
+				PRODUCT_BUNDLE_IDENTIFIER = navisapps.autocheck.ru;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Autocheck Development Profile";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -881,6 +1043,64 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DEDF90052BD69E46004340C0 /* XCRemoteSwiftPackageReference "AudioKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/AudioKit.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.5.4;
+			};
+		};
+		DEDF90082BD69EDD004340C0 /* XCRemoteSwiftPackageReference "AudioKitEX" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/AudioKitEX.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.5.2;
+			};
+		};
+		DEDF900B2BD69FC5004340C0 /* XCRemoteSwiftPackageReference "KissFFT" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/KissFFT.git";
+			requirement = {
+				kind = exactVersion;
+				version = 1.0.0;
+			};
+		};
+		DEDF900E2BD69FF7004340C0 /* XCRemoteSwiftPackageReference "SoundpipeAudioKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/SoundpipeAudioKit.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.5.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DEDF90062BD69E46004340C0 /* AudioKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEDF90052BD69E46004340C0 /* XCRemoteSwiftPackageReference "AudioKit" */;
+			productName = AudioKit;
+		};
+		DEDF90092BD69EDD004340C0 /* AudioKitEX */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEDF90082BD69EDD004340C0 /* XCRemoteSwiftPackageReference "AudioKitEX" */;
+			productName = AudioKitEX;
+		};
+		DEDF900C2BD69FC5004340C0 /* KissFFT */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEDF900B2BD69FC5004340C0 /* XCRemoteSwiftPackageReference "KissFFT" */;
+			productName = KissFFT;
+		};
+		DEDF900F2BD69FF7004340C0 /* SoundpipeAudioKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEDF900E2BD69FF7004340C0 /* XCRemoteSwiftPackageReference "SoundpipeAudioKit" */;
+			productName = SoundpipeAudioKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DE664D332BD681C800956E9F /* Project object */;
 }

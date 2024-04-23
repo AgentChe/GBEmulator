@@ -15,3 +15,28 @@
 "ImagePicker.TakePhoto" = "Take a photo";
 "ImagePicker.CameraRoll" = "Camera roll";
 "ImagePicker.PhotoLibrary" = "Photo library";
+
+// MARK: Splash
+"Splash.Loading" = "Loading...";
+
+// MARK: Cartridges
+"Cartridges.Title" = "Game Library";
+"Cartridges.Import" = "import";
+"Cartridges.HowImport" = "how to import a game";
+"Cartridges.Empty.Title" = "It doesn’t look like\nyou’ve imported anything";
+"Cartridges.Empty.SubTitle" = "To import games, tap the button\nbellow";
+"Cartridges.Confirm.Delete" = "Delete Game";
+"Cartridges.Confirm.Close" = "Close";
+
+// MARK: Instruction
+"Instruction.Title" = "how to import a game";
+"Instruction.Part1" = "You need to have a special file containing a game's data, which is called ROM.";
+"Instruction.Part2" = "If you have an original Nintendo cartridge there is a way to produced a digital copy (ROM), which you can later use in our or other emulators (not limited to iOS platform). Nintendo community commonly recommends using this device:";
+"Instruction.Part3" = "https://www.epilogue.co/product/gb-operator";
+"Instruction.Part4" = "Some of the games have been also released for free in a digital *.gb format. Try searching the web for those *.gb ROMS. Here are a few useful links:";
+"Instruction.Part5" = "https://www.emulatorgames.net/roms/gameboy/";
+"Instruction.Part6" = "https://visualboyadvance.org/gba-roms/";
+"Instruction.Part7" = "https://www.emuparadise.me/Nintendo_Game_Boy_ROMs/12";
+"Instruction.Part8" = "https://romsfun.com/roms/game-boy";
+"Instruction.Part9" = "Once you have a ROM file ready (for now in *.gb format only) you need to transfer it to your iOS device, tap Import button in our app and locate the file. If the file structure is intact the imported game will appear in the list on the main screen.";
+"Instruction.Part10" = "Please keep in mind that if you delete the app you will need to re-import the game one more time upon redownloading the app.";
