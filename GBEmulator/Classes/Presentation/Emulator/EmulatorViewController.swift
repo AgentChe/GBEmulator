@@ -56,8 +56,8 @@ final class EmulatorViewController: UIViewController {
         view.backgroundColor = Appearance.main100
         hostingController.view.backgroundColor = UIColor.clear
         
-        clock.start()
         gameLibraryManager.insertCartridge()
+        clock.start()
     }
 }
 

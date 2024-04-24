@@ -40,7 +40,7 @@ struct StartSelectButton: View {
                 .padding(EdgeInsets())
                 .background(Color.clear)
             }
-            .onPressed(onReleased)
+            .onPressed(onPressed)
             .onReleased(onReleased)
             .padding(EdgeInsets())
         }

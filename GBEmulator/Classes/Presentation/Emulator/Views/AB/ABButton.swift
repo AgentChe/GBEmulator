@@ -23,7 +23,7 @@ struct ABButton: View {
                     .scaleEffect(pressed ? 1.2 : 1)
                     .animation(.spring().speed(4), value: pressed)
             }
-            .onPressed(onReleased)
+            .onPressed(onPressed)
             .onReleased(onReleased)
             .padding(EdgeInsets())
             
