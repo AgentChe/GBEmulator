@@ -8,6 +8,7 @@
 import UIKit
 
 final class SplashView: UIView {
+    lazy var imageView = makeImageView()
     lazy var loadingLabel = makeLoadingLabel()
     
     override init(frame: CGRect) {
@@ -33,6 +34,13 @@ private extension SplashView {
 private extension SplashView {
     func makeConstraints() {
         NSLayoutConstraint.activate([
+            imageView.widthAnchor.constraint(equalToConstant: 135.scale),
+            imageView.heightAnchor.constraint(equalToConstant: 124.scale),
+            imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            imageView.centerYAnchor.constraint(equalTo: centerYAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
             loadingLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             loadingLabel.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -30.scale)
         ])
@@ -41,6 +49,16 @@ private extension SplashView {
 
 // MARK: Lazy initialization
 private extension SplashView {
+    func makeImageView() -> UIImageView {
+        let view = UIImageView()
+        view.contentMode = .scaleAspectFit
+        view.image = UIImage(named: "Splash.Image")
+        view.clipsToBounds = true
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
     func makeLoadingLabel() -> UILabel {
         let attrs = TextAttributes()
             .textColor(UIColor.black)
