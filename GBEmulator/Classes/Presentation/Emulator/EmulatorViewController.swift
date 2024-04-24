@@ -9,9 +9,14 @@ import UIKit
 import SwiftUI
 
 final class EmulatorViewController: UIViewController {
-    deinit {
-        print("___ deinit")
-    }
+    private lazy var mmu = MMU()
+    private lazy var ppu = PPU(mmu)
+    private lazy var cpu = CPU(mmu)
+    private lazy var apu = APU(mmu)
+    private lazy var timer = Timer(mmu)
+    private lazy var joypad = Joypad(mmu)
+    private lazy var clock = Clock(mmu, ppu, cpu, apu, timer)
+    private lazy var gameLibraryManager = GameLibraryManager(clock, cartridge: cartridge)
     
     private let cartridge: Cartridge
     
@@ -28,39 +33,47 @@ final class EmulatorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let mmu = MMU()
-        let ppu = PPU(mmu)
-        let cpu = CPU(mmu)
-        let apu = APU(mmu)
-        let timer = Timer(mmu)
-        let joypad = Joypad(mmu)
-        let clock = Clock(mmu, ppu, cpu, apu, timer)
-        let gameLibraryManager = GameLibraryManager(clock)
+        let emulatorView = EmulatorView(
+            title: cartridge.title,
+            lcd: ppu.view
+        ) { [weak self] in
+            self?.dismiss()
+        }
+        .environmentObject(joypad.buttons)
+        
+        let hostingController = UIHostingController(rootView: emulatorView)
+        addChild(hostingController)
+        view.addSubview(hostingController.view)
+        
+        hostingController.view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            hostingController.view.topAnchor.constraint(equalTo: view.topAnchor),
+            hostingController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            hostingController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            hostingController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+        
+        view.backgroundColor = Appearance.main100
+        hostingController.view.backgroundColor = UIColor.clear
         
         clock.start()
-        
-        let ui = UIHostingController(rootView: GameBoyView(lcd: ppu.view).environmentObject(joypad.buttons).environmentObject(gameLibraryManager))
-        
-        view.backgroundColor = .black
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(ui.view)
-        
-        ui.view.translatesAutoresizingMaskIntoConstraints = false
-        ui.view.topAnchor.constraint(equalTo: view.topAnchor).isActive =  true
-        ui.view.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive =  true
-        ui.view.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive =  true
-        ui.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive =  true
-        
-        gameLibraryManager.insertCartridge(cartridge)
-        
-        // TODO
-//        cartridge.saveRam()
+        gameLibraryManager.insertCartridge()
     }
 }
 
 // MARK: Public
 extension EmulatorViewController {
     static func make(cartridge: Cartridge) -> EmulatorViewController {
-        EmulatorViewController(cartridge: cartridge)
+        let vc = EmulatorViewController(cartridge: cartridge)
+        vc.modalPresentationStyle = .fullScreen
+        return vc
+    }
+}
+
+// MARK: Private
+private extension EmulatorViewController {
+    func dismiss() {
+        cartridge.saveRam()
+        dismiss(animated: true)
     }
 }

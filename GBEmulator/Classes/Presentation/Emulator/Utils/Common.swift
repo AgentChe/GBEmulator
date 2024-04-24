@@ -1,4 +1,3 @@
-// TODO: Rename UInt8.swap() function to swapNibbles()
 
 import Foundation
 import SwiftUI

@@ -10,7 +10,7 @@ import SwiftUI
 struct CartridgesView: View {
     let didSelect: (Cartridge) -> Void
     
-    @EnvironmentObject private var gameLibraryManager: GameLibraryManager
+    @ObservedObject private var gameLibraryStorage = GameLibraryStorage()
     @State private var showFilePicker = false
     @State private var deleteCartridge: Cartridge?
     @State private var showInstruction = false
@@ -21,13 +21,13 @@ struct CartridgesView: View {
                 .multilineTextAlignment(.center)
                 .font(Font(Fonts.Joystix.monospace(size: 18.scale)))
                 .foregroundColor(Color(Appearance.mono100))
-                .padding(EdgeInsets())
+                .padding(EdgeInsets(t: ScreenSize.isIphoneXFamily ? 0 : 16.scale))
                 .background(Color.clear)
             
-            if gameLibraryManager.library.isEmpty {
+            if gameLibraryStorage.library.isEmpty {
                 CartridgesEmptyView()
             } else {
-                List(gameLibraryManager.library, id: \.id) { cartridge in
+                List(gameLibraryStorage.library, id: \.id) { cartridge in
                     CartridgeView(cartridge: cartridge, didSelect: didSelect, didDelete: { cartridge in
                         deleteCartridge = cartridge
                     })
@@ -47,7 +47,7 @@ struct CartridgesView: View {
             .padding(EdgeInsets(vertical: 8.scale))
             .sheet(isPresented: $showFilePicker) {
                 FilePickerUIRepresentable(types: [.gb], allowMultiple: true) { urls in
-                    gameLibraryManager.importURLs(urls: urls)
+                    gameLibraryStorage.importURLs(urls: urls)
                 }
                 .ignoresSafeArea()
             }
@@ -55,7 +55,7 @@ struct CartridgesView: View {
             ActionButton(title: "Cartridges.HowImport".localized.uppercased(), style: .gray, action: {
                 showInstruction = true
             })
-            .padding(EdgeInsets(vertical: 8.scale))
+            .padding(EdgeInsets(t: 8.scale, b: ScreenSize.isIphoneXFamily ? 8.scale : 32.scale))
             .sheet(isPresented: $showInstruction) {
                 InstructionView()
             }
@@ -67,7 +67,7 @@ struct CartridgesView: View {
                         deleteCartridge = nil
                         
                         if confirm {
-                            gameLibraryManager.deleteCartridge(cartridge)
+                            gameLibraryStorage.deleteCartridge(cartridge)
                         }
                     }
                 }

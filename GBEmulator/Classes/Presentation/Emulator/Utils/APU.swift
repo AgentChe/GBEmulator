@@ -1,8 +1,3 @@
-// TODO: Figure out a good default for master volume 🤔
-// TODO: A weird noise can be heard as soon as the GB is turned on
-// TODO: Tetris main menu and Type-B music is not sounding correct
-// TODO: Still need to implement the noise voice properly
-
 import Foundation
 import AudioKit
 import SoundpipeAudioKit

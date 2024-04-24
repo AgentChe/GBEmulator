@@ -40,3 +40,7 @@
 "Instruction.Part8" = "https://romsfun.com/roms/game-boy";
 "Instruction.Part9" = "Once you have a ROM file ready (for now in *.gb format only) you need to transfer it to your iOS device, tap Import button in our app and locate the file. If the file structure is intact the imported game will appear in the list on the main screen.";
 "Instruction.Part10" = "Please keep in mind that if you delete the app you will need to re-import the game one more time upon redownloading the app.";
+
+// MARK: Emulator
+"Emulator.Start" = "START";
+"Emulator.Select" = "SELECT";

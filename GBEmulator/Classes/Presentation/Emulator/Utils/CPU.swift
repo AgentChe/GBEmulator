@@ -1,8 +1,3 @@
-// TODO: Only execute a cmd if you have accumulated enough cycles?
-// TODO: if cmd.cycles > cycles {
-// TODO:    queue.insert(cmd, at: 0)
-// TODO:    return
-// TODO: }
 
 struct Instruction {
     internal var toCommand: (CPU) throws -> Command

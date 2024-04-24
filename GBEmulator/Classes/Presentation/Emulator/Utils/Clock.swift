@@ -1,4 +1,3 @@
-// TODO: Refactor cycle calculations in the frame() function. Need to be more explicit and maybe encapsulated into their respective components
 
 import Foundation
 

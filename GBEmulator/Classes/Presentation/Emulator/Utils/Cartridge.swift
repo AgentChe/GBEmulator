@@ -3,10 +3,6 @@
 // https://retrocomputing.stackexchange.com/questions/11732/how-does-the-gameboys-memory-bank-switching-work
 // https://b13rg.github.io/Gameboy-MBC-Analysis/
 
-// TODO: Support more MBC types
-// TODO: Make sure memory bank switching is working properly
-// TODO: Make sure catridge RAM restoration is working properly
-
 import Foundation
 
 enum MBCType {

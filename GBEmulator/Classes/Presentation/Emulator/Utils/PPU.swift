@@ -1,9 +1,3 @@
-// TODO: self.objectsEnabled is not currently being used anywhere
-// TODO: Handle sprite priority: https://youtu.be/HyzD8pNlpwI?t=2179
-// TODO: Handle transparent pixel: https://youtu.be/HyzD8pNlpwI?t=3308
-// TODO: Double-break code in pixelTransfer() function is horrible - even for my standards..
-// TODO: Need a helper function like: let pixels =  fill(pallete, lsb: [0,1,2,3], hsb: [0,1,2,3])
-// TODO: And another: let pixels = mix(base: pixels1, with: pixels2, from: someIndex)
 
 import Foundation
 import UIKit

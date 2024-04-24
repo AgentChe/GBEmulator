@@ -12,20 +12,10 @@ final class CartridgesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let mmu = MMU()
-        let ppu = PPU(mmu)
-        let cpu = CPU(mmu)
-        let apu = APU(mmu)
-        let timer = Timer(mmu)
-        let joypad = Joypad(mmu)
-        let clock = Clock(mmu, ppu, cpu, apu, timer)
-        let gameLibraryManager = GameLibraryManager(clock)
-        
         let cartridgesView = CartridgesView { [weak self] cartridge in
             let vc = EmulatorViewController.make(cartridge: cartridge)
             self?.present(vc, animated: true)
         }
-        .environmentObject(gameLibraryManager)
         
         let hostingController = UIHostingController(rootView: cartridgesView)
         addChild(hostingController)
