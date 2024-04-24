@@ -142,7 +142,11 @@ public class CPU {
     public init(_ mmu: MMU) {
         self.mmu = mmu
         
-        self.mmu.interruptFlags.subscribe { flags in
+        self.mmu.interruptFlags.subscribe { [weak self] flags in
+            guard let self else {
+                return
+            }
+            
             if flags > 0 && self.enabled == false {
                 self.enabled = flags & self.mmu.interruptsEnabled.read() > 0
             }

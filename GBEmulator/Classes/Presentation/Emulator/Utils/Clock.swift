@@ -1,7 +1,7 @@
 
 import Foundation
 
-public class Clock {
+public class Clock {    
     private let mmu: MMU
     private let ppu: PPU
     private let cpu: CPU
@@ -23,19 +23,23 @@ public class Clock {
     }
     
     public func sync(task: @escaping (MMU, CPU, PPU, APU, Timer) -> Void) {
-        self.syncTasks.append(task)
+        syncTasks.append(task)
     }
 
     public func start(_ current: DispatchTime = .now()) {
         var next = current + frameTime
 
-        DispatchQueue.global(qos: .userInteractive).async {
+        DispatchQueue.global(qos: .userInteractive).async { [weak self] in
+            guard let self else {
+                return
+            }
+            
             if self.syncTasks.isNotEmpty {
                 self.syncTasks.forEach { $0(self.mmu, self.cpu, self.ppu, self.apu, self.timer) }
                 self.syncTasks.removeAll()
             }
             
-            try! self.frame()
+            try? self.frame()
 
             let now = DispatchTime.now()
 
@@ -43,8 +47,8 @@ public class Clock {
                 next = now
             }
 
-            DispatchQueue.main.asyncAfter(deadline: next, execute: {
-                self.start(next)
+            DispatchQueue.main.asyncAfter(deadline: next, execute: { [weak self] in
+                self?.start(next)
             })
         }
     }
@@ -90,5 +94,11 @@ public class Clock {
         }
         
         StopWatch.global.resetAll()
+    }
+    
+    func stop() {
+        DispatchQueue.global(qos: .userInteractive).async { [weak self] in
+            self?.syncTasks.removeAll()
+        }
     }
 }

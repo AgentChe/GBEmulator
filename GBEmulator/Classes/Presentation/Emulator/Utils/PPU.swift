@@ -184,7 +184,11 @@ public class PPU {
         self.view = LCDBitmapView(child: LCDBitmap())
         self.mmu = mmu
         
-        self.mmu.lcdControl.subscribe { byte in
+        self.mmu.lcdControl.subscribe { [weak self] byte in
+            guard let self else {
+                return
+            }
+            
             self.view.child.enabled = byte.bit(7)
             self.windowTileMap = byte.bit(6) ? 1 : 0
             self.windowEnabled = byte.bit(5)
@@ -195,38 +199,62 @@ public class PPU {
             self.backgroundEnabled = byte.bit(0)
         }
         
-        self.mmu.lcdY.subscribe { ly in
+        self.mmu.lcdY.subscribe { [weak self] ly in
+            guard let self else {
+                return
+            }
+            
             let lyc = self.mmu.lcdYCompare.read()
             self.setLYEqualsLYC(ly == lyc)
         }
         
-        self.mmu.lcdYCompare.subscribe { lyc in
+        self.mmu.lcdYCompare.subscribe { [weak self] lyc in
+            guard let self else {
+                return
+            }
+            
             let ly = self.mmu.lcdY.read()
             self.setLYEqualsLYC(ly == lyc)
         }
         
-        self.mmu.bgPalette.subscribe { byte in
+        self.mmu.bgPalette.subscribe { [weak self] byte in
+            guard let self else {
+                return
+            }
+            
             self.bgPalette[0] = defaultPalette[byte.crumb(0)]
             self.bgPalette[1] = defaultPalette[byte.crumb(1)]
             self.bgPalette[2] = defaultPalette[byte.crumb(2)]
             self.bgPalette[3] = defaultPalette[byte.crumb(3)]
         }
         
-        self.mmu.obj0Palette.subscribe { byte in
+        self.mmu.obj0Palette.subscribe { [weak self] byte in
+            guard let self else {
+                return
+            }
+            
             self.obj0Palette[0] = Pixel.transparent
             self.obj0Palette[1] = defaultPalette[byte.crumb(1)]
             self.obj0Palette[2] = defaultPalette[byte.crumb(2)]
             self.obj0Palette[3] = defaultPalette[byte.crumb(3)]
         }
         
-        self.mmu.obj1Palette.subscribe { byte in
+        self.mmu.obj1Palette.subscribe { [weak self] byte in
+            guard let self else {
+                return
+            }
+            
             self.obj1Palette[0] = Pixel.transparent
             self.obj1Palette[1] = defaultPalette[byte.crumb(1)]
             self.obj1Palette[2] = defaultPalette[byte.crumb(2)]
             self.obj1Palette[3] = defaultPalette[byte.crumb(3)]
         }
         
-        self.mmu.serialDataControl.subscribe({ (b) in b == 0x81 }) { _ in
+        self.mmu.serialDataControl.subscribe({ (b) in b == 0x81 }) { [weak self] _ in
+            guard let self else {
+                return
+            }
+            
             let byte = self.mmu.serialDataTransfer.read()
             let scalar = UnicodeScalar(byte)
             let char = Character(scalar)
@@ -289,8 +317,12 @@ public class PPU {
         let objSizeY: Int
     }
     
-    func oamScan(ly: UInt8, scx: UInt8, scy: UInt8, continuation: @escaping (OamScanData) -> Command) -> Command {
-        return Command(cycles: 40) {
+    func oamScan(ly: UInt8, scx: UInt8, scy: UInt8, continuation: @escaping (OamScanData) -> Command?) -> Command {
+        return Command(cycles: 40) { [weak self] in
+            guard let self else {
+                return nil
+            }
+            
             self.setMode(2)
             
             let bgy = scy &+ ly
@@ -335,7 +367,11 @@ public class PPU {
                 }
             }
             
-            let allObjects = self.objectsMemo.get(deps: [self.mmu.oam.version]) {
+            let allObjects = self.objectsMemo.get(deps: [self.mmu.oam.version]) { [weak self] in
+                guard let self else {
+                    return []
+                }
+                
                 return try! self.mmu.oam.readBytes(address: 0xFE00, count: 160).chunked(into: 4).map { arr in
                     return Object(x: arr[1], y: arr[0], index: arr[2], attributes: arr[3])
                 }
@@ -349,7 +385,11 @@ public class PPU {
             deps.append(objSizeY)
             deps.append(self.mmu.vramTileData.version)
             let objTileData = self.objectsTileDataMemo.get(deps: deps) {
-                return visibleObjects.map ({ (o: Object) -> [UInt8]  in
+                return visibleObjects.map ({ [weak self] (o: Object) -> [UInt8]  in
+                    guard let self else {
+                        return []
+                    }
+                    
                     let offset = UInt16(o.index) * 16
                     let address: UInt16 = 0x8000 &+ offset
                     let data = try! self.mmu.vramTileData.readBytes(address: address, count: UInt16(objSizeY) * 2)
@@ -363,7 +403,11 @@ public class PPU {
     }
     
     func pixelTransfer(ly: UInt8, scx: UInt8, data: OamScanData, continuation: @escaping () -> Command) -> Command {
-        return Command(cycles: 144) {
+        return Command(cycles: 144) { [weak self] in
+            guard let self else {
+                return nil
+            }
+            
             self.setMode(3)
             
             var pixels = self.backgroundEnabled ? [Pixel]() : [Pixel](repeating: Pixel.white, count: 256)
@@ -445,7 +489,11 @@ public class PPU {
     }
     
     func hBlank(ly: UInt8) -> Command {
-        return Command(cycles: 44) {
+        return Command(cycles: 44) { [weak self] in
+            guard let self else {
+                return nil
+            }
+            
             self.setMode(0)
             
             // Increment ly at the end of the blanking period
@@ -457,14 +505,18 @@ public class PPU {
     }
     
     func vBlank(ly: UInt8) -> Command {
-        return Command(cycles: 228) {
+        return Command(cycles: 228) { [weak self] in
+            guard let self else {
+                return nil
+            }
+            
             if ly == 144 {
                 self.setMode(1)
             }
             
             // Increment or reset ly at the end of the blanking period
-            return Command(cycles: 0) {
-                self.mmu.lcdY.write(ly < 153 ? ly + 1 : 0)
+            return Command(cycles: 0) { [weak self] in
+                self?.mmu.lcdY.write(ly < 153 ? ly + 1 : 0)
                 return nil
             }
         }
@@ -476,7 +528,11 @@ public class PPU {
         let scy = mmu.scrollY.read()
         
         if ly < view.child.bitmap.height {
-            return self.oamScan(ly: ly, scx: scx, scy: scy) { data in
+            return oamScan(ly: ly, scx: scx, scy: scy) { [weak self] data in
+                guard let self else {
+                    return nil
+                }
+                
                 return self.pixelTransfer(ly: ly, scx: scx, data: data) {
                     return self.hBlank(ly: ly);
                 }

@@ -43,11 +43,15 @@ public class Timer {
     public init(_ mmu: MMU) {
         self.mmu = mmu
         
-        self.mmu.dividerRegister.subscribe { _ in
-            self.mmu.dividerRegister.write(0, publish: false)
+        self.mmu.dividerRegister.subscribe { [weak self] _ in
+            self?.mmu.dividerRegister.write(0, publish: false)
         }
         
-        self.mmu.timerControl.subscribe { control in
+        self.mmu.timerControl.subscribe { [weak self] control in
+            guard let self else {
+                return
+            }
+            
             self.enabled = control.bit(2)
             
             let speed = control & 0b00000011

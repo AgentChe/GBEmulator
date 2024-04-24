@@ -405,7 +405,11 @@ public class APU {
     }
     
     func wireUpPulseA() {
-        self.mmu.nr10.subscribe { nr10 in
+        self.mmu.nr10.subscribe { [weak self] nr10 in
+            guard let self else {
+                return
+            }
+            
             let sweepShifts = nr10 & 0b00000111
             let sweepIncreasing = nr10.bit(3)
             let sweepTime = convertToSweepTime(byte: (nr10 & 0b01110000) >> 4)
@@ -415,7 +419,11 @@ public class APU {
             self.pulseA.frequencySweepEnvelope.sweepTime = sweepTime
         }
         
-        self.mmu.nr11.subscribe { nr11 in
+        self.mmu.nr11.subscribe { [weak self] nr11 in
+            guard let self else {
+                return
+            }
+            
             let pulseWidth = convertToPulseWidth(byte: nr11 & 0b11000000)
             let lengthEnvelopDuration = (64 - Float(nr11 & 0b00111111)) * (1 / 256)
             
@@ -423,7 +431,11 @@ public class APU {
             self.pulseA.lengthEnvelope.duration = lengthEnvelopDuration
         }
         
-        self.mmu.nr12.subscribe { nr12 in
+        self.mmu.nr12.subscribe { [weak self] nr12 in
+            guard let self else {
+                return
+            }
+            
             let amplitudeEnvelopeStartStep = Int((nr12 & 0b11110000) >> 4)
             let amplitudeEnvelopeStepDuration = Float(nr12 & 0b00000111) * (1 / 64)
             let amplitudeEnvelopeIncreasing = nr12.bit(3)
@@ -435,7 +447,11 @@ public class APU {
             self.pulseA.amplitudeEnvelope.increasing = amplitudeEnvelopeIncreasing
         }
         
-        self.mmu.nr13.subscribe { nr13 in
+        self.mmu.nr13.subscribe { [weak self] nr13 in
+            guard let self else {
+                return
+            }
+            
             let bits = frequencyToBits(frequency: self.pulseA.frequencySweepEnvelope.startFrequency)
             let lsb = UInt16(nr13)
             let msb = bits & 0xFF00
@@ -444,7 +460,11 @@ public class APU {
             self.pulseA.frequencySweepEnvelope.startFrequency = frequency
         }
     
-        self.mmu.nr14.subscribe { nr14 in
+        self.mmu.nr14.subscribe { [weak self] nr14 in
+            guard let self else {
+                return
+            }
+            
             let bits = frequencyToBits(frequency: self.pulseA.frequencySweepEnvelope.startFrequency)
             let lsb = bits & 0x00FF
             let msb = UInt16(nr14 & 0b00000111) << 8
@@ -459,7 +479,11 @@ public class APU {
     }
     
     func wireUpPulseB() {
-        self.mmu.nr21.subscribe { nr21 in
+        self.mmu.nr21.subscribe { [weak self] nr21 in
+            guard let self else {
+                return
+            }
+            
             let pulseWidth = convertToPulseWidth(byte: nr21 & 0b11000000)
             let lengthEnvelopeDuration = (64 - Float(nr21 & 0b00111111)) * (1 / 256)
             
@@ -467,7 +491,11 @@ public class APU {
             self.pulseB.lengthEnvelope.duration = lengthEnvelopeDuration
         }
         
-        self.mmu.nr22.subscribe { nr22 in
+        self.mmu.nr22.subscribe { [weak self] nr22 in
+            guard let self else {
+                return
+            }
+            
             let amplitudeEnvelopeStartStep = Int((nr22 & 0b11110000) >> 4)
             let amplitudeEnvelopeStepDuration = Float(nr22 & 0b00000111) * (1 / 64)
             let amplitudeEnvelopeIncreasing = nr22.bit(3)
@@ -479,7 +507,11 @@ public class APU {
             self.pulseB.amplitudeEnvelope.increasing = amplitudeEnvelopeIncreasing
         }
         
-        self.mmu.nr23.subscribe { nr23 in
+        self.mmu.nr23.subscribe { [weak self] nr23 in
+            guard let self else {
+                return
+            }
+            
             let bits = frequencyToBits(frequency: self.pulseB.frequency)
             let lsb = UInt16(nr23)
             let msb = bits & 0xFF00
@@ -488,7 +520,11 @@ public class APU {
             self.pulseB.frequency = frequency
         }
         
-        self.mmu.nr24.subscribe { nr24 in
+        self.mmu.nr24.subscribe { [weak self] nr24 in
+            guard let self else {
+                return
+            }
+            
             let bits = frequencyToBits(frequency: self.pulseB.frequency)
             let lsb = bits & 0x00FF
             let msb = UInt16(nr24 & 0b00000111) << 8
@@ -503,19 +539,31 @@ public class APU {
     }
     
     func wireUpCustomWave() {
-        self.mmu.nr30.subscribe { nr30 in
+        self.mmu.nr30.subscribe { [weak self] nr30 in
+            guard let self else {
+                return
+            }
+            
             let dacEnabled = nr30.bit(7)
             
             self.customWave.dacEnabled = dacEnabled
         }
         
-        self.mmu.nr31.subscribe { nr31 in
+        self.mmu.nr31.subscribe { [weak self] nr31 in
+            guard let self else {
+                return
+            }
+            
             let lengthEnvelopeDuration = (256 - Float(nr31)) * (1 / 256)
             
             self.customWave.lengthEnvelope.duration = lengthEnvelopeDuration
         }
         
-        self.mmu.nr33.subscribe { nr33 in
+        self.mmu.nr33.subscribe { [weak self] nr33 in
+            guard let self else {
+                return
+            }
+            
             let bits = frequencyToBits(frequency: self.pulseB.frequency)
             let lsb = UInt16(nr33)
             let msb = bits & 0xFF00
@@ -524,7 +572,11 @@ public class APU {
             self.customWave.frequency = frequency
         }
         
-        self.mmu.nr34.subscribe { nr34 in
+        self.mmu.nr34.subscribe { [weak self] nr34 in
+            guard let self else {
+                return
+            }
+            
             let bits = frequencyToBits(frequency: self.pulseB.frequency)
             let lsb = bits & 0x00FF
             let msb = UInt16(nr34 & 0b00000111) << 8
@@ -539,13 +591,21 @@ public class APU {
     }
     
     func wireUpNoise() {
-        self.mmu.nr41.subscribe { nr41 in
+        self.mmu.nr41.subscribe { [weak self] nr41 in
+            guard let self else {
+                return
+            }
+            
             let lengthEnvelopeDuration = (64 - Float(nr41 & 0b00111111)) * (1 / 256)
             
             self.noise.lengthEnvelope.duration = lengthEnvelopeDuration
         }
         
-        self.mmu.nr42.subscribe { nr42 in
+        self.mmu.nr42.subscribe { [weak self] nr42 in
+            guard let self else {
+                return
+            }
+            
             let amplitudeEnvelopeStartStep = Int((nr42 & 0b11110000) >> 4)
             let amplitudeEnvelopeStepDuration = Float(nr42 & 0b00000111) * 1 / 64
             let amplitudeEnvelopeIncreasing = nr42.bit(3)
@@ -557,7 +617,11 @@ public class APU {
             self.noise.amplitudeEnvelope.increasing = amplitudeEnvelopeIncreasing
         }
         
-        self.mmu.nr43.subscribe { nr43 in
+        self.mmu.nr43.subscribe { [weak self] nr43 in
+            guard let self else {
+                return
+            }
+            
             let temp = nr43 & 0b00000111
             let r = temp == 0 ? Float(0.5) : Float(temp)
             let s = Float(nr43 & 0b11100000)
@@ -566,7 +630,11 @@ public class APU {
             self.noise.frequency = frequency
         }
         
-        self.mmu.nr44.subscribe { nr44 in
+        self.mmu.nr44.subscribe { [weak self] nr44 in
+            guard let self else {
+                return
+            }
+            
             let lengthEnvelopeEnabled = nr44.bit(6)
             let triggered = nr44.bit(7)
             
@@ -577,13 +645,21 @@ public class APU {
     
     func wireUpMaster() {
         // Set left and right channel volumes
-        self.mmu.nr50.subscribe { nr50 in
+        self.mmu.nr50.subscribe { [weak self] nr50 in
+            guard let self else {
+                return
+            }
+            
             self.master.setLeftChannelVolume(Float((nr50 & 0b01110000) >> 4) / 7.0)
             self.master.setRightChannelVolume(Float(nr50 & 0b00000111) / 7.0)
         }
         
         // Enabled left or right channel output for each voice
-        self.mmu.nr51.subscribe { nr51 in
+        self.mmu.nr51.subscribe { [weak self] nr51 in
+            guard let self else {
+                return
+            }
+            
             self.master.enableChannels(index: 0, left: nr51.bit(4), right: nr51.bit(0))
             self.master.enableChannels(index: 1, left: nr51.bit(5), right: nr51.bit(1))
             self.master.enableChannels(index: 2, left: nr51.bit(6), right: nr51.bit(2))
@@ -591,15 +667,19 @@ public class APU {
         }
         
         // Master sound output
-        self.mmu.nr52.subscribe { nr52 in
-            self.master.enabled = nr52.bit(7)
+        self.mmu.nr52.subscribe { [weak self] nr52 in
+            self?.master.enabled = nr52.bit(7)
         }
     }
     
     func updateWaveformSamples() {
         let nr32 = self.mmu.nr32.read()
         let outputLevel = (nr32 & 0b01100000) >> 5
-        let waveformData = self.waveformDataMemo.get(deps: [self.mmu.waveformRam.version, outputLevel]) {
+        let waveformData = self.waveformDataMemo.get(deps: [self.mmu.waveformRam.version, outputLevel]) { [weak self] in
+            guard let self else {
+                return []
+            }
+            
             let buffer = self.mmu.waveformRam.buffer
             return buffer.flatMap({ [Float($0.nibble(1) >> outputLevel) / 0b1111, Float($0.nibble(0) >> outputLevel) / 0b1111 ] }).map({ $0 * 2 - 1 })
         }

@@ -9,6 +9,15 @@ import UIKit
 import SwiftUI
 
 final class EmulatorViewController: UIViewController {
+    deinit {
+        mmu.reset()
+        ppu.reset()
+        cpu.reset()
+        apu.reset()
+        timer.reset()
+        clock.stop()
+    }
+    
     private lazy var mmu = MMU()
     private lazy var ppu = PPU(mmu)
     private lazy var cpu = CPU(mmu)
@@ -16,7 +25,7 @@ final class EmulatorViewController: UIViewController {
     private lazy var timer = Timer(mmu)
     private lazy var joypad = Joypad(mmu)
     private lazy var clock = Clock(mmu, ppu, cpu, apu, timer)
-    private lazy var gameLibraryManager = GameLibraryManager(clock, cartridge: cartridge)
+    private lazy var gameLibraryManager = GameLibraryManager(clock, cartridge: cartridge) 
     
     private let cartridge: Cartridge
     

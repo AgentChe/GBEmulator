@@ -268,7 +268,9 @@ public struct Address {
     }
     
     func subscribe(_ predicate: @escaping (UInt8) -> Bool, handler: @escaping (UInt8) -> Void) {
-        arr.subscribe({ (a, b) in a == self.address && predicate(b) }, handler: { _, byte in handler(byte) })
+        arr.subscribe({ (a, b) in
+            a == address && predicate(b)
+        }, handler: { _, byte in handler(byte) })
     }
 }
 
@@ -354,32 +356,40 @@ public class MMU: MemoryAccessArray {
             rest
         ])
         
-        self.biosRegister.subscribe { byte in
+        self.biosRegister.subscribe { [weak self] byte in
+            guard let self else {
+                return
+            }
+            
             if byte == 1 {
                 self.remove(item: self.bios)
             }
         }
         
-        self.dmaTransfer.subscribe { byte in
-            self.startDMATransfer(byte: byte)
+        self.dmaTransfer.subscribe { [weak self] byte in
+            self?.startDMATransfer(byte: byte)
         }
     }
     
     func insertCartridge(_ cart: Cartridge) {
-        self.remove(item: bios)
+        remove(item: bios)
         
-        if let found = self.find(type: Cartridge.self){
-            self.remove(item: found)
+        if let found = find(type: Cartridge.self){
+            remove(item: found)
         }
         
-        self.insert(item: bios, index: 0)
-        self.insert(item: cart, index: 1) // Always insert cartridge after bios
+        insert(item: bios, index: 0)
+        insert(item: cart, index: 1) // Always insert cartridge after bios
     }
     
     func startDMATransfer(byte: UInt8) {
         let start = UInt16(byte) << 8
         for offset in 0..<0xA0 {
-            queue.append(Command(cycles: 1) {
+            queue.append(Command(cycles: 1) { [weak self] in
+                guard let self else {
+                    return nil
+                }
+                
                 let data = try self.readByte(address: start + UInt16(offset))
                 try self.writeByte(address: 0xFE00 + UInt16(offset), byte: data)
                 return nil

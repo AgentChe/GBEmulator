@@ -21,7 +21,11 @@ public class Joypad {
         self.mmu = mmu
         self.buttons = Buttons()
         
-        self.mmu.joypad.subscribe { input in
+        self.mmu.joypad.subscribe { [weak self] input in
+            guard let self else {
+                return
+            }
+            
             var result = input
             
             if !result[4] {
