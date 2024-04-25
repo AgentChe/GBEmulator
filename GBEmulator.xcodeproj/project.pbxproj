@@ -106,6 +106,13 @@
 		DEDF917C2BD8376D004340C0 /* EmulatorHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF917B2BD8376D004340C0 /* EmulatorHeaderView.swift */; };
 		DEDF91802BD845E8004340C0 /* ABButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF917F2BD845E8004340C0 /* ABButton.swift */; };
 		DEDF91832BD84CA1004340C0 /* StartSelectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF91822BD84CA1004340C0 /* StartSelectButton.swift */; };
+		DEDF92B62BDAB14E004340C0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF92B52BDAB14E004340C0 /* HomeViewController.swift */; };
+		DEDF92B82BDAB153004340C0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF92B72BDAB153004340C0 /* HomeView.swift */; };
+		DEDF92BB2BDAB3E7004340C0 /* HomeMenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF92BA2BDAB3E7004340C0 /* HomeMenuItemView.swift */; };
+		DEDF92BD2BDABBEB004340C0 /* tetris.gb in Resources */ = {isa = PBXBuildFile; fileRef = DEDF92BC2BDABBD5004340C0 /* tetris.gb */; };
+		DEDF92C02BDACB32004340C0 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF92BF2BDACB32004340C0 /* MenuViewController.swift */; };
+		DEDF92C22BDACB38004340C0 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF92C12BDACB38004340C0 /* MenuView.swift */; };
+		DEDF92C52BDACBE5004340C0 /* MenuRouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF92C42BDACBE5004340C0 /* MenuRouteView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -208,6 +215,13 @@
 		DEDF917B2BD8376D004340C0 /* EmulatorHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmulatorHeaderView.swift; sourceTree = "<group>"; };
 		DEDF917F2BD845E8004340C0 /* ABButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABButton.swift; sourceTree = "<group>"; };
 		DEDF91822BD84CA1004340C0 /* StartSelectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartSelectButton.swift; sourceTree = "<group>"; };
+		DEDF92B52BDAB14E004340C0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		DEDF92B72BDAB153004340C0 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		DEDF92BA2BDAB3E7004340C0 /* HomeMenuItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMenuItemView.swift; sourceTree = "<group>"; };
+		DEDF92BC2BDABBD5004340C0 /* tetris.gb */ = {isa = PBXFileReference; lastKnownFileType = file; path = tetris.gb; sourceTree = "<group>"; };
+		DEDF92BF2BDACB32004340C0 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		DEDF92C12BDACB38004340C0 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		DEDF92C42BDACBE5004340C0 /* MenuRouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRouteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -442,8 +456,8 @@
 			isa = PBXGroup;
 			children = (
 				DE664E6A2BD6866100956E9F /* Utils */,
-				DE664E6B2BD6866100956E9F /* SplashView.swift */,
 				DE664E6C2BD6866100956E9F /* SplashViewController.swift */,
+				DE664E6B2BD6866100956E9F /* SplashView.swift */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -451,6 +465,8 @@
 		DE664E7F2BD6866100956E9F /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				DEDF92BE2BDACB24004340C0 /* Menu */,
+				DEDF92B42BDAB143004340C0 /* Home */,
 				DEDF90302BD6A425004340C0 /* Cartridges */,
 				DEDF901F2BD6A02D004340C0 /* Emulator */,
 				DE664E6D2BD6866100956E9F /* Splash */,
@@ -508,6 +524,7 @@
 		DE664E912BD6866100956E9F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				DEDF92BC2BDABBD5004340C0 /* tetris.gb */,
 				DE664E572BD6866100956E9F /* Misc */,
 				DE664E7F2BD6866100956E9F /* Presentation */,
 				DE664E902BD6866100956E9F /* Service */,
@@ -635,6 +652,42 @@
 			path = StartSelect;
 			sourceTree = "<group>";
 		};
+		DEDF92B42BDAB143004340C0 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				DEDF92B92BDAB344004340C0 /* Views */,
+				DEDF92B52BDAB14E004340C0 /* HomeViewController.swift */,
+				DEDF92B72BDAB153004340C0 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		DEDF92B92BDAB344004340C0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEDF92BA2BDAB3E7004340C0 /* HomeMenuItemView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DEDF92BE2BDACB24004340C0 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				DEDF92C32BDACB9A004340C0 /* Views */,
+				DEDF92BF2BDACB32004340C0 /* MenuViewController.swift */,
+				DEDF92C12BDACB38004340C0 /* MenuView.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		DEDF92C32BDACB9A004340C0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEDF92C42BDACBE5004340C0 /* MenuRouteView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -707,6 +760,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEDF92BD2BDABBEB004340C0 /* tetris.gb in Resources */,
 				DEDF90002BD68A07004340C0 /* RobotoMono-Medium.ttf in Resources */,
 				DEDF90012BD68A07004340C0 /* RobotoMono-Regular.ttf in Resources */,
 				DEDF90022BD68A07004340C0 /* RobotoMono-SemiBold.ttf in Resources */,
@@ -768,11 +822,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE664EB82BD6866100956E9F /* ScreenSize.swift in Sources */,
+				DEDF92C52BDACBE5004340C0 /* MenuRouteView.swift in Sources */,
 				DEDF90292BD6A02D004340C0 /* MMU.swift in Sources */,
 				DEDF90202BD6A02D004340C0 /* APU.swift in Sources */,
 				DEDF90272BD6A02D004340C0 /* Instructions.swift in Sources */,
 				DE664EA62BD6866100956E9F /* UIColor+Extension.swift in Sources */,
+				DEDF92B82BDAB153004340C0 /* HomeView.swift in Sources */,
 				DE664ECB2BD6866100956E9F /* SplashReceiptValidationObserver.swift in Sources */,
+				DEDF92C22BDACB38004340C0 /* MenuView.swift in Sources */,
 				DE664EAC2BD6866100956E9F /* APIRequestBody.swift in Sources */,
 				DE664ECD2BD6866100956E9F /* SplashViewController.swift in Sources */,
 				DE664EB02BD6866100956E9F /* PushNotificationsManager.swift in Sources */,
@@ -797,6 +854,7 @@
 				DEDF91832BD84CA1004340C0 /* StartSelectButton.swift in Sources */,
 				DE664EA42BD6866100956E9F /* String+Extension.swift in Sources */,
 				DEDF91662BD7F63D004340C0 /* ConfirmDeleteView.swift in Sources */,
+				DEDF92C02BDACB32004340C0 /* MenuViewController.swift in Sources */,
 				DE664E9C2BD6866100956E9F /* CircleProgressView.swift in Sources */,
 				DE664EA02BD6866100956E9F /* PaddingTextField.swift in Sources */,
 				DEDF903E2BD6C8E5004340C0 /* CartridgesView.swift in Sources */,
@@ -836,6 +894,7 @@
 				DEDF90322BD6A42F004340C0 /* CartridgesViewController.swift in Sources */,
 				DEDF902A2BD6A02D004340C0 /* PPU.swift in Sources */,
 				DEDF91802BD845E8004340C0 /* ABButton.swift in Sources */,
+				DEDF92BB2BDAB3E7004340C0 /* HomeMenuItemView.swift in Sources */,
 				DEDF917C2BD8376D004340C0 /* EmulatorHeaderView.swift in Sources */,
 				DE664EA22BD6866100956E9F /* Collection+Extension.swift in Sources */,
 				DEDF90282BD6A02D004340C0 /* Joypad.swift in Sources */,
@@ -844,6 +903,7 @@
 				DE664E982BD6866100956E9F /* RxActivityIndicator.swift in Sources */,
 				DE664EE42BD6866100956E9F /* SessionManager.swift in Sources */,
 				DE664EBA2BD6866100956E9F /* Weak.swift in Sources */,
+				DEDF92B62BDAB14E004340C0 /* HomeViewController.swift in Sources */,
 				DE664EB62BD6866100956E9F /* ObservableRetrySingle.swift in Sources */,
 				DE664E9E2BD6866100956E9F /* GradientView.swift in Sources */,
 				DE664E922BD6866100956E9F /* AmplitudeManager.swift in Sources */,

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CartridgesView: View {
+    let didTapBack: () -> Void
     let didSelect: (Cartridge) -> Void
     
     @ObservedObject private var gameLibraryStorage = GameLibraryStorage()
@@ -17,14 +18,28 @@ struct CartridgesView: View {
 
     var body: some View {
         VStack {
-            Text("Cartridges.Title".localized)
-                .multilineTextAlignment(.center)
-                .font(Font(Fonts.Joystix.monospace(size: 18.scale)))
-                .foregroundColor(Color(Appearance.mono100))
-                .padding(EdgeInsets(t: ScreenSize.isIphoneXFamily ? 0 : 16.scale))
-                .background(Color.clear)
+            HStack {
+                Button(action: didTapBack) {
+                    Image("Cartridges.Delete")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 24.scale, height: 24.scale)
+                        .padding(EdgeInsets())
+                }
+                
+                Text("Cartridges.Title".localized)
+                    .multilineTextAlignment(.center)
+                    .font(Font(Fonts.Joystix.monospace(size: 18.scale)))
+                    .foregroundColor(Color(Appearance.mono100))
+                    .padding(EdgeInsets())
+                
+                Spacer()
+            }
+            .padding(EdgeInsets(value: 16.scale))
             
             if gameLibraryStorage.library.isEmpty {
+                Spacer()
+                
                 CartridgesEmptyView()
             } else {
                 List(gameLibraryStorage.library, id: \.id) { cartridge in

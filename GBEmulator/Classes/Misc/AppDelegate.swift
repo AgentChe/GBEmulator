@@ -22,6 +22,8 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         
         IAPManager.initialize()
         
+        UINavigationBar.appearance().isHidden = true
+        
         return true
     }
     

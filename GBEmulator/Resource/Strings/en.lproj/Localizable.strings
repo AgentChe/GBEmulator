@@ -44,3 +44,16 @@
 // MARK: Emulator
 "Emulator.Start" = "START";
 "Emulator.Select" = "SELECT";
+
+// MARK: Home
+"Home.Title" = "HOME";
+"Home.GameLibrary" = "GAME LIBRARY";
+"Home.Play" = "PLAY";
+"Home.Wallpapers" = "WALLPAPERS";
+"Home.SeeAll" = "SEE ALL";
+
+// MARK: Menu
+"Menu.Title" = "MENU";
+"Menu.TermsOfUse" = "TERMS OF USE";
+"Menu.PrivacyPolicy" = "PRIVACY POLICY";
+"Menu.ContactUs" = "CONTACT US";

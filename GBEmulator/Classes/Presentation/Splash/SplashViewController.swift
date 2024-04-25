@@ -39,7 +39,7 @@ extension SplashViewController {
 private extension SplashViewController {
     func goNext() {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
-            let nc = CartridgesViewController.make()
+            let nc = HomeViewController.make()
             UIApplication.shared.keyWindow?.rootViewController = nc
         }
     }

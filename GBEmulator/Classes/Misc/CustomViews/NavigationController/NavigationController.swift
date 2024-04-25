@@ -19,7 +19,7 @@ class NavigationController: UINavigationController {
     }
 }
 
-// MARK: API
+// MARK: Public
 extension NavigationController {
     func apply(settings: NavigationControllerSettings) {
         navigationBar.setBackgroundImage(settings.backgroundImage, for: .default)

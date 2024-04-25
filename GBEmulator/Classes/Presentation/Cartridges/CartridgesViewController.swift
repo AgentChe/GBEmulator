@@ -12,10 +12,12 @@ final class CartridgesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let cartridgesView = CartridgesView { [weak self] cartridge in
+        let cartridgesView = CartridgesView(didTapBack: { [weak self] in
+            self?.dismiss(animated: true)
+        }, didSelect: { [weak self] cartridge in
             let vc = EmulatorViewController.make(cartridge: cartridge)
             self?.present(vc, animated: true)
-        }
+        })
         
         let hostingController = UIHostingController(rootView: cartridgesView)
         addChild(hostingController)
@@ -37,6 +39,8 @@ final class CartridgesViewController: UIViewController {
 // MARK: Public
 extension CartridgesViewController {
     static func make() -> CartridgesViewController {
-        CartridgesViewController()
+        let vc = CartridgesViewController()
+        vc.modalPresentationStyle = .fullScreen
+        return vc
     }
 }
