@@ -13,4 +13,5 @@ struct Appearance {
     static let main300 = UIColor(integralRed: 160, green: 160, blue: 160)
     static let main400 = UIColor(integralRed: 128, green: 201, blue: 120)
     static let mono100 = UIColor.black
+    static let mono200 = UIColor.white
 }

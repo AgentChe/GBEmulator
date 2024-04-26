@@ -18,8 +18,9 @@ final class HomeViewController: UIViewController {
         }, didTapGameLibrary: { [weak self] in
             let vc = CartridgesViewController.make()
             self?.present(vc, animated: true)
-        }, didTapWallpapers: {
-            
+        }, didTapWallpapers: { [weak self] in
+            let vc = WallpapersCategoriesViewController.make()
+            self?.present(vc, animated: true)
         })
         
         let hostingController = UIHostingController(rootView: homeView)

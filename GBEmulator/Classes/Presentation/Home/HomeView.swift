@@ -51,7 +51,7 @@ struct HomeView: View {
                 title: "Home.Wallpapers".localized,
                 actionTitle: "Home.SeeAll".localized,
                 imageName: "Home.WallPapers"
-            ), action: didTapGameLibrary)
+            ), action: didTapWallpapers)
             .padding(EdgeInsets(t: ScreenSize.isIphoneXFamily ? 16.scale : 8.scale))
         }
         .padding(EdgeInsets(value: 16.scale))

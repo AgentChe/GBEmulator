@@ -66,6 +66,7 @@
 		DE664EE22BD6866100956E9F /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE664E8B2BD6866100956E9F /* IAPManager.swift */; };
 		DE664EE32BD6866100956E9F /* PurchaseValidationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE664E8C2BD6866100956E9F /* PurchaseValidationObserver.swift */; };
 		DE664EE42BD6866100956E9F /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE664E8E2BD6866100956E9F /* SessionManager.swift */; };
+		DECC4FC42BDC29C0004A46B9 /* WPLockscreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECC4FC32BDC29C0004A46B9 /* WPLockscreenView.swift */; };
 		DEDF90002BD68A07004340C0 /* RobotoMono-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DEDF8FFE2BD689CC004340C0 /* RobotoMono-Medium.ttf */; };
 		DEDF90012BD68A07004340C0 /* RobotoMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DEDF8FFD2BD689CC004340C0 /* RobotoMono-Regular.ttf */; };
 		DEDF90022BD68A07004340C0 /* RobotoMono-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DEDF8FFF2BD689CC004340C0 /* RobotoMono-SemiBold.ttf */; };
@@ -109,10 +110,30 @@
 		DEDF92B62BDAB14E004340C0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF92B52BDAB14E004340C0 /* HomeViewController.swift */; };
 		DEDF92B82BDAB153004340C0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF92B72BDAB153004340C0 /* HomeView.swift */; };
 		DEDF92BB2BDAB3E7004340C0 /* HomeMenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF92BA2BDAB3E7004340C0 /* HomeMenuItemView.swift */; };
-		DEDF92BD2BDABBEB004340C0 /* tetris.gb in Resources */ = {isa = PBXBuildFile; fileRef = DEDF92BC2BDABBD5004340C0 /* tetris.gb */; };
 		DEDF92C02BDACB32004340C0 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF92BF2BDACB32004340C0 /* MenuViewController.swift */; };
 		DEDF92C22BDACB38004340C0 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF92C12BDACB38004340C0 /* MenuView.swift */; };
 		DEDF92C52BDACBE5004340C0 /* MenuRouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF92C42BDACBE5004340C0 /* MenuRouteView.swift */; };
+		DEDF92CB2BDAD9AA004340C0 /* WallpapersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF92CA2BDAD9AA004340C0 /* WallpapersManager.swift */; };
+		DEDF92CD2BDB989D004340C0 /* WallpaperCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF92CC2BDB989D004340C0 /* WallpaperCategory.swift */; };
+		DEDF92CF2BDB98A2004340C0 /* Wallpaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF92CE2BDB98A2004340C0 /* Wallpaper.swift */; };
+		DEDF92D12BDB9AA4004340C0 /* GetWallpapersCategoriesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF92D02BDB9AA4004340C0 /* GetWallpapersCategoriesRequest.swift */; };
+		DEDF92D52BDB9C34004340C0 /* WallpapersCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF92D42BDB9C34004340C0 /* WallpapersCategoriesViewController.swift */; };
+		DEDF92D72BDB9C3B004340C0 /* WallpapersCategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF92D62BDB9C3B004340C0 /* WallpapersCategoriesViewModel.swift */; };
+		DEDF92D92BDB9C40004340C0 /* WallpapersCategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF92D82BDB9C40004340C0 /* WallpapersCategoriesView.swift */; };
+		DEDF92DC2BDB9D61004340C0 /* WallpapersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF92DB2BDB9D61004340C0 /* WallpapersViewController.swift */; };
+		DEDF92DE2BDB9D67004340C0 /* WallpapersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF92DD2BDB9D67004340C0 /* WallpapersViewModel.swift */; };
+		DEDF92E02BDB9D6B004340C0 /* WallpapersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF92DF2BDB9D6B004340C0 /* WallpapersView.swift */; };
+		DEDF92E32BDB9F92004340C0 /* WallpapersNabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF92E22BDB9F92004340C0 /* WallpapersNabBar.swift */; };
+		DEDF92E62BDBA28A004340C0 /* WCTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF92E52BDBA28A004340C0 /* WCTableView.swift */; };
+		DEDF92E82BDBA298004340C0 /* WCTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF92E72BDBA298004340C0 /* WCTableCell.swift */; };
+		DEEAC6B12BDBACFA003196F0 /* WallpapersCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEAC6B02BDBACFA003196F0 /* WallpapersCollectionView.swift */; };
+		DEEAC6B32BDBAD01003196F0 /* WallpapersCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEAC6B22BDBAD01003196F0 /* WallpapersCollectionCell.swift */; };
+		DEEAC6B62BDBD3D8003196F0 /* WallpapersPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEAC6B52BDBD3D8003196F0 /* WallpapersPreviewViewController.swift */; };
+		DEEAC6B82BDBD3DF003196F0 /* WallpapersPreviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEAC6B72BDBD3DF003196F0 /* WallpapersPreviewViewModel.swift */; };
+		DEEAC6BA2BDBD3E3003196F0 /* WallpapersPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEAC6B92BDBD3E3003196F0 /* WallpapersPreviewView.swift */; };
+		DEEAC6BE2BDBD6E2003196F0 /* WPCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEAC6BD2BDBD6E2003196F0 /* WPCollectionView.swift */; };
+		DEEAC6C02BDBD72E003196F0 /* WPCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEAC6BF2BDBD72E003196F0 /* WPCollectionCell.swift */; };
+		DEEAC6C32BDBE6F7003196F0 /* PhotoLibraryWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEAC6C22BDBE6F7003196F0 /* PhotoLibraryWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -179,6 +200,7 @@
 		DE664E8B2BD6866100956E9F /* IAPManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
 		DE664E8C2BD6866100956E9F /* PurchaseValidationObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaseValidationObserver.swift; sourceTree = "<group>"; };
 		DE664E8E2BD6866100956E9F /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		DECC4FC32BDC29C0004A46B9 /* WPLockscreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPLockscreenView.swift; sourceTree = "<group>"; };
 		DEDF8FFA2BD6896F004340C0 /* Joystix Monospace.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Joystix Monospace.ttf"; sourceTree = "<group>"; };
 		DEDF8FFC2BD689BE004340C0 /* RobotoMono-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-Bold.ttf"; sourceTree = "<group>"; };
 		DEDF8FFD2BD689CC004340C0 /* RobotoMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-Regular.ttf"; sourceTree = "<group>"; };
@@ -218,10 +240,30 @@
 		DEDF92B52BDAB14E004340C0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DEDF92B72BDAB153004340C0 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		DEDF92BA2BDAB3E7004340C0 /* HomeMenuItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMenuItemView.swift; sourceTree = "<group>"; };
-		DEDF92BC2BDABBD5004340C0 /* tetris.gb */ = {isa = PBXFileReference; lastKnownFileType = file; path = tetris.gb; sourceTree = "<group>"; };
 		DEDF92BF2BDACB32004340C0 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		DEDF92C12BDACB38004340C0 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		DEDF92C42BDACBE5004340C0 /* MenuRouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRouteView.swift; sourceTree = "<group>"; };
+		DEDF92CA2BDAD9AA004340C0 /* WallpapersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpapersManager.swift; sourceTree = "<group>"; };
+		DEDF92CC2BDB989D004340C0 /* WallpaperCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperCategory.swift; sourceTree = "<group>"; };
+		DEDF92CE2BDB98A2004340C0 /* Wallpaper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallpaper.swift; sourceTree = "<group>"; };
+		DEDF92D02BDB9AA4004340C0 /* GetWallpapersCategoriesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWallpapersCategoriesRequest.swift; sourceTree = "<group>"; };
+		DEDF92D42BDB9C34004340C0 /* WallpapersCategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpapersCategoriesViewController.swift; sourceTree = "<group>"; };
+		DEDF92D62BDB9C3B004340C0 /* WallpapersCategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpapersCategoriesViewModel.swift; sourceTree = "<group>"; };
+		DEDF92D82BDB9C40004340C0 /* WallpapersCategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpapersCategoriesView.swift; sourceTree = "<group>"; };
+		DEDF92DB2BDB9D61004340C0 /* WallpapersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpapersViewController.swift; sourceTree = "<group>"; };
+		DEDF92DD2BDB9D67004340C0 /* WallpapersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpapersViewModel.swift; sourceTree = "<group>"; };
+		DEDF92DF2BDB9D6B004340C0 /* WallpapersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpapersView.swift; sourceTree = "<group>"; };
+		DEDF92E22BDB9F92004340C0 /* WallpapersNabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpapersNabBar.swift; sourceTree = "<group>"; };
+		DEDF92E52BDBA28A004340C0 /* WCTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCTableView.swift; sourceTree = "<group>"; };
+		DEDF92E72BDBA298004340C0 /* WCTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCTableCell.swift; sourceTree = "<group>"; };
+		DEEAC6B02BDBACFA003196F0 /* WallpapersCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpapersCollectionView.swift; sourceTree = "<group>"; };
+		DEEAC6B22BDBAD01003196F0 /* WallpapersCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpapersCollectionCell.swift; sourceTree = "<group>"; };
+		DEEAC6B52BDBD3D8003196F0 /* WallpapersPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpapersPreviewViewController.swift; sourceTree = "<group>"; };
+		DEEAC6B72BDBD3DF003196F0 /* WallpapersPreviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpapersPreviewViewModel.swift; sourceTree = "<group>"; };
+		DEEAC6B92BDBD3E3003196F0 /* WallpapersPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpapersPreviewView.swift; sourceTree = "<group>"; };
+		DEEAC6BD2BDBD6E2003196F0 /* WPCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPCollectionView.swift; sourceTree = "<group>"; };
+		DEEAC6BF2BDBD72E003196F0 /* WPCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPCollectionCell.swift; sourceTree = "<group>"; };
+		DEEAC6C22BDBE6F7003196F0 /* PhotoLibraryWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -465,6 +507,7 @@
 		DE664E7F2BD6866100956E9F /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				DEDF92D22BDB9B81004340C0 /* Wallpapers */,
 				DEDF92BE2BDACB24004340C0 /* Menu */,
 				DEDF92B42BDAB143004340C0 /* Home */,
 				DEDF90302BD6A425004340C0 /* Cartridges */,
@@ -515,6 +558,7 @@
 		DE664E902BD6866100956E9F /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				DEDF92C72BDAD993004340C0 /* Wallpapers */,
 				DE664E8D2BD6866100956E9F /* Purchase */,
 				DE664E8F2BD6866100956E9F /* Session */,
 			);
@@ -524,7 +568,6 @@
 		DE664E912BD6866100956E9F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				DEDF92BC2BDABBD5004340C0 /* tetris.gb */,
 				DE664E572BD6866100956E9F /* Misc */,
 				DE664E7F2BD6866100956E9F /* Presentation */,
 				DE664E902BD6866100956E9F /* Service */,
@@ -688,6 +731,138 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		DEDF92C72BDAD993004340C0 /* Wallpapers */ = {
+			isa = PBXGroup;
+			children = (
+				DEDF92C92BDAD99F004340C0 /* Request */,
+				DEDF92C82BDAD99B004340C0 /* Model */,
+				DEDF92CA2BDAD9AA004340C0 /* WallpapersManager.swift */,
+			);
+			path = Wallpapers;
+			sourceTree = "<group>";
+		};
+		DEDF92C82BDAD99B004340C0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DEDF92CC2BDB989D004340C0 /* WallpaperCategory.swift */,
+				DEDF92CE2BDB98A2004340C0 /* Wallpaper.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DEDF92C92BDAD99F004340C0 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				DEDF92D02BDB9AA4004340C0 /* GetWallpapersCategoriesRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		DEDF92D22BDB9B81004340C0 /* Wallpapers */ = {
+			isa = PBXGroup;
+			children = (
+				DEEAC6B42BDBD3B5003196F0 /* WallpapersPreview */,
+				DEDF92DA2BDB9D55004340C0 /* Wallpapers */,
+				DEDF92D32BDB9C21004340C0 /* Categories */,
+			);
+			path = Wallpapers;
+			sourceTree = "<group>";
+		};
+		DEDF92D32BDB9C21004340C0 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				DEDF92E12BDB9F85004340C0 /* Views */,
+				DEDF92D42BDB9C34004340C0 /* WallpapersCategoriesViewController.swift */,
+				DEDF92D62BDB9C3B004340C0 /* WallpapersCategoriesViewModel.swift */,
+				DEDF92D82BDB9C40004340C0 /* WallpapersCategoriesView.swift */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		DEDF92DA2BDB9D55004340C0 /* Wallpapers */ = {
+			isa = PBXGroup;
+			children = (
+				DEEAC6AE2BDBACE7003196F0 /* Views */,
+				DEDF92DB2BDB9D61004340C0 /* WallpapersViewController.swift */,
+				DEDF92DD2BDB9D67004340C0 /* WallpapersViewModel.swift */,
+				DEDF92DF2BDB9D6B004340C0 /* WallpapersView.swift */,
+			);
+			path = Wallpapers;
+			sourceTree = "<group>";
+		};
+		DEDF92E12BDB9F85004340C0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEDF92E42BDBA27A004340C0 /* TableView */,
+				DEDF92E22BDB9F92004340C0 /* WallpapersNabBar.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DEDF92E42BDBA27A004340C0 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				DEDF92E52BDBA28A004340C0 /* WCTableView.swift */,
+				DEDF92E72BDBA298004340C0 /* WCTableCell.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		DEEAC6AE2BDBACE7003196F0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEEAC6AF2BDBACEC003196F0 /* CollectionView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DEEAC6AF2BDBACEC003196F0 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				DEEAC6B02BDBACFA003196F0 /* WallpapersCollectionView.swift */,
+				DEEAC6B22BDBAD01003196F0 /* WallpapersCollectionCell.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		DEEAC6B42BDBD3B5003196F0 /* WallpapersPreview */ = {
+			isa = PBXGroup;
+			children = (
+				DEEAC6C12BDBE6F1003196F0 /* Utils */,
+				DEEAC6BB2BDBD3E6003196F0 /* Views */,
+				DEEAC6B52BDBD3D8003196F0 /* WallpapersPreviewViewController.swift */,
+				DEEAC6B72BDBD3DF003196F0 /* WallpapersPreviewViewModel.swift */,
+				DEEAC6B92BDBD3E3003196F0 /* WallpapersPreviewView.swift */,
+			);
+			path = WallpapersPreview;
+			sourceTree = "<group>";
+		};
+		DEEAC6BB2BDBD3E6003196F0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEEAC6BC2BDBD6D4003196F0 /* CollectionView */,
+				DECC4FC32BDC29C0004A46B9 /* WPLockscreenView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DEEAC6BC2BDBD6D4003196F0 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				DEEAC6BD2BDBD6E2003196F0 /* WPCollectionView.swift */,
+				DEEAC6BF2BDBD72E003196F0 /* WPCollectionCell.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		DEEAC6C12BDBE6F1003196F0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DEEAC6C22BDBE6F7003196F0 /* PhotoLibraryWrapper.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -760,7 +935,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEDF92BD2BDABBEB004340C0 /* tetris.gb in Resources */,
 				DEDF90002BD68A07004340C0 /* RobotoMono-Medium.ttf in Resources */,
 				DEDF90012BD68A07004340C0 /* RobotoMono-Regular.ttf in Resources */,
 				DEDF90022BD68A07004340C0 /* RobotoMono-SemiBold.ttf in Resources */,
@@ -824,12 +998,16 @@
 				DE664EB82BD6866100956E9F /* ScreenSize.swift in Sources */,
 				DEDF92C52BDACBE5004340C0 /* MenuRouteView.swift in Sources */,
 				DEDF90292BD6A02D004340C0 /* MMU.swift in Sources */,
+				DEEAC6B82BDBD3DF003196F0 /* WallpapersPreviewViewModel.swift in Sources */,
 				DEDF90202BD6A02D004340C0 /* APU.swift in Sources */,
+				DEDF92CB2BDAD9AA004340C0 /* WallpapersManager.swift in Sources */,
 				DEDF90272BD6A02D004340C0 /* Instructions.swift in Sources */,
 				DE664EA62BD6866100956E9F /* UIColor+Extension.swift in Sources */,
+				DEDF92DC2BDB9D61004340C0 /* WallpapersViewController.swift in Sources */,
 				DEDF92B82BDAB153004340C0 /* HomeView.swift in Sources */,
 				DE664ECB2BD6866100956E9F /* SplashReceiptValidationObserver.swift in Sources */,
 				DEDF92C22BDACB38004340C0 /* MenuView.swift in Sources */,
+				DEEAC6BA2BDBD3E3003196F0 /* WallpapersPreviewView.swift in Sources */,
 				DE664EAC2BD6866100956E9F /* APIRequestBody.swift in Sources */,
 				DE664ECD2BD6866100956E9F /* SplashViewController.swift in Sources */,
 				DE664EB02BD6866100956E9F /* PushNotificationsManager.swift in Sources */,
@@ -838,8 +1016,10 @@
 				DE664EAA2BD6866100956E9F /* UIView+RxExtension.swift in Sources */,
 				DE664EBB2BD6866100956E9F /* XOREncryption.swift in Sources */,
 				DE664E952BD6866100956E9F /* FirebaseManager.swift in Sources */,
+				DEDF92CF2BDB98A2004340C0 /* Wallpaper.swift in Sources */,
 				DEDF915F2BD7EB13004340C0 /* CartridgesEmptyView.swift in Sources */,
 				DE664EE22BD6866100956E9F /* IAPManager.swift in Sources */,
+				DEDF92E32BDB9F92004340C0 /* WallpapersNabBar.swift in Sources */,
 				DE664EA92BD6866100956E9F /* UITapGestureRecognizer+Extension.swift in Sources */,
 				DE664EAB2BD6866100956E9F /* DefaultRequestWrapper.swift in Sources */,
 				DE664EA72BD6866100956E9F /* UIDevice+Extension.swift in Sources */,
@@ -848,6 +1028,7 @@
 				DE664EDE2BD6866100956E9F /* IAPErrorHelper.swift in Sources */,
 				DEDF916D2BD828C2004340C0 /* GameLibraryStorage.swift in Sources */,
 				DE664EB22BD6866100956E9F /* NetworkError.swift in Sources */,
+				DEDF92D92BDB9C40004340C0 /* WallpapersCategoriesView.swift in Sources */,
 				DE664EB92BD6866100956E9F /* TextAttributes.swift in Sources */,
 				DE664EAF2BD6866100956E9F /* PushNotificationsModel.swift in Sources */,
 				DE664EE32BD6866100956E9F /* PurchaseValidationObserver.swift in Sources */,
@@ -855,6 +1036,8 @@
 				DE664EA42BD6866100956E9F /* String+Extension.swift in Sources */,
 				DEDF91662BD7F63D004340C0 /* ConfirmDeleteView.swift in Sources */,
 				DEDF92C02BDACB32004340C0 /* MenuViewController.swift in Sources */,
+				DEEAC6B12BDBACFA003196F0 /* WallpapersCollectionView.swift in Sources */,
+				DECC4FC42BDC29C0004A46B9 /* WPLockscreenView.swift in Sources */,
 				DE664E9C2BD6866100956E9F /* CircleProgressView.swift in Sources */,
 				DE664EA02BD6866100956E9F /* PaddingTextField.swift in Sources */,
 				DEDF903E2BD6C8E5004340C0 /* CartridgesView.swift in Sources */,
@@ -871,11 +1054,18 @@
 				DEDF91692BD8059C004340C0 /* InstructionView.swift in Sources */,
 				DE664EB12BD6866100956E9F /* ContentError.swift in Sources */,
 				DE664EBE2BD6866100956E9F /* GlobalDefinitions.swift in Sources */,
+				DEDF92DE2BDB9D67004340C0 /* WallpapersViewModel.swift in Sources */,
 				DE664EAE2BD6866100956E9F /* PushNotificationsAuthorizationStatus.swift in Sources */,
 				DE664EE12BD6866100956E9F /* ProductPrice.swift in Sources */,
 				DE664EB42BD6866100956E9F /* Fonts.swift in Sources */,
 				DEDF91742BD83563004340C0 /* DPadView.swift in Sources */,
 				DE664EA12BD6866100956E9F /* TapAreaButton.swift in Sources */,
+				DEDF92D12BDB9AA4004340C0 /* GetWallpapersCategoriesRequest.swift in Sources */,
+				DEDF92CD2BDB989D004340C0 /* WallpaperCategory.swift in Sources */,
+				DEEAC6BE2BDBD6E2003196F0 /* WPCollectionView.swift in Sources */,
+				DEEAC6B62BDBD3D8003196F0 /* WallpapersPreviewViewController.swift in Sources */,
+				DEEAC6C02BDBD72E003196F0 /* WPCollectionCell.swift in Sources */,
+				DEDF92E82BDBA298004340C0 /* WCTableCell.swift in Sources */,
 				DEDF90242BD6A02D004340C0 /* CPU.swift in Sources */,
 				DE664EBF2BD6866100956E9F /* SceneDelegate.swift in Sources */,
 				DE664EA82BD6866100956E9F /* UIEdgeInsets+Extension.swift in Sources */,
@@ -886,12 +1076,15 @@
 				DEDF90212BD6A02D004340C0 /* Cartridge.swift in Sources */,
 				DE664EBC2BD6866100956E9F /* AppDelegate.swift in Sources */,
 				DE664EB52BD6866100956E9F /* NumberLaunches.swift in Sources */,
+				DEDF92E62BDBA28A004340C0 /* WCTableView.swift in Sources */,
 				DEDF91702BD83512004340C0 /* PressableView.swift in Sources */,
+				DEDF92D52BDB9C34004340C0 /* WallpapersCategoriesViewController.swift in Sources */,
 				DEDF91782BD8358D004340C0 /* StartSelectView.swift in Sources */,
 				DEDF916B2BD82289004340C0 /* EmulatorViewController.swift in Sources */,
 				DEDF915B2BD7E6F2004340C0 /* Appearance.swift in Sources */,
 				DEDF90222BD6A02D004340C0 /* Clock.swift in Sources */,
 				DEDF90322BD6A42F004340C0 /* CartridgesViewController.swift in Sources */,
+				DEEAC6B32BDBAD01003196F0 /* WallpapersCollectionCell.swift in Sources */,
 				DEDF902A2BD6A02D004340C0 /* PPU.swift in Sources */,
 				DEDF91802BD845E8004340C0 /* ABButton.swift in Sources */,
 				DEDF92BB2BDAB3E7004340C0 /* HomeMenuItemView.swift in Sources */,
@@ -899,8 +1092,10 @@
 				DE664EA22BD6866100956E9F /* Collection+Extension.swift in Sources */,
 				DEDF90282BD6A02D004340C0 /* Joypad.swift in Sources */,
 				DE664EB32BD6866100956E9F /* SignError.swift in Sources */,
+				DEEAC6C32BDBE6F7003196F0 /* PhotoLibraryWrapper.swift in Sources */,
 				DE664E962BD6866100956E9F /* ImagePicker.swift in Sources */,
 				DE664E982BD6866100956E9F /* RxActivityIndicator.swift in Sources */,
+				DEDF92D72BDB9C3B004340C0 /* WallpapersCategoriesViewModel.swift in Sources */,
 				DE664EE42BD6866100956E9F /* SessionManager.swift in Sources */,
 				DE664EBA2BD6866100956E9F /* Weak.swift in Sources */,
 				DEDF92B62BDAB14E004340C0 /* HomeViewController.swift in Sources */,
@@ -909,6 +1104,7 @@
 				DE664E922BD6866100956E9F /* AmplitudeManager.swift in Sources */,
 				DE664EA52BD6866100956E9F /* UIApplication+Extension.swift in Sources */,
 				DE664ECC2BD6866100956E9F /* SplashView.swift in Sources */,
+				DEDF92E02BDB9D6B004340C0 /* WallpapersView.swift in Sources */,
 				DEDF91762BD83577004340C0 /* ABView.swift in Sources */,
 				DE664E932BD6866100956E9F /* BranchManager.swift in Sources */,
 				DEDF903C2BD6C0A9004340C0 /* CartridgeView.swift in Sources */,
@@ -1063,15 +1259,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 4X5YS65338;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 7FN7933CDF;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GBEmulator/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Emulator;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "The access is required for saving wallpapers to your device";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "The access is required for saving wallpapers to your device";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -1085,7 +1283,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.gbemulator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Emulator AppStore";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Autocheck Development Profile";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -1102,15 +1300,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 4X5YS65338;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 7FN7933CDF;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GBEmulator/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Emulator;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "The access is required for saving wallpapers to your device";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "The access is required for saving wallpapers to your device";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -1124,7 +1324,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.gbemulator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Emulator AppStore";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Autocheck Development Profile";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;

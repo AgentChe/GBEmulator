@@ -57,3 +57,13 @@
 "Menu.TermsOfUse" = "TERMS OF USE";
 "Menu.PrivacyPolicy" = "PRIVACY POLICY";
 "Menu.ContactUs" = "CONTACT US";
+
+// MARK: WallpapersCategories
+"WallpapersCategories.Title" = "WALLPAPERS";
+"WallpapersCategories.Count" = "%i WALLPAPERS";
+
+// MARK: WallpapersPreview
+"WallpapersPreview.Save" = "Save";
+"WallpapersPreview.Result.Failure" = "Error when saving photo";
+"WallpapersPreview.Result.NotPermission" = "No permission to save";
+"WallpapersPreview.Result.Success" = "Saved to Camera Roll";

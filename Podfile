@@ -9,6 +9,8 @@ target 'GBEmulator' do
   pod 'RxCocoa'
   
   pod 'Alamofire'
+  pod 'Kingfisher'
+  pod 'Toast-Swift'
   
   pod 'SwiftyStoreKit'
 
