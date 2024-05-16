@@ -39,6 +39,14 @@ struct HomeView: View {
             .padding(EdgeInsets())
             
             HomeMenuItemView(item: HomeMenuItemView.Item(
+                color: Color(Appearance.main400),
+                title: "Home.GameLibrary".localized,
+                actionTitle: "Home.Play".localized,
+                imageName: "Home.GameLibrary"
+            ), action: didTapGameLibrary)
+            .padding(EdgeInsets(t: ScreenSize.isIphoneXFamily ? 23.scale : 16.scale))
+            
+            HomeMenuItemView(item: HomeMenuItemView.Item(
                 color: Color(integralRed: 245, green: 191, blue: 0),
                 title: "Home.Wallpapers".localized,
                 actionTitle: "Home.SeeAll".localized,
