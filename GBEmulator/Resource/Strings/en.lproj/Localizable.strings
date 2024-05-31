@@ -19,6 +19,30 @@
 // MARK: Splash
 "Splash.Loading" = "Loading...";
 
+// MARK: Paygate
+"Paygate.Error.Title" = "Error";
+"Paygate.Error.Text" = "An error occurred during execution. Try later.";
+"Paygate.Error.Button" = "OK";
+"Paygate.Title" = "Upgrade Premium";
+"Paygate.Info1" = "Get all the pre-installed games";
+"Paygate.Info2" = "Import & play own games";
+"Paygate.Info3" = "1000+ retro gaming wallpapers";
+"Paygate.EnableFreeTrial" = "Enable Free Trial";
+"Paygate.FreeTrialEnabled" = "Free Trial Enabled";
+"Paygate.Yearly" = "Yearly";
+"Paygate.Yearly.Bottom" = "Just %@/year";
+"Paygate.PerWeek" = "per week";
+"Paygate.FreeTrialDays" = "7-day free trial";
+"Paygate.Then" = "then %@\n";
+"Paygate.Continue" = "Continue";
+"Paygate.TryFreeSubscribe" = "Try Free & Subscribe";
+"Paygate.CancelAnytime" = "Cancel Anytime";
+"Paygate.NoPaymentNow" = "No payment now";
+"Paygate.TermsOfUse" = "Terms of Use";
+"Paygate.PrivacyPolicy" = "Privacy Policy";
+"Paygate.RestorePurchases" = "Restore Purchases";
+"Paygate.BestOffer" = "⭐ Best Offer";
+
 // MARK: Cartridges
 "Cartridges.Title" = "Game Library";
 "Cartridges.Import" = "import";

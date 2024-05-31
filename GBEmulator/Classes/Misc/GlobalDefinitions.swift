@@ -20,4 +20,10 @@ final class GlobalDefinitions {
     static let termsOfUseUrl = URL(string: "https://sergei-mobile.com/eula.html")!
     static let privacyPolicyUrl = URL(string: "https://sergei-mobile.com/policy.html")!
     static let contactUsUrl = URL(string: "https://sergei-mobile.com/contact.html")!
+    
+    enum Paygate {
+        static let yearly = "com.gbemulator.yearly"
+        static let weekly = "com.gbemulator.weekly"
+    }
 }
+
