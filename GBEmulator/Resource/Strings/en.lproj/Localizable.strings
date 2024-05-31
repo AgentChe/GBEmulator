@@ -43,6 +43,19 @@
 "Paygate.RestorePurchases" = "Restore Purchases";
 "Paygate.BestOffer" = "⭐ Best Offer";
 
+// MARK: Onboarding
+"Onboarding.Welcome.Text" = "Welcome to Emulator, where the past and present collide in the most epic way possible.";
+"Onboarding.Welcome.Button" = "START";
+"Onboarding.Category.Title" = "Choose categories you’d like to play";
+"Onboarding.Category.Action" = "action";
+"Onboarding.Category.Adventure" = "Adventure";
+"Onboarding.Category.Puzzle" = "Puzzle";
+"Onboarding.Category.InteractiveFiction" = "Interactive\nfiction";
+"Onboarding.Category.RPG" = "RPG";
+"Onboarding.Category.Survival" = "Survival";
+"Onboarding.About1.Text" = "Track down and import the best free-to-play *.gb games to create a personalized Gameboy experience.";
+"Onboarding.About2.Text" = "Digitize original Nintendo cartridges and experience the same thrill,on your mobile device.";
+
 // MARK: Cartridges
 "Cartridges.Title" = "Game Library";
 "Cartridges.Import" = "import";

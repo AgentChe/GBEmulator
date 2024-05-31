@@ -38,9 +38,23 @@ extension SplashViewController {
 // MARK: Private
 private extension SplashViewController {
     func goNext() {
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
-            let nc = HomeViewController.make()
-            UIApplication.shared.keyWindow?.rootViewController = nc
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) { [weak self] in
+            self?.route()
+        }
+    }
+    
+    func route() {
+        if !OnboardingViewController.wasViewed() {
+            UIApplication.shared.keyWindow?.rootViewController = OnboardingViewController.make()
+        } else {
+            if SessionManager().hasActiveSubscriptions() {
+                UIApplication.shared.keyWindow?.rootViewController = HomeViewController.make()
+            } else {
+                let vc = PaygateViewController.make {
+                    UIApplication.shared.keyWindow?.rootViewController = HomeViewController.make()
+                }
+                present(vc, animated: true)
+            }
         }
     }
 }
