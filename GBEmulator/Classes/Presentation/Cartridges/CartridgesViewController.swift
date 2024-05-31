@@ -15,7 +15,8 @@ final class CartridgesViewController: UIViewController {
         let cartridgesView = CartridgesView(didTapBack: { [weak self] in
             self?.dismiss(animated: true)
         }, didSelect: { [weak self] cartridge in
-            let vc = EmulatorViewController.make(cartridge: cartridge)
+            let hasActiveSubscriptions = SessionManager().hasActiveSubscriptions()
+            let vc = hasActiveSubscriptions ? EmulatorViewController.make(cartridge: cartridge) : PaygateViewController.make()
             self?.present(vc, animated: true)
         })
         
