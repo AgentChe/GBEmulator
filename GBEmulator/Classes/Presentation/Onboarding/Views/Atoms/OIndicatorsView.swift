@@ -16,6 +16,7 @@ final class OIndicatorsView: UIView {
     
     lazy var indicator1 = makeIndicator()
     lazy var indicator2 = makeIndicator()
+    lazy var indicator3 = makeIndicator()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -37,6 +38,7 @@ private extension OIndicatorsView {
         
         indicator1.image = page == 1 ? selected : deselected
         indicator2.image = page == 2 ? selected : deselected
+        indicator3.image = page == 3 ? selected : deselected
     }
 }
 
@@ -52,9 +54,16 @@ private extension OIndicatorsView {
         
         NSLayoutConstraint.activate([
             indicator2.widthAnchor.constraint(equalToConstant: 12.scale),
-            indicator2.trailingAnchor.constraint(equalTo: trailingAnchor),
+            indicator2.centerXAnchor.constraint(equalTo: centerXAnchor),
             indicator2.topAnchor.constraint(equalTo: topAnchor),
             indicator2.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            indicator3.widthAnchor.constraint(equalToConstant: 12.scale),
+            indicator3.trailingAnchor.constraint(equalTo: trailingAnchor),
+            indicator3.topAnchor.constraint(equalTo: topAnchor),
+            indicator3.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
 }

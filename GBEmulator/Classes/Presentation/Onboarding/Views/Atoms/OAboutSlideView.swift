@@ -8,14 +8,14 @@
 import UIKit
 
 final class OAboutSlideView: UIView {
-    lazy var imageView = makeImageView(name: "Onboarding.\(key).Image")
-    lazy var titleView = makeImageView(name: "Onboarding.\(key).Title")
+    lazy var imageView = makeImageView(name: "Onboarding.About\(number).Image")
+    lazy var titleView = makeImageView(name: "Onboarding.About\(number).Title")
     lazy var textLabel = makeTextLabel()
     
-    private let key: String
+    private let number: Int
     
-    init(key: String) {
-        self.key = key
+    init(number: Int) {
+        self.number = number
         
         super.init(frame: .zero)
         
@@ -39,7 +39,7 @@ private extension OAboutSlideView {
         
         NSLayoutConstraint.activate([
             titleView.widthAnchor.constraint(equalToConstant: 358.scale),
-            titleView.heightAnchor.constraint(equalToConstant: 66.scale),
+            titleView.heightAnchor.constraint(equalToConstant: number == 3 ? 95.scale : 66.scale),
             titleView.centerXAnchor.constraint(equalTo: centerXAnchor),
             titleView.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 16.scale)
         ])
@@ -72,7 +72,7 @@ private extension OAboutSlideView {
             .textAlignment(.center)
         
         let view = UILabel()
-        view.attributedText = "Onboarding.\(key).Text".localized.attributed(with: attrs)
+        view.attributedText = "Onboarding.About\(number).Text".localized.attributed(with: attrs)
         view.numberOfLines = 0
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)

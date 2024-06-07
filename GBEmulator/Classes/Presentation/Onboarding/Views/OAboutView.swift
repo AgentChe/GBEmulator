@@ -8,13 +8,15 @@
 import UIKit
 
 final class OAboutView: OSlideView {
-    lazy var slide1View = makeSlideView(key: "About1")
-    lazy var slide2View = makeSlideView(key: "About2")
+    lazy var slide1View = makeSlideView(number: 1)
+    lazy var slide2View = makeSlideView(number: 2)
+    lazy var slide3View = makeSlideView(number: 3)
     lazy var indicatorsView = makeIndicatorsView()
     lazy var continueButton = makeContinueButton()
     
     private lazy var slide1LeadingConstraint = NSLayoutConstraint()
     private lazy var slide2LeadingConstraint = NSLayoutConstraint()
+    private lazy var slide3LeadingConstraint = NSLayoutConstraint()
     
     private lazy var currentSlideNumber = 1 {
         didSet {
@@ -43,28 +45,33 @@ final class OAboutView: OSlideView {
 private extension OAboutView {
     @objc
     func continueTapped() {
-        if currentSlideNumber == 1 {
-            NSLayoutConstraint.deactivate([
-                slide1LeadingConstraint,
-                slide2LeadingConstraint
-            ])
-            
-            slide1LeadingConstraint.constant = -390.scale
-            slide2LeadingConstraint.constant = 0
-            
-            NSLayoutConstraint.activate([
-                slide1LeadingConstraint,
-                slide2LeadingConstraint
-            ])
-            
-            UIView.animate(withDuration: 0.3, animations: { [weak self] in
-                self?.layoutIfNeeded()
-            }, completion: { [weak self] result in
-                self?.currentSlideNumber = 2
-            })
-        } else {
+        if currentSlideNumber == 3 {
             onNext()
+            
+            return
         }
+        
+        NSLayoutConstraint.deactivate([
+            slide1LeadingConstraint,
+            slide2LeadingConstraint,
+            slide3LeadingConstraint
+        ])
+        
+        slide1LeadingConstraint.constant -= 390.scale
+        slide2LeadingConstraint.constant -= 390.scale
+        slide3LeadingConstraint.constant -= 390.scale
+        
+        NSLayoutConstraint.activate([
+            slide1LeadingConstraint,
+            slide2LeadingConstraint,
+            slide3LeadingConstraint
+        ])
+        
+        UIView.animate(withDuration: 0.3, animations: { [weak self] in
+            self?.layoutIfNeeded()
+        }, completion: { [weak self] result in
+            self?.currentSlideNumber += 1
+        })
     }
 }
 
@@ -87,8 +94,16 @@ private extension OAboutView {
             slide2View.widthAnchor.constraint(equalToConstant: 390.scale)
         ])
         
+        slide3LeadingConstraint = slide3View.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 780.scale)
         NSLayoutConstraint.activate([
-            indicatorsView.widthAnchor.constraint(equalToConstant: 30.scale),
+            slide3LeadingConstraint,
+            slide3View.topAnchor.constraint(equalTo: topAnchor),
+            slide3View.bottomAnchor.constraint(equalTo: bottomAnchor),
+            slide3View.widthAnchor.constraint(equalToConstant: 390.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
+            indicatorsView.widthAnchor.constraint(equalToConstant: 48.scale),
             indicatorsView.heightAnchor.constraint(equalToConstant: 12.scale),
             indicatorsView.centerXAnchor.constraint(equalTo: centerXAnchor),
             indicatorsView.bottomAnchor.constraint(equalTo: continueButton.topAnchor, constant: ScreenSize.isIphoneXFamily ? -63.scale : -30.scale)
@@ -105,8 +120,8 @@ private extension OAboutView {
 
 // MARK: Lazy initialization
 private extension OAboutView {
-    func makeSlideView(key: String) -> OAboutSlideView {
-        let view = OAboutSlideView(key: key)
+    func makeSlideView(number: Int) -> OAboutSlideView {
+        let view = OAboutSlideView(number: number)
         view.backgroundColor = Appearance.main100
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)

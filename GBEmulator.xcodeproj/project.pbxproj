@@ -59,6 +59,7 @@
 		DE664ECC2BD6866100956E9F /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE664E6B2BD6866100956E9F /* SplashView.swift */; };
 		DE664ECD2BD6866100956E9F /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE664E6C2BD6866100956E9F /* SplashViewController.swift */; };
 		DE664EE42BD6866100956E9F /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE664E8E2BD6866100956E9F /* SessionManager.swift */; };
+		DEA4D4912C12F5DB0049FBFC /* Tetris.gb in Resources */ = {isa = PBXBuildFile; fileRef = DEA4D4902C12F5D40049FBFC /* Tetris.gb */; };
 		DECC4FC42BDC29C0004A46B9 /* WPLockscreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECC4FC32BDC29C0004A46B9 /* WPLockscreenView.swift */; };
 		DEDF90002BD68A07004340C0 /* RobotoMono-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DEDF8FFE2BD689CC004340C0 /* RobotoMono-Medium.ttf */; };
 		DEDF90012BD68A07004340C0 /* RobotoMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DEDF8FFD2BD689CC004340C0 /* RobotoMono-Regular.ttf */; };
@@ -213,6 +214,7 @@
 		DE664E6B2BD6866100956E9F /* SplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		DE664E6C2BD6866100956E9F /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		DE664E8E2BD6866100956E9F /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		DEA4D4902C12F5D40049FBFC /* Tetris.gb */ = {isa = PBXFileReference; lastKnownFileType = file; path = Tetris.gb; sourceTree = "<group>"; };
 		DECC4FC32BDC29C0004A46B9 /* WPLockscreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPLockscreenView.swift; sourceTree = "<group>"; };
 		DEDF8FFA2BD6896F004340C0 /* Joystix Monospace.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Joystix Monospace.ttf"; sourceTree = "<group>"; };
 		DEDF8FFC2BD689BE004340C0 /* RobotoMono-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-Bold.ttf"; sourceTree = "<group>"; };
@@ -580,6 +582,7 @@
 		DE664E912BD6866100956E9F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				DEA4D4902C12F5D40049FBFC /* Tetris.gb */,
 				DE664E572BD6866100956E9F /* Misc */,
 				DE664E7F2BD6866100956E9F /* Presentation */,
 				DE664E902BD6866100956E9F /* Service */,
@@ -1043,6 +1046,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEA4D4912C12F5DB0049FBFC /* Tetris.gb in Resources */,
 				DEDF90002BD68A07004340C0 /* RobotoMono-Medium.ttf in Resources */,
 				DEDF90012BD68A07004340C0 /* RobotoMono-Regular.ttf in Resources */,
 				DEDF90022BD68A07004340C0 /* RobotoMono-SemiBold.ttf in Resources */,

@@ -53,8 +53,9 @@
 "Onboarding.Category.InteractiveFiction" = "Interactive\nfiction";
 "Onboarding.Category.RPG" = "RPG";
 "Onboarding.Category.Survival" = "Survival";
-"Onboarding.About1.Text" = "Track down and import the best free-to-play *.gb games to create a personalized Gameboy experience.";
+"Onboarding.About1.Text" = "Track down and import the best free-to-play *.gba games to create a personalized Gameboy experience.";
 "Onboarding.About2.Text" = "Digitize original Nintendo cartridges and experience the same thrill,on your mobile device.";
+"Onboarding.About3.Text" = "Dive into our handpicked selection of Gameboy classics all ready for you to play.";
 
 // MARK: Cartridges
 "Cartridges.Title" = "Game Library";
