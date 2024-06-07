@@ -89,6 +89,8 @@
 "Home.Play" = "PLAY";
 "Home.Wallpapers" = "WALLPAPERS";
 "Home.SeeAll" = "SEE ALL";
+"Home.GameRoms.Title" = "GAME ROMS";
+"Home.GameRoms.Browse" = "BROWSE";
 
 // MARK: Menu
 "Menu.Title" = "MENU";

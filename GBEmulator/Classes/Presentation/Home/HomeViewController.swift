@@ -21,6 +21,8 @@ final class HomeViewController: UIViewController {
         }, didTapWallpapers: { [weak self] in
             let vc = WallpapersCategoriesViewController.make()
             self?.present(vc, animated: true)
+        }, didTapGameRoms: { [weak self] in
+            // TODO
         })
         
         let hostingController = UIHostingController(rootView: homeView)
