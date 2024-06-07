@@ -107,3 +107,12 @@
 "WallpapersPreview.Result.Failure" = "Error when saving photo";
 "WallpapersPreview.Result.NotPermission" = "No permission to save";
 "WallpapersPreview.Result.Success" = "Saved to Camera Roll";
+
+// MARK: Emulator
+"Emulator.L" = "L";
+"Emulator.R" = "R";
+"Emulator.Start" = "START";
+"Emulator.Select" = "SELECT";
+"Emulator.Exit" = "EXIT";
+"Emulator.A" = "A";
+"Emulator.B" = "B";

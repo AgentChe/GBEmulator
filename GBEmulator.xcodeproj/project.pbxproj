@@ -59,7 +59,14 @@
 		DE664ECC2BD6866100956E9F /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE664E6B2BD6866100956E9F /* SplashView.swift */; };
 		DE664ECD2BD6866100956E9F /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE664E6C2BD6866100956E9F /* SplashViewController.swift */; };
 		DE664EE42BD6866100956E9F /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE664E8E2BD6866100956E9F /* SessionManager.swift */; };
+		DE95ECB12C13288B00CB238D /* EmulatorOptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE95ECB02C13288B00CB238D /* EmulatorOptionButton.swift */; };
+		DE95ECB32C132DE500CB238D /* EmulatorLRButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE95ECB22C132DE500CB238D /* EmulatorLRButton.swift */; };
+		DE95ECB52C13331C00CB238D /* EmulatorABButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE95ECB42C13331B00CB238D /* EmulatorABButton.swift */; };
+		DE95ECB72C1334DC00CB238D /* EmulatorDPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE95ECB62C1334DC00CB238D /* EmulatorDPadView.swift */; };
+		DE95ECB92C1337B300CB238D /* EmulatorDPadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE95ECB82C1337B300CB238D /* EmulatorDPadButton.swift */; };
 		DEA4D4912C12F5DB0049FBFC /* Tetris.gb in Resources */ = {isa = PBXBuildFile; fileRef = DEA4D4902C12F5D40049FBFC /* Tetris.gb */; };
+		DEA4D4932C1319B80049FBFC /* EmulatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA4D4922C1319B80049FBFC /* EmulatorViewController.swift */; };
+		DEA4D4952C1319BF0049FBFC /* EmulatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA4D4942C1319BF0049FBFC /* EmulatorView.swift */; };
 		DECC4FC42BDC29C0004A46B9 /* WPLockscreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECC4FC32BDC29C0004A46B9 /* WPLockscreenView.swift */; };
 		DEDF90002BD68A07004340C0 /* RobotoMono-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DEDF8FFE2BD689CC004340C0 /* RobotoMono-Medium.ttf */; };
 		DEDF90012BD68A07004340C0 /* RobotoMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DEDF8FFD2BD689CC004340C0 /* RobotoMono-Regular.ttf */; };
@@ -91,16 +98,7 @@
 		DEDF91612BD7F01A004340C0 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF91602BD7F01A004340C0 /* ActionButton.swift */; };
 		DEDF91662BD7F63D004340C0 /* ConfirmDeleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF91652BD7F63D004340C0 /* ConfirmDeleteView.swift */; };
 		DEDF91692BD8059C004340C0 /* InstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF91682BD8059C004340C0 /* InstructionView.swift */; };
-		DEDF916B2BD82289004340C0 /* EmulatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF916A2BD82289004340C0 /* EmulatorViewController.swift */; };
 		DEDF916D2BD828C2004340C0 /* GameLibraryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF916C2BD828C2004340C0 /* GameLibraryStorage.swift */; };
-		DEDF91702BD83512004340C0 /* PressableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF916F2BD83512004340C0 /* PressableView.swift */; };
-		DEDF91742BD83563004340C0 /* DPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF91732BD83563004340C0 /* DPadView.swift */; };
-		DEDF91762BD83577004340C0 /* ABView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF91752BD83577004340C0 /* ABView.swift */; };
-		DEDF91782BD8358D004340C0 /* StartSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF91772BD8358D004340C0 /* StartSelectView.swift */; };
-		DEDF917A2BD835BA004340C0 /* EmulatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF91792BD835BA004340C0 /* EmulatorView.swift */; };
-		DEDF917C2BD8376D004340C0 /* EmulatorHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF917B2BD8376D004340C0 /* EmulatorHeaderView.swift */; };
-		DEDF91802BD845E8004340C0 /* ABButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF917F2BD845E8004340C0 /* ABButton.swift */; };
-		DEDF91832BD84CA1004340C0 /* StartSelectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF91822BD84CA1004340C0 /* StartSelectButton.swift */; };
 		DEDF92B62BDAB14E004340C0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF92B52BDAB14E004340C0 /* HomeViewController.swift */; };
 		DEDF92B82BDAB153004340C0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF92B72BDAB153004340C0 /* HomeView.swift */; };
 		DEDF92BB2BDAB3E7004340C0 /* HomeMenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF92BA2BDAB3E7004340C0 /* HomeMenuItemView.swift */; };
@@ -214,7 +212,14 @@
 		DE664E6B2BD6866100956E9F /* SplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		DE664E6C2BD6866100956E9F /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		DE664E8E2BD6866100956E9F /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		DE95ECB02C13288B00CB238D /* EmulatorOptionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmulatorOptionButton.swift; sourceTree = "<group>"; };
+		DE95ECB22C132DE500CB238D /* EmulatorLRButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmulatorLRButton.swift; sourceTree = "<group>"; };
+		DE95ECB42C13331B00CB238D /* EmulatorABButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmulatorABButton.swift; sourceTree = "<group>"; };
+		DE95ECB62C1334DC00CB238D /* EmulatorDPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmulatorDPadView.swift; sourceTree = "<group>"; };
+		DE95ECB82C1337B300CB238D /* EmulatorDPadButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmulatorDPadButton.swift; sourceTree = "<group>"; };
 		DEA4D4902C12F5D40049FBFC /* Tetris.gb */ = {isa = PBXFileReference; lastKnownFileType = file; path = Tetris.gb; sourceTree = "<group>"; };
+		DEA4D4922C1319B80049FBFC /* EmulatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmulatorViewController.swift; sourceTree = "<group>"; };
+		DEA4D4942C1319BF0049FBFC /* EmulatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmulatorView.swift; sourceTree = "<group>"; };
 		DECC4FC32BDC29C0004A46B9 /* WPLockscreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPLockscreenView.swift; sourceTree = "<group>"; };
 		DEDF8FFA2BD6896F004340C0 /* Joystix Monospace.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Joystix Monospace.ttf"; sourceTree = "<group>"; };
 		DEDF8FFC2BD689BE004340C0 /* RobotoMono-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-Bold.ttf"; sourceTree = "<group>"; };
@@ -242,16 +247,7 @@
 		DEDF91602BD7F01A004340C0 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		DEDF91652BD7F63D004340C0 /* ConfirmDeleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmDeleteView.swift; sourceTree = "<group>"; };
 		DEDF91682BD8059C004340C0 /* InstructionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionView.swift; sourceTree = "<group>"; };
-		DEDF916A2BD82289004340C0 /* EmulatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmulatorViewController.swift; sourceTree = "<group>"; };
 		DEDF916C2BD828C2004340C0 /* GameLibraryStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLibraryStorage.swift; sourceTree = "<group>"; };
-		DEDF916F2BD83512004340C0 /* PressableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressableView.swift; sourceTree = "<group>"; };
-		DEDF91732BD83563004340C0 /* DPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPadView.swift; sourceTree = "<group>"; };
-		DEDF91752BD83577004340C0 /* ABView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABView.swift; sourceTree = "<group>"; };
-		DEDF91772BD8358D004340C0 /* StartSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartSelectView.swift; sourceTree = "<group>"; };
-		DEDF91792BD835BA004340C0 /* EmulatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmulatorView.swift; sourceTree = "<group>"; };
-		DEDF917B2BD8376D004340C0 /* EmulatorHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmulatorHeaderView.swift; sourceTree = "<group>"; };
-		DEDF917F2BD845E8004340C0 /* ABButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABButton.swift; sourceTree = "<group>"; };
-		DEDF91822BD84CA1004340C0 /* StartSelectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartSelectButton.swift; sourceTree = "<group>"; };
 		DEDF92B52BDAB14E004340C0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DEDF92B72BDAB153004340C0 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		DEDF92BA2BDAB3E7004340C0 /* HomeMenuItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMenuItemView.swift; sourceTree = "<group>"; };
@@ -590,6 +586,18 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		DE95ECAD2C13215800CB238D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE95ECB22C132DE500CB238D /* EmulatorLRButton.swift */,
+				DE95ECB02C13288B00CB238D /* EmulatorOptionButton.swift */,
+				DE95ECB42C13331B00CB238D /* EmulatorABButton.swift */,
+				DE95ECB62C1334DC00CB238D /* EmulatorDPadView.swift */,
+				DE95ECB82C1337B300CB238D /* EmulatorDPadButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		DEDF8FF82BD688DE004340C0 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -621,10 +629,9 @@
 		DEDF901F2BD6A02D004340C0 /* Emulator */ = {
 			isa = PBXGroup;
 			children = (
-				DEDF916E2BD83509004340C0 /* Views */,
-				DEDF902D2BD6A030004340C0 /* Utils */,
-				DEDF916A2BD82289004340C0 /* EmulatorViewController.swift */,
-				DEDF91792BD835BA004340C0 /* EmulatorView.swift */,
+				DE95ECAD2C13215800CB238D /* Views */,
+				DEA4D4922C1319B80049FBFC /* EmulatorViewController.swift */,
+				DEA4D4942C1319BF0049FBFC /* EmulatorView.swift */,
 			);
 			path = Emulator;
 			sourceTree = "<group>";
@@ -652,6 +659,7 @@
 		DEDF90302BD6A425004340C0 /* Cartridges */ = {
 			isa = PBXGroup;
 			children = (
+				DEDF902D2BD6A030004340C0 /* Utils */,
 				DEDF91672BD7F8D1004340C0 /* FilePicker */,
 				DEDF903A2BD6C09A004340C0 /* Views */,
 				DEDF90312BD6A42F004340C0 /* CartridgesViewController.swift */,
@@ -678,36 +686,6 @@
 				DEDF90382BD6B11E004340C0 /* FilePicker.swift */,
 			);
 			path = FilePicker;
-			sourceTree = "<group>";
-		};
-		DEDF916E2BD83509004340C0 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				DEDF91812BD84C71004340C0 /* StartSelect */,
-				DEDF917E2BD845DF004340C0 /* AB */,
-				DEDF916F2BD83512004340C0 /* PressableView.swift */,
-				DEDF91732BD83563004340C0 /* DPadView.swift */,
-				DEDF917B2BD8376D004340C0 /* EmulatorHeaderView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		DEDF917E2BD845DF004340C0 /* AB */ = {
-			isa = PBXGroup;
-			children = (
-				DEDF91752BD83577004340C0 /* ABView.swift */,
-				DEDF917F2BD845E8004340C0 /* ABButton.swift */,
-			);
-			path = AB;
-			sourceTree = "<group>";
-		};
-		DEDF91812BD84C71004340C0 /* StartSelect */ = {
-			isa = PBXGroup;
-			children = (
-				DEDF91772BD8358D004340C0 /* StartSelectView.swift */,
-				DEDF91822BD84CA1004340C0 /* StartSelectButton.swift */,
-			);
-			path = StartSelect;
 			sourceTree = "<group>";
 		};
 		DEDF92B42BDAB143004340C0 /* Home */ = {
@@ -1149,7 +1127,6 @@
 				DEDF92D92BDB9C40004340C0 /* WallpapersCategoriesView.swift in Sources */,
 				DE664EB92BD6866100956E9F /* TextAttributes.swift in Sources */,
 				DE664EAF2BD6866100956E9F /* PushNotificationsModel.swift in Sources */,
-				DEDF91832BD84CA1004340C0 /* StartSelectButton.swift in Sources */,
 				DE664EA42BD6866100956E9F /* String+Extension.swift in Sources */,
 				DEDF91662BD7F63D004340C0 /* ConfirmDeleteView.swift in Sources */,
 				DEE0FCC92C0A37F3008CBF1D /* OCategoryButton.swift in Sources */,
@@ -1159,6 +1136,8 @@
 				DEDF92C02BDACB32004340C0 /* MenuViewController.swift in Sources */,
 				DEEAC6B12BDBACFA003196F0 /* WallpapersCollectionView.swift in Sources */,
 				DECC4FC42BDC29C0004A46B9 /* WPLockscreenView.swift in Sources */,
+				DE95ECB32C132DE500CB238D /* EmulatorLRButton.swift in Sources */,
+				DE95ECB12C13288B00CB238D /* EmulatorOptionButton.swift in Sources */,
 				DE664E9C2BD6866100956E9F /* CircleProgressView.swift in Sources */,
 				DE664EA02BD6866100956E9F /* PaddingTextField.swift in Sources */,
 				DEE0FC922C0A22FD008CBF1D /* IAPActionResult.swift in Sources */,
@@ -1166,6 +1145,7 @@
 				DE664E972BD6866100956E9F /* RequestReview.swift in Sources */,
 				DE664EB72BD6866100956E9F /* Scalable.swift in Sources */,
 				DEE0FC962C0A22FD008CBF1D /* PurchaseValidationObserver.swift in Sources */,
+				DE95ECB72C1334DC00CB238D /* EmulatorDPadView.swift in Sources */,
 				DEDF90232BD6A02D004340C0 /* Common.swift in Sources */,
 				DE664E942BD6866100956E9F /* FacebookManager.swift in Sources */,
 				DE664E9B2BD6866100956E9F /* NavigationControllerSettings.swift in Sources */,
@@ -1178,12 +1158,12 @@
 				DEDF92DE2BDB9D67004340C0 /* WallpapersViewModel.swift in Sources */,
 				DE664EAE2BD6866100956E9F /* PushNotificationsAuthorizationStatus.swift in Sources */,
 				DE664EB42BD6866100956E9F /* Fonts.swift in Sources */,
-				DEDF91742BD83563004340C0 /* DPadView.swift in Sources */,
 				DE664EA12BD6866100956E9F /* TapAreaButton.swift in Sources */,
 				DEDF92D12BDB9AA4004340C0 /* GetWallpapersCategoriesRequest.swift in Sources */,
 				DEDF92CD2BDB989D004340C0 /* WallpaperCategory.swift in Sources */,
 				DEEAC6BE2BDBD6E2003196F0 /* WPCollectionView.swift in Sources */,
 				DEEAC6B62BDBD3D8003196F0 /* WallpapersPreviewViewController.swift in Sources */,
+				DEA4D4932C1319B80049FBFC /* EmulatorViewController.swift in Sources */,
 				DEE0FC802C0A22CA008CBF1D /* PaygateInfoCell.swift in Sources */,
 				DEE0FCC62C0A3338008CBF1D /* OWelcomeView.swift in Sources */,
 				DEEAC6C02BDBD72E003196F0 /* WPCollectionCell.swift in Sources */,
@@ -1198,24 +1178,20 @@
 				DE664EAD2BD6866100956E9F /* RestAPITransport.swift in Sources */,
 				DE664E9A2BD6866100956E9F /* NavigationController.swift in Sources */,
 				DE664E9F2BD6866100956E9F /* PaddingLabel.swift in Sources */,
-				DEDF917A2BD835BA004340C0 /* EmulatorView.swift in Sources */,
+				DE95ECB92C1337B300CB238D /* EmulatorDPadButton.swift in Sources */,
 				DEDF90212BD6A02D004340C0 /* Cartridge.swift in Sources */,
 				DE664EBC2BD6866100956E9F /* AppDelegate.swift in Sources */,
 				DE664EB52BD6866100956E9F /* NumberLaunches.swift in Sources */,
 				DEDF92E62BDBA28A004340C0 /* WCTableView.swift in Sources */,
-				DEDF91702BD83512004340C0 /* PressableView.swift in Sources */,
 				DEDF92D52BDB9C34004340C0 /* WallpapersCategoriesViewController.swift in Sources */,
 				DEE0FC7C2C0A22CA008CBF1D /* PaygateInteractor.swift in Sources */,
-				DEDF91782BD8358D004340C0 /* StartSelectView.swift in Sources */,
-				DEDF916B2BD82289004340C0 /* EmulatorViewController.swift in Sources */,
 				DEDF915B2BD7E6F2004340C0 /* Appearance.swift in Sources */,
 				DEDF90222BD6A02D004340C0 /* Clock.swift in Sources */,
 				DEDF90322BD6A42F004340C0 /* CartridgesViewController.swift in Sources */,
+				DE95ECB52C13331C00CB238D /* EmulatorABButton.swift in Sources */,
 				DEEAC6B32BDBAD01003196F0 /* WallpapersCollectionCell.swift in Sources */,
 				DEDF902A2BD6A02D004340C0 /* PPU.swift in Sources */,
-				DEDF91802BD845E8004340C0 /* ABButton.swift in Sources */,
 				DEDF92BB2BDAB3E7004340C0 /* HomeMenuItemView.swift in Sources */,
-				DEDF917C2BD8376D004340C0 /* EmulatorHeaderView.swift in Sources */,
 				DE664EA22BD6866100956E9F /* Collection+Extension.swift in Sources */,
 				DEDF90282BD6A02D004340C0 /* Joypad.swift in Sources */,
 				DE664EB32BD6866100956E9F /* SignError.swift in Sources */,
@@ -1228,6 +1204,7 @@
 				DEE0FCCF2C0A400E008CBF1D /* OAboutSlideView.swift in Sources */,
 				DEDF92B62BDAB14E004340C0 /* HomeViewController.swift in Sources */,
 				DE664EB62BD6866100956E9F /* ObservableRetrySingle.swift in Sources */,
+				DEA4D4952C1319BF0049FBFC /* EmulatorView.swift in Sources */,
 				DEE0FCC42C0A31B6008CBF1D /* OnboardingViewController.swift in Sources */,
 				DE664E9E2BD6866100956E9F /* GradientView.swift in Sources */,
 				DEE0FC812C0A22CA008CBF1D /* PaygateInfoView.swift in Sources */,
@@ -1237,7 +1214,6 @@
 				DE664EA52BD6866100956E9F /* UIApplication+Extension.swift in Sources */,
 				DE664ECC2BD6866100956E9F /* SplashView.swift in Sources */,
 				DEDF92E02BDB9D6B004340C0 /* WallpapersView.swift in Sources */,
-				DEDF91762BD83577004340C0 /* ABView.swift in Sources */,
 				DE664E932BD6866100956E9F /* BranchManager.swift in Sources */,
 				DEDF903C2BD6C0A9004340C0 /* CartridgeView.swift in Sources */,
 				DEDF902B2BD6A02D004340C0 /* Timer.swift in Sources */,
@@ -1404,7 +1380,7 @@
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "The access is required for saving wallpapers to your device";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1445,7 +1421,7 @@
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "The access is required for saving wallpapers to your device";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (

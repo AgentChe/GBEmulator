@@ -45,6 +45,18 @@ final class HomeViewController: UIHostingController<HomeView> {
         
         view.backgroundColor = Appearance.main100
     }
+    
+    override var shouldAutorotate: Bool {
+        true
+    }
+
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        .portrait
+    }
+
+    override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
+        .portrait
+    }
 }
 
 extension HomeViewController {

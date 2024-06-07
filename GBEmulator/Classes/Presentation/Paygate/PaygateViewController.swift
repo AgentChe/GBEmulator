@@ -107,6 +107,18 @@ final class PaygateViewController: UIViewController {
             })
             .disposed(by: disposeBag)
     }
+    
+    override var shouldAutorotate: Bool {
+        true
+    }
+
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        .portrait
+    }
+
+    override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
+        .portrait
+    }
 }
 
 // MARK: Public

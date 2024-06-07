@@ -42,6 +42,18 @@ final class MenuViewController: UIHostingController<MenuView> {
         
         view.backgroundColor = Appearance.main100
     }
+    
+    override var shouldAutorotate: Bool {
+        true
+    }
+
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        .portrait
+    }
+
+    override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
+        .portrait
+    }
 }
 
 // MARK: Public

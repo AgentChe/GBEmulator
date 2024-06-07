@@ -33,6 +33,18 @@ final class OnboardingViewController: UIViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         .darkContent
     }
+    
+    override var shouldAutorotate: Bool {
+        true
+    }
+
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        .portrait
+    }
+
+    override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
+        .portrait
+    }
 }
 
 // MARK: Make

@@ -77,6 +77,18 @@ final class WallpapersPreviewViewController: UIViewController {
             scrollTo: initial
         )
     }
+    
+    override var shouldAutorotate: Bool {
+        true
+    }
+
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        .portrait
+    }
+
+    override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
+        .portrait
+    }
 }
 
 // MARK: Public
