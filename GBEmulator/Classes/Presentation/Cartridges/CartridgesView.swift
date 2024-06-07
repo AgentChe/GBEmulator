@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct CartridgesView: View {
-    let didTapBack: () -> Void
-    let didSelect: (Cartridge) -> Void
+    var didTapBack: (() -> Void)?
+    var didSelect: ((Cartridge) -> Void)?
     
     @ObservedObject private var gameLibraryStorage = GameLibraryStorage()
     @State private var showFilePicker = false
@@ -19,8 +19,10 @@ struct CartridgesView: View {
     var body: some View {
         VStack {
             HStack {
-                Button(action: didTapBack) {
-                    Image("Cartridges.Delete")
+                Button(action: {
+                    didTapBack?()
+                }) {
+                    Image("Back")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 24.scale, height: 24.scale)
@@ -43,7 +45,9 @@ struct CartridgesView: View {
                 CartridgesEmptyView()
             } else {
                 List(gameLibraryStorage.library, id: \.id) { cartridge in
-                    CartridgeView(cartridge: cartridge, didSelect: didSelect, didDelete: { cartridge in
+                    CartridgeView(cartridge: cartridge, didSelect: { cartridge in
+                        didSelect?(cartridge)
+                    }, didDelete: { cartridge in
                         deleteCartridge = cartridge
                     })
                         .listRowBackground(Color.clear)

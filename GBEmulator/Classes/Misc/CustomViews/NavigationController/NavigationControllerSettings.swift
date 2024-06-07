@@ -13,6 +13,7 @@ struct NavigationControllerSettings {
     let isTranslucent: Bool
     let tintColor: UIColor
     let titleTextAttrributes: [NSAttributedString.Key: Any]
+    let navBarHidden: Bool
 }
 
 // MARK: Make
@@ -26,6 +27,7 @@ extension NavigationControllerSettings {
                                         .textColor(UIColor.black)
                                         .font(Fonts.Joystix.monospace(size: 18.scale))
                                         .textAlignment(.center)
-                                        .dictionary)
+                                        .dictionary,
+                                     navBarHidden: true)
     }
 }

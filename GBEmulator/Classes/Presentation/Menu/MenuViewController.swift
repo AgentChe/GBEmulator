@@ -8,42 +8,45 @@
 import UIKit
 import SwiftUI
 
-final class MenuViewController: UIViewController {
+final class MenuViewController: UIHostingController<MenuView> {
+    init() {
+        var menuView = MenuView()
+        
+        super.init(rootView: menuView)
+        
+        menuView.didTapClose = { [weak self] in
+            self?.navigationController?.popViewController(animated: true)
+        }
+        
+        menuView.didTapTermsOfUse = {
+            UIApplication.shared.open(GlobalDefinitions.termsOfUseUrl)
+        }
+        
+        menuView.didTapPrivacyPolicy = {
+            UIApplication.shared.open(GlobalDefinitions.privacyPolicyUrl)
+        }
+        
+        menuView.didTapContactUs = {
+            UIApplication.shared.open(GlobalDefinitions.contactUsUrl)
+        }
+        
+        rootView = menuView
+    }
+    
+    @MainActor required dynamic init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let menuView = MenuView(didTapClose: { [weak self] in
-            self?.dismiss(animated: true)
-        }, didTapTermsOfUse: {
-            UIApplication.shared.open(GlobalDefinitions.termsOfUseUrl)
-        }, didTapPrivacyPolicy: {
-            UIApplication.shared.open(GlobalDefinitions.privacyPolicyUrl)
-        }, didTapContactUs: {
-            UIApplication.shared.open(GlobalDefinitions.contactUsUrl)
-        })
-        
-        let hostingController = UIHostingController(rootView: menuView)
-        addChild(hostingController)
-        view.addSubview(hostingController.view)
-        
-        hostingController.view.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            hostingController.view.topAnchor.constraint(equalTo: view.topAnchor),
-            hostingController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            hostingController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            hostingController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
-        
         view.backgroundColor = Appearance.main100
-        hostingController.view.backgroundColor = UIColor.clear
     }
 }
 
 // MARK: Public
 extension MenuViewController {
     static func make() -> MenuViewController {
-        let vc = MenuViewController()
-        vc.modalPresentationStyle = .fullScreen
-        return vc
+        MenuViewController()
     }
 }

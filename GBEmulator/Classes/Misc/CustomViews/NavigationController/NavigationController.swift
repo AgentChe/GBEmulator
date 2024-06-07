@@ -27,5 +27,6 @@ extension NavigationController {
         navigationBar.isTranslucent = settings.isTranslucent
         navigationBar.tintColor = settings.tintColor
         navigationBar.titleTextAttributes = settings.titleTextAttrributes
+        setNavigationBarHidden(settings.navBarHidden, animated: false)
     }
 }

@@ -93,7 +93,7 @@ private extension WallpapersPreviewViewController {
     func route(_ route: WallpapersPreviewViewModel.Route) {
         switch route {
         case .close:
-            dismiss(animated: true)
+            navigationController?.popViewController(animated: true)
         case .toast(let message):
             var style = ToastStyle()
             style.messageFont = Fonts.Joystix.monospace(size: 16.scale)

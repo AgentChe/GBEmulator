@@ -8,16 +8,18 @@
 import SwiftUI
 
 struct MenuView: View {
-    let didTapClose: () -> Void
-    let didTapTermsOfUse: () -> Void
-    let didTapPrivacyPolicy: () -> Void
-    let didTapContactUs: () -> Void
+    var didTapClose: (() -> Void)?
+    var didTapTermsOfUse: (() -> Void)?
+    var didTapPrivacyPolicy: (() -> Void)?
+    var didTapContactUs: (() -> Void)?
     
     var body: some View {
         VStack(spacing: 0) {
             HStack {
-                Button(action: didTapClose) {
-                    Image("Cartridges.Delete")
+                Button(action: {
+                    didTapClose?()
+                }) {
+                    Image("Back")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 24.scale, height: 24.scale)
@@ -37,19 +39,19 @@ struct MenuView: View {
             MenuRouteView(title: "Menu.TermsOfUse".localized)
                 .padding(EdgeInsets(value: 16.scale))
                 .onTapGesture {
-                    didTapTermsOfUse()
+                    didTapTermsOfUse?()
                 }
             
             MenuRouteView(title: "Menu.PrivacyPolicy".localized)
                 .padding(EdgeInsets(value: 16.scale))
                 .onTapGesture {
-                    didTapPrivacyPolicy()
+                    didTapPrivacyPolicy?()
                 }
             
             MenuRouteView(title: "Menu.ContactUs".localized)
                 .padding(EdgeInsets(value: 16.scale))
                 .onTapGesture {
-                    didTapContactUs()
+                    didTapContactUs?()
                 }
             
             Spacer()

@@ -68,10 +68,10 @@ private extension WallpapersViewController {
     func route(_ route: WallpapersViewModel.Route) {
         switch route {
         case .close:
-            dismiss(animated: true)
+            navigationController?.popViewController(animated: true)
         case let .selected((category, wallpaper)):
             let vc = WallpapersPreviewViewController.make(category: category, selected: wallpaper)
-            present(vc, animated: true)
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
 }

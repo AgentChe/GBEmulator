@@ -8,17 +8,19 @@
 import SwiftUI
 
 struct HomeView: View {
-    let didTapMenu: () -> Void
-    let didTapGameLibrary: () -> Void
-    let didTapWallpapers: () -> Void
-    let didTapGameRoms: () -> Void
+    var didTapMenu: (() -> Void)?
+    var didTapGameLibrary: (() -> Void)?
+    var didTapWallpapers: (() -> Void)?
+    var didTapGameRoms: (() -> Void)?
     
     var body: some View {
         VStack(spacing: 0) {
             HStack {
                 Spacer()
                 
-                Button(action: didTapMenu) {
+                Button(action: {
+                    didTapMenu?()
+                }) {
                     Image("Home.Menu")
                         .resizable()
                         .scaledToFit()
@@ -45,7 +47,9 @@ struct HomeView: View {
                     title: "Home.GameLibrary".localized,
                     actionTitle: "Home.Play".localized,
                     imageName: "Home.GameLibrary"
-                ), action: didTapGameLibrary)
+                ), action: {
+                    didTapGameLibrary?()
+                })
                 .padding(EdgeInsets(t: ScreenSize.isIphoneXFamily ? 23.scale : 16.scale))
                 
                 HomeMenuItemView(item: HomeMenuItemView.Item(
@@ -53,7 +57,9 @@ struct HomeView: View {
                     title: "Home.Wallpapers".localized,
                     actionTitle: "Home.SeeAll".localized,
                     imageName: "Home.WallPapers"
-                ), action: didTapWallpapers)
+                ), action: {
+                    didTapWallpapers?()
+                })
                 .padding(EdgeInsets(t: ScreenSize.isIphoneXFamily ? 16.scale : 8.scale))
                 
                 HomeMenuItemView(item: HomeMenuItemView.Item(
@@ -61,12 +67,14 @@ struct HomeView: View {
                     title: "Home.GameRoms.Title".localized,
                     actionTitle: "Home.GameRoms.Browse".localized,
                     imageName: "Home.GameRoms"
-                ), action: didTapGameRoms)
+                ), action: {
+                    didTapGameRoms?()
+                })
                 .padding(EdgeInsets(t: ScreenSize.isIphoneXFamily ? 16.scale : 8.scale))
                 
                 Spacer()
             }
         }
-        .padding(EdgeInsets(value: 16.scale))
+        .padding(EdgeInsets(horizontal: 16.scale))
     }
 }

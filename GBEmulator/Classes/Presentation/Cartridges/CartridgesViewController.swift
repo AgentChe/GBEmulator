@@ -8,40 +8,39 @@
 import UIKit
 import SwiftUI
 
-final class CartridgesViewController: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
+final class CartridgesViewController: UIHostingController<CartridgesView> {
+    private init() {
+        var cartridgesView = CartridgesView()
         
-        let cartridgesView = CartridgesView(didTapBack: { [weak self] in
-            self?.dismiss(animated: true)
-        }, didSelect: { [weak self] cartridge in
+        super.init(rootView: cartridgesView)
+        
+        cartridgesView.didTapBack = { [weak self] in
+            self?.navigationController?.popViewController(animated: true)
+        }
+        
+        cartridgesView.didSelect = { [weak self] cartridge in
             let hasActiveSubscriptions = SessionManager().hasActiveSubscriptions()
             let vc = hasActiveSubscriptions ? EmulatorViewController.make(cartridge: cartridge) : PaygateViewController.make()
             self?.present(vc, animated: true)
-        })
+        }
         
-        let hostingController = UIHostingController(rootView: cartridgesView)
-        addChild(hostingController)
-        view.addSubview(hostingController.view)
-        
-        hostingController.view.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            hostingController.view.topAnchor.constraint(equalTo: view.topAnchor),
-            hostingController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            hostingController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            hostingController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
+        rootView = cartridgesView
+    }
+    
+    @MainActor required dynamic init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
         view.backgroundColor = Appearance.main100
-        hostingController.view.backgroundColor = UIColor.clear
     }
 }
 
 // MARK: Public
 extension CartridgesViewController {
     static func make() -> CartridgesViewController {
-        let vc = CartridgesViewController()
-        vc.modalPresentationStyle = .fullScreen
-        return vc
+        CartridgesViewController()
     }
 }

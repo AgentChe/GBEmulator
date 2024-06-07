@@ -8,41 +8,45 @@
 import UIKit
 import SwiftUI
 
-final class HomeViewController: UIViewController {
+final class HomeViewController: UIHostingController<HomeView> {
+    init() {
+        var homeView = HomeView()
+        
+        super.init(rootView: homeView)
+        
+        homeView.didTapMenu = { [weak self] in
+            let vc = MenuViewController.make()
+            self?.navigationController?.pushViewController(vc, animated: true)
+        }
+        
+        homeView.didTapGameLibrary = { [weak self] in
+            let vc = CartridgesViewController.make()
+            self?.navigationController?.pushViewController(vc, animated: true)
+        }
+        
+        homeView.didTapWallpapers = { [weak self] in
+            let vc = WallpapersCategoriesViewController.make()
+            self?.navigationController?.pushViewController(vc, animated: true)
+        }
+        
+        homeView.didTapGameRoms = { [weak self] in
+            // TODO
+        }
+        
+        rootView = homeView
+    }
+    
+    @MainActor required dynamic init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let homeView = HomeView(didTapMenu: { [weak self] in
-            let vc = MenuViewController.make()
-            self?.present(vc, animated: true)
-        }, didTapGameLibrary: { [weak self] in
-            let vc = CartridgesViewController.make()
-            self?.present(vc, animated: true)
-        }, didTapWallpapers: { [weak self] in
-            let vc = WallpapersCategoriesViewController.make()
-            self?.present(vc, animated: true)
-        }, didTapGameRoms: { [weak self] in
-            // TODO
-        })
-        
-        let hostingController = UIHostingController(rootView: homeView)
-        addChild(hostingController)
-        view.addSubview(hostingController.view)
-        
-        hostingController.view.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            hostingController.view.topAnchor.constraint(equalTo: view.topAnchor),
-            hostingController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            hostingController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            hostingController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
-        
         view.backgroundColor = Appearance.main100
-        hostingController.view.backgroundColor = UIColor.clear
     }
 }
 
-// MARK: Public
 extension HomeViewController {
     static func make() -> HomeViewController {
         HomeViewController()

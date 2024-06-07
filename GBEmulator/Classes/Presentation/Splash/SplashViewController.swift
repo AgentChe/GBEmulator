@@ -48,10 +48,10 @@ private extension SplashViewController {
             UIApplication.shared.keyWindow?.rootViewController = OnboardingViewController.make()
         } else {
             if SessionManager().hasActiveSubscriptions() {
-                UIApplication.shared.keyWindow?.rootViewController = HomeViewController.make()
+                UIApplication.shared.keyWindow?.rootViewController = NavigationController(rootViewController: HomeViewController.make())
             } else {
                 let vc = PaygateViewController.make {
-                    UIApplication.shared.keyWindow?.rootViewController = HomeViewController.make()
+                    UIApplication.shared.keyWindow?.rootViewController = NavigationController(rootViewController: HomeViewController.make())
                 }
                 present(vc, animated: true)
             }

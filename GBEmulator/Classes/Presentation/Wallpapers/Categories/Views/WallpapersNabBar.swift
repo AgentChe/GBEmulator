@@ -49,7 +49,7 @@ private extension WallpapersNabBar {
 private extension WallpapersNabBar {
     func makeBackButton() -> TapAreaButton {
         let view = TapAreaButton()
-        view.setImage(UIImage(named: "Cartridges.Delete"), for: .normal)
+        view.setImage(UIImage(named: "Back"), for: .normal)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
