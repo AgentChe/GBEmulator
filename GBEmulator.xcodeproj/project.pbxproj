@@ -64,7 +64,8 @@
 		DE95ECB52C13331C00CB238D /* EmulatorABButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE95ECB42C13331B00CB238D /* EmulatorABButton.swift */; };
 		DE95ECB72C1334DC00CB238D /* EmulatorDPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE95ECB62C1334DC00CB238D /* EmulatorDPadView.swift */; };
 		DE95ECB92C1337B300CB238D /* EmulatorDPadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE95ECB82C1337B300CB238D /* EmulatorDPadButton.swift */; };
-		DEA4D4912C12F5DB0049FBFC /* Tetris.gb in Resources */ = {isa = PBXBuildFile; fileRef = DEA4D4902C12F5D40049FBFC /* Tetris.gb */; };
+		DE95ECBB2C1342B400CB238D /* EmulatorWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE95ECBA2C1342B400CB238D /* EmulatorWebView.swift */; };
+		DE95ECBE2C13436100CB238D /* JSMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE95ECBD2C13436100CB238D /* JSMessageHandler.swift */; };
 		DEA4D4932C1319B80049FBFC /* EmulatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA4D4922C1319B80049FBFC /* EmulatorViewController.swift */; };
 		DEA4D4952C1319BF0049FBFC /* EmulatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA4D4942C1319BF0049FBFC /* EmulatorView.swift */; };
 		DECC4FC42BDC29C0004A46B9 /* WPLockscreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECC4FC32BDC29C0004A46B9 /* WPLockscreenView.swift */; };
@@ -217,7 +218,8 @@
 		DE95ECB42C13331B00CB238D /* EmulatorABButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmulatorABButton.swift; sourceTree = "<group>"; };
 		DE95ECB62C1334DC00CB238D /* EmulatorDPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmulatorDPadView.swift; sourceTree = "<group>"; };
 		DE95ECB82C1337B300CB238D /* EmulatorDPadButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmulatorDPadButton.swift; sourceTree = "<group>"; };
-		DEA4D4902C12F5D40049FBFC /* Tetris.gb */ = {isa = PBXFileReference; lastKnownFileType = file; path = Tetris.gb; sourceTree = "<group>"; };
+		DE95ECBA2C1342B400CB238D /* EmulatorWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmulatorWebView.swift; sourceTree = "<group>"; };
+		DE95ECBD2C13436100CB238D /* JSMessageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSMessageHandler.swift; sourceTree = "<group>"; };
 		DEA4D4922C1319B80049FBFC /* EmulatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmulatorViewController.swift; sourceTree = "<group>"; };
 		DEA4D4942C1319BF0049FBFC /* EmulatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmulatorView.swift; sourceTree = "<group>"; };
 		DECC4FC32BDC29C0004A46B9 /* WPLockscreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPLockscreenView.swift; sourceTree = "<group>"; };
@@ -578,7 +580,6 @@
 		DE664E912BD6866100956E9F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				DEA4D4902C12F5D40049FBFC /* Tetris.gb */,
 				DE664E572BD6866100956E9F /* Misc */,
 				DE664E7F2BD6866100956E9F /* Presentation */,
 				DE664E902BD6866100956E9F /* Service */,
@@ -589,6 +590,7 @@
 		DE95ECAD2C13215800CB238D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DE95ECBC2C13435800CB238D /* WebView */,
 				DE95ECB22C132DE500CB238D /* EmulatorLRButton.swift */,
 				DE95ECB02C13288B00CB238D /* EmulatorOptionButton.swift */,
 				DE95ECB42C13331B00CB238D /* EmulatorABButton.swift */,
@@ -596,6 +598,15 @@
 				DE95ECB82C1337B300CB238D /* EmulatorDPadButton.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		DE95ECBC2C13435800CB238D /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				DE95ECBA2C1342B400CB238D /* EmulatorWebView.swift */,
+				DE95ECBD2C13436100CB238D /* JSMessageHandler.swift */,
+			);
+			path = WebView;
 			sourceTree = "<group>";
 		};
 		DEDF8FF82BD688DE004340C0 /* Fonts */ = {
@@ -1024,7 +1035,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEA4D4912C12F5DB0049FBFC /* Tetris.gb in Resources */,
 				DEDF90002BD68A07004340C0 /* RobotoMono-Medium.ttf in Resources */,
 				DEDF90012BD68A07004340C0 /* RobotoMono-Regular.ttf in Resources */,
 				DEDF90022BD68A07004340C0 /* RobotoMono-SemiBold.ttf in Resources */,
@@ -1186,6 +1196,7 @@
 				DEDF92D52BDB9C34004340C0 /* WallpapersCategoriesViewController.swift in Sources */,
 				DEE0FC7C2C0A22CA008CBF1D /* PaygateInteractor.swift in Sources */,
 				DEDF915B2BD7E6F2004340C0 /* Appearance.swift in Sources */,
+				DE95ECBE2C13436100CB238D /* JSMessageHandler.swift in Sources */,
 				DEDF90222BD6A02D004340C0 /* Clock.swift in Sources */,
 				DEDF90322BD6A42F004340C0 /* CartridgesViewController.swift in Sources */,
 				DE95ECB52C13331C00CB238D /* EmulatorABButton.swift in Sources */,
@@ -1197,6 +1208,7 @@
 				DE664EB32BD6866100956E9F /* SignError.swift in Sources */,
 				DEEAC6C32BDBE6F7003196F0 /* PhotoLibraryWrapper.swift in Sources */,
 				DE664E962BD6866100956E9F /* ImagePicker.swift in Sources */,
+				DE95ECBB2C1342B400CB238D /* EmulatorWebView.swift in Sources */,
 				DE664E982BD6866100956E9F /* RxActivityIndicator.swift in Sources */,
 				DEDF92D72BDB9C3B004340C0 /* WallpapersCategoriesViewModel.swift in Sources */,
 				DE664EE42BD6866100956E9F /* SessionManager.swift in Sources */,

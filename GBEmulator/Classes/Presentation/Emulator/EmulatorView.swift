@@ -12,7 +12,7 @@ final class EmulatorView: UIView {
     lazy var dPadView = makeDPadView()
     lazy var startButton = makeOptionButton(title: "Emulator.Start")
     lazy var selectButton = makeOptionButton(title: "Emulator.Select")
-    lazy var bitmapView = makeBitmapView()
+    lazy var webView = makeWebView()
     lazy var rButton = makeLRButton(key: "Emulator.R")
     lazy var aButton = makeABButton(title: "Emulator.A".localized)
     lazy var bButton = makeABButton(title: "Emulator.B".localized)
@@ -55,27 +55,27 @@ private extension EmulatorView {
         NSLayoutConstraint.activate([
             dPadView.widthAnchor.constraint(equalToConstant: 132.scale),
             dPadView.heightAnchor.constraint(equalToConstant: 132.scale),
-            dPadView.trailingAnchor.constraint(equalTo: bitmapView.leadingAnchor, constant: -30.scale),
+            dPadView.trailingAnchor.constraint(equalTo: webView.leadingAnchor, constant: -30.scale),
             dPadView.topAnchor.constraint(equalTo: lButton.bottomAnchor, constant: 37.scale)
         ])
         
         NSLayoutConstraint.activate([
-            startButton.trailingAnchor.constraint(equalTo: bitmapView.leadingAnchor, constant: -30.scale),
+            startButton.trailingAnchor.constraint(equalTo: webView.leadingAnchor, constant: -30.scale),
             startButton.bottomAnchor.constraint(equalTo: selectButton.topAnchor, constant: -16.scale),
             startButton.heightAnchor.constraint(equalToConstant: 23.scale)
         ])
         
         NSLayoutConstraint.activate([
-            selectButton.trailingAnchor.constraint(equalTo: bitmapView.leadingAnchor, constant: -30.scale),
+            selectButton.trailingAnchor.constraint(equalTo: webView.leadingAnchor, constant: -30.scale),
             selectButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -28.scale),
             selectButton.heightAnchor.constraint(equalToConstant: 23.scale)
         ])
         
         NSLayoutConstraint.activate([
-            bitmapView.widthAnchor.constraint(equalToConstant: 390.scale),
-            bitmapView.heightAnchor.constraint(equalToConstant: 348.scale),
-            bitmapView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            bitmapView.centerYAnchor.constraint(equalTo: centerYAnchor)
+            webView.widthAnchor.constraint(equalToConstant: 390.scale),
+            webView.heightAnchor.constraint(equalToConstant: 348.scale),
+            webView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            webView.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
         
         NSLayoutConstraint.activate([
@@ -88,19 +88,19 @@ private extension EmulatorView {
         NSLayoutConstraint.activate([
             aButton.widthAnchor.constraint(equalToConstant: 52.scale),
             aButton.heightAnchor.constraint(equalToConstant: 52.scale),
-            aButton.leadingAnchor.constraint(equalTo: bitmapView.trailingAnchor, constant: 88.scale),
+            aButton.leadingAnchor.constraint(equalTo: webView.trailingAnchor, constant: 88.scale),
             aButton.topAnchor.constraint(equalTo: rButton.bottomAnchor, constant: 61.scale)
         ])
         
         NSLayoutConstraint.activate([
             bButton.widthAnchor.constraint(equalToConstant: 52.scale),
             bButton.heightAnchor.constraint(equalToConstant: 52.scale),
-            bButton.leadingAnchor.constraint(equalTo: bitmapView.trailingAnchor, constant: 30.scale),
+            bButton.leadingAnchor.constraint(equalTo: webView.trailingAnchor, constant: 30.scale),
             bButton.topAnchor.constraint(equalTo: rButton.bottomAnchor, constant: 95.scale)
         ])
         
         NSLayoutConstraint.activate([
-            exitButton.leadingAnchor.constraint(equalTo: bitmapView.trailingAnchor, constant: 30.scale),
+            exitButton.leadingAnchor.constraint(equalTo: webView.trailingAnchor, constant: 30.scale),
             exitButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -28.scale),
             exitButton.heightAnchor.constraint(equalToConstant: 23.scale)
         ])
@@ -130,9 +130,8 @@ private extension EmulatorView {
         return view
     }
     
-    func makeBitmapView() -> LCDBitmap {
-        let view = LCDBitmap()
-        view.backgroundColor = UIColor(integralRed: 78, green: 105, blue: 73)
+    func makeWebView() -> EmulatorWebView {
+        let view = EmulatorWebView()
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
