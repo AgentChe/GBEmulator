@@ -116,3 +116,8 @@
 "Emulator.Exit" = "EXIT";
 "Emulator.A" = "A";
 "Emulator.B" = "B";
+
+// MARK: Games
+"Games.Title" = "GAME ROMS";
+"Games.Search.Placeholder" = "Search";
+"Games.Play" = "Play";

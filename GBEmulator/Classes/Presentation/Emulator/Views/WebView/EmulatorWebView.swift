@@ -36,6 +36,12 @@ extension EmulatorWebView: WKNavigationDelegate {
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         decisionHandler(.allow)
     }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        webView.evaluateJavaScript("openLoadDialog()") { result, error in
+            print()
+        }
+    }
 }
 
 // MARK: WKScriptMessageHandler
@@ -48,7 +54,7 @@ extension EmulatorWebView: WKScriptMessageHandler {
 // MARK: Private
 private extension EmulatorWebView {
     func initialize() {
-        let url = URL(string: "https://games.sergei-mobile.com/emulator?game=assets/games/users/1421 - Max Payne Advance (E)(Rising Sun).gba")!
+        let url = URL(string: "https://games.sergei-mobile.com/emulator")!
         let request = URLRequest(url: url)
         webView.load(request)
     }

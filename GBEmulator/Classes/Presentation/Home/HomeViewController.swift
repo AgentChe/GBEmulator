@@ -30,7 +30,8 @@ final class HomeViewController: UIHostingController<HomeView> {
         }
         
         homeView.didTapGameRoms = { [weak self] in
-            // TODO
+            let vc = GamesViewController.make()
+            self?.navigationController?.pushViewController(vc, animated: true)
         }
         
         rootView = homeView

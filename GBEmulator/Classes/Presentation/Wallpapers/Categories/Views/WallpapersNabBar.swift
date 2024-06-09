@@ -11,9 +11,14 @@ final class WallpapersNabBar: UIView {
     lazy var backButton = makeBackButton()
     lazy var label = makeLabel()
     
+    private let backIcon: String
     private let title: String
     
-    init(title: String) {
+    init(
+        backIcon: String = "Back",
+        title: String
+    ) {
+        self.backIcon = backIcon
         self.title = title
         
         super.init(frame: .zero)
@@ -49,7 +54,7 @@ private extension WallpapersNabBar {
 private extension WallpapersNabBar {
     func makeBackButton() -> TapAreaButton {
         let view = TapAreaButton()
-        view.setImage(UIImage(named: "Back"), for: .normal)
+        view.setImage(UIImage(named: backIcon), for: .normal)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
