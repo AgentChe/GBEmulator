@@ -27,5 +27,9 @@ final class GlobalDefinitions {
         static let yearly = "com.gbemulator.yearly"
         static let weekly = "com.gbemulator.weekly"
     }
+    
+    enum ImportedTypesIds {
+        static let gb = "com.gbemulator.file"
+    }
 }
 

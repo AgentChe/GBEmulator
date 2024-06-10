@@ -11,15 +11,14 @@ class GameLibraryStorage: ObservableObject {
     @Published private(set) var library: [Cartridge]
     
     init() {
-        let bundledGames = FileSystem.listAbsoluteURLs(inDirectory: Bundle.main.bundlePath, suffix: ".gb")
-        let importedGames = FileSystem.listAbsoluteURLs(inDirectory: FileSystem.documentsDirectory, suffix: ".gb")
+        let bundledGames = FileSystem.listAbsoluteURLs(inDirectory: Bundle.main.bundlePath, suffix: ".gba")
+        let importedGames = FileSystem.listAbsoluteURLs(inDirectory: FileSystem.documentsDirectory, suffix: ".gba")
         
         let bundledCarts = bundledGames.map { romPath -> Cartridge in
-            let ramPath = URL(fileURLWithPath: "\(FileSystem.documentsDirectory)/\(romPath.lastPathComponent).ram")
-            return Cartridge(romPath: romPath, ramPath: ramPath)
+            Cartridge(path: romPath)
         }
         let importedCarts = importedGames.map { romPath -> Cartridge in
-            return Cartridge(romPath: romPath, ramPath: romPath.appendingPathExtension("ram"))
+            Cartridge(path: romPath)
         }
         let allCarts = bundledCarts + importedCarts
         
@@ -29,16 +28,14 @@ class GameLibraryStorage: ObservableObject {
     func deleteCartridge(_ discarded: Cartridge) {
         library = library.filter { $0 !== discarded }
         
-        try? FileSystem.removeItem(at: discarded.romPath)
-        try? FileSystem.removeItem(at: discarded.ramPath)
+        try? FileSystem.removeItem(at: discarded.path)
     }
     
     func importURLs(urls: [URL]) {
         library.append(contentsOf: urls.map { src in
             let romPath = URL(fileURLWithPath: "\(FileSystem.documentsDirectory)/\(src.lastPathComponent)")
-            let ramPath = romPath.appendingPathExtension("ram")
             try? FileSystem.moveItem(at: src, to: romPath)
-            return Cartridge(romPath: romPath, ramPath: ramPath)
+            return Cartridge(path: romPath)
         })
     }
 }

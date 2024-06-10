@@ -79,8 +79,8 @@
 			<dict>
 				<key>public.filename-extension</key>
 				<array>
-					<string>gb</string>
-					<string>GB</string>
+					<string>gba</string>
+					<string>GBA</string>
 				</array>
 			</dict>
 		</dict>

@@ -12,6 +12,7 @@ final class GameViewModel {
     enum Route {
         case dismiss
         case play(Game)
+        case paygate
     }
     
     private let game: Driver<Game>
@@ -54,14 +55,17 @@ private extension GameViewModel {
             .map { Route.dismiss }
             .asDriver(onErrorDriveWith: .never())
         
-        let play = didTapPlay
+        let playOrPaygate = didTapPlay
             .asDriver(onErrorDriveWith: .never())
             .withLatestFrom(game)
-            .map { Route.play($0) }
+            .map { game -> Route in
+                let needPayment = game.paid ? !SessionManager().hasActiveSubscriptions() : false
+                return needPayment ? .paygate : .play(game)
+            }
             .asDriver(onErrorDriveWith: .never())
         
         return Driver
-            .merge(dismiss, play)
+            .merge(dismiss, playOrPaygate)
     }
     
     func makeElements() -> Driver<[GameTableElement]> {

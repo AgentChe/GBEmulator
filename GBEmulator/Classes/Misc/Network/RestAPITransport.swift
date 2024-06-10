@@ -36,4 +36,34 @@ final class RestAPITransport {
             }
         }
     }
+    
+    func formBody(fileUrl: URL, request: APIRequestBody) -> Single<Any> {
+        Single<Any>.create { single in
+            let to = URL(string: request.url)!
+            let headers = request.headers
+            
+            let request = AF.upload(multipartFormData: { multipartFormData in
+                multipartFormData.append(fileUrl, withName: "files")
+            }, to: to, headers: headers)
+            
+            request
+                .validate(statusCode: [200, 201])
+                .response { response in
+                    if let error = response.error {
+                        single(.failure(NetworkError(.serverNotAvailable, underlyingError: error)))
+                    } else if let data = response.data {
+                        do {
+                            let json = try JSONSerialization.jsonObject(with: data, options: [])
+                            single(.success(json))
+                        } catch let error {
+                            single(.failure(NetworkError(.serverNotAvailable, underlyingError: error)))
+                        }
+                    } else {
+                        single(.failure(NetworkError(.serverNotAvailable)))
+                    }
+                }
+            
+            return Disposables.create()
+        }
+    }
 }

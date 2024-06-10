@@ -65,7 +65,11 @@ private extension GameViewController {
         case .dismiss:
             navigationController?.popViewController(animated: true)
         case .play(let game):
-            break // TODO
+            let vc = EmulatorViewController.make(game: game)
+            present(vc, animated: true)
+        case .paygate:
+            let vc = PaygateViewController.make()
+            present(vc, animated: true)
         }
     }
 }

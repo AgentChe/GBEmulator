@@ -46,6 +46,7 @@ private extension WallpapersCategoriesView {
             tableView.topAnchor.constraint(equalTo: navBar.bottomAnchor, constant: 2.scale),
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
+        
         NSLayoutConstraint.activate([
             preloader.centerXAnchor.constraint(equalTo: centerXAnchor),
             preloader.centerYAnchor.constraint(equalTo: centerYAnchor)

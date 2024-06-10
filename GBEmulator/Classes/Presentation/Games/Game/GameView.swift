@@ -48,7 +48,7 @@ private extension GameView {
         ])
         
         NSLayoutConstraint.activate([
-            playButton.widthAnchor.constraint(equalToConstant: 166.scale),
+            playButton.widthAnchor.constraint(equalToConstant: 358.scale),
             playButton.heightAnchor.constraint(equalToConstant: 54.scale),
             playButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             playButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -16.scale)
@@ -85,10 +85,10 @@ private extension GameView {
             .font(Fonts.Joystix.monospace(size: 16.scale))
         
         let view = UIButton(type: .system)
-        view.backgroundColor = Appearance.main100
+        view.backgroundColor = Appearance.main400
         view.setAttributedTitle("Games.Play".localized.attributed(with: attrs), for: .normal)
         view.layer.cornerRadius = 12.scale
-        view.layer.shadowColor = Appearance.main300.cgColor
+        view.layer.shadowColor = UIColor(integralRed: 63, green: 128, blue: 50).cgColor
         view.layer.shadowOffset = CGSize(width: 0, height: 12.scale)
         view.layer.shadowOpacity = 1
         view.layer.shadowRadius = 0

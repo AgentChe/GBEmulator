@@ -44,7 +44,7 @@ struct CartridgesView: View {
                 
                 CartridgesEmptyView()
             } else {
-                List(gameLibraryStorage.library, id: \.id) { cartridge in
+                List(gameLibraryStorage.library, id: \.path.lastPathComponent) { cartridge in
                     CartridgeView(cartridge: cartridge, didSelect: { cartridge in
                         didSelect?(cartridge)
                     }, didDelete: { cartridge in

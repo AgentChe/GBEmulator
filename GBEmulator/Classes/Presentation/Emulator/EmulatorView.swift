@@ -17,6 +17,7 @@ final class EmulatorView: UIView {
     lazy var aButton = makeABButton(title: "Emulator.A".localized)
     lazy var bButton = makeABButton(title: "Emulator.B".localized)
     lazy var exitButton = makeOptionButton(title: "Emulator.Exit".localized)
+    lazy var preloader = makePreloader()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -39,7 +40,7 @@ private extension EmulatorView {
         let radians = degrees * .pi / 180
         startButton.transform = CGAffineTransform(rotationAngle: radians)
         selectButton.transform = CGAffineTransform(rotationAngle: radians)
-    }
+    } 
 }
 
 // MARK: Make constraints
@@ -104,6 +105,13 @@ private extension EmulatorView {
             exitButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -28.scale),
             exitButton.heightAnchor.constraint(equalToConstant: 23.scale)
         ])
+        
+        NSLayoutConstraint.activate([
+            preloader.widthAnchor.constraint(equalToConstant: 45.scale),
+            preloader.heightAnchor.constraint(equalToConstant: 45.scale),
+            preloader.centerXAnchor.constraint(equalTo: centerXAnchor),
+            preloader.centerYAnchor.constraint(equalTo: centerYAnchor)
+        ])
     }
 }
 
@@ -139,6 +147,16 @@ private extension EmulatorView {
     
     func makeABButton(title: String) -> EmulatorABButton {
         let view = EmulatorABButton(title: title)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makePreloader() -> UIActivityIndicatorView {
+        let view = UIActivityIndicatorView()
+        view.color = Appearance.main400
+        view.style = .large
+        view.hidesWhenStopped = true
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

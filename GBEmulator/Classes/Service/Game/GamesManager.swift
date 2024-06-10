@@ -9,6 +9,7 @@ import RxSwift
 
 protocol GamesManagerProtocol {
     func obtainGames(forceUpdate: Bool) -> Single<[Game]>
+    func uploadGame(fileURL: URL) -> Single<URL?>
 }
 
 final class GamesManager {
@@ -23,6 +24,12 @@ final class GamesManager {
 extension GamesManager: GamesManagerProtocol {
     func obtainGames(forceUpdate: Bool) -> Single<[Game]> {
         forceUpdate ? fetchGames() : cachedGames()
+    }
+    
+    func uploadGame(fileURL: URL) -> Single<URL?> {
+        restApiTransport
+            .formBody(fileUrl: fileURL, request: UploadGameRequest())
+            .map { UploadGameResponse.url(from: $0) }
     }
 }
 

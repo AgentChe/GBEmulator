@@ -14,7 +14,7 @@ struct CartridgeView: View {
     
     var body: some View {
         HStack(alignment: .center) {
-            Text(cartridge.title)
+            Text(cartridge.name)
                 .font(Font(Fonts.Joystix.monospace(size: 16.scale)))
                 .foregroundColor(.black)
                 .lineLimit(nil)

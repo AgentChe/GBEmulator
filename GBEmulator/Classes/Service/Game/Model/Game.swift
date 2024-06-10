@@ -15,17 +15,20 @@ struct Game: Codable {
     let countries: [Country]
     let description: String?
     let source: URL
+    let paid: Bool
     
     init?(json: [String: Any]) {
         guard
             let title = json["title"] as? String,
             let imagePath = json["thumbnail"] as? String,
-            let thumbnail = URL(string: "https://dolphin-app-s5het.ondigitalocean.app/" + imagePath), // TODO
+            let imageFullPath = (GlobalDefinitions.emulatorDomain + "/" + imagePath).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+            let thumbnail = URL(string: imageFullPath),
             let ratingJSON = json["rating"] as? [String: Any],
             let rating = Rating(json: ratingJSON),
             let size = json["game_size"] as? String,
             let sourcePath = json["game_src"] as? String,
-            let source = URL(string: "https://dolphin-app-s5het.ondigitalocean.app/" + sourcePath) // TODO
+            let sourceFullPath = (GlobalDefinitions.emulatorDomain + "/" + sourcePath).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+            let source = URL(string: sourceFullPath)
         else {
             return nil
         }
@@ -43,6 +46,7 @@ struct Game: Codable {
         }()
         self.description = json["description"] as? String
         self.source = source
+        self.paid = json["is_paid"] as? Bool ?? false
     }
 }
 

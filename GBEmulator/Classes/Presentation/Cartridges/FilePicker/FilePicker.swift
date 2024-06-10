@@ -9,7 +9,7 @@ import SwiftUI
 import UniformTypeIdentifiers
 
 extension UTType {
-    static var gb: UTType { UTType(importedAs: "com.gbemulator.file" )}
+    static var gb: UTType { UTType(importedAs: GlobalDefinitions.ImportedTypesIds.gb )}
 }
 
 struct FilePickerUIRepresentable: UIViewControllerRepresentable {

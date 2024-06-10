@@ -85,7 +85,7 @@
 
 // MARK: Home
 "Home.Title" = "HOME";
-"Home.GameLibrary" = "GAME LIBRARY";
+"Home.GameLibrary" = "IMPORTED GAMES";
 "Home.Play" = "PLAY";
 "Home.Wallpapers" = "WALLPAPERS";
 "Home.SeeAll" = "SEE ALL";
@@ -121,3 +121,6 @@
 "Games.Title" = "GAME ROMS";
 "Games.Search.Placeholder" = "Search";
 "Games.Play" = "Play";
+"Games.Error.Title" = "Error";
+"Games.Error.Text" = "An error occurred during execution. Try later.";
+"Games.Error.Button" = "OK";

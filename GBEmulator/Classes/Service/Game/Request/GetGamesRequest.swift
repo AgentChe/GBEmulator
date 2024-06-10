@@ -8,9 +8,8 @@
 import Alamofire
 
 struct GetGamesRequest: APIRequestBody {
-    // TODO: заменить после сборки gba
     var url: String {
-        "https://dolphin-app-s5het.ondigitalocean.app/games.json"
+        GlobalDefinitions.emulatorDomain + "/games"
     }
     
     var method: HTTPMethod {

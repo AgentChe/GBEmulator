@@ -9,12 +9,32 @@ import UIKit
 import WebKit
 
 final class EmulatorWebView: UIView {
-    enum Commands: String {
-        case play = "play"
-        case pause = "pause"
-        case restart = "restart"
-        case select = "select"
-        case start = "start"
+    enum Command: String {
+        case play = "sendGameAction('play')"
+        case pause = "sendGameAction('pause')"
+        case restart = "sendGameAction('restart')"
+        case select = "sendGameAction('select')"
+        case start = "sendGameAction('start')"
+        
+        case leftDown = "sendControllDownAction('left')"
+        case rightDown = "sendControllDownAction('right')"
+        case upDown = "sendControllDownAction('up')"
+        case downDown = "sendControllDownAction('down')"
+        
+        case aDown = "sendControllDownAction('A')"
+        case bDown = "sendControllDownAction('B')"
+        case lDown = "sendControllDownAction('L')"
+        case rDown = "sendControllDownAction('R')"
+        
+        case leftUp = "sendControllUpAction('left')"
+        case rightUp = "sendControllUpAction('right')"
+        case upUp = "sendControllUpAction('up')"
+        case downUp = "sendControllUpAction('down')"
+        
+        case aUp = "sendControllUpAction('A')"
+        case bUp = "sendControllUpAction('B')"
+        case lUp = "sendControllUpAction('L')"
+        case rUp = "sendControllUpAction('R')"
     }
     
     lazy var webView = makeWebView()
@@ -23,7 +43,6 @@ final class EmulatorWebView: UIView {
         super.init(frame: frame)
         
         makeConstraints()
-        initialize()
     }
     
     required init?(coder: NSCoder) {
@@ -31,32 +50,22 @@ final class EmulatorWebView: UIView {
     }
 }
 
+// MARK: Public
+extension EmulatorWebView {
+    func request(url: URL) {
+        let request = URLRequest(url: url)
+        webView.load(request)
+    }
+    
+    func send(command: Command) {
+        webView.evaluateJavaScript(command.rawValue)
+    }
+}
+
 // MARK: WKNavigationDelegate
 extension EmulatorWebView: WKNavigationDelegate {
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         decisionHandler(.allow)
-    }
-    
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        webView.evaluateJavaScript("openLoadDialog()") { result, error in
-            print()
-        }
-    }
-}
-
-// MARK: WKScriptMessageHandler
-extension EmulatorWebView: WKScriptMessageHandler {
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        print()
-    }
-}
-
-// MARK: Private
-private extension EmulatorWebView {
-    func initialize() {
-        let url = URL(string: "https://games.sergei-mobile.com/emulator")!
-        let request = URLRequest(url: url)
-        webView.load(request)
     }
 }
 
@@ -75,15 +84,7 @@ private extension EmulatorWebView {
 // MARK: Lazy initialization
 private extension EmulatorWebView {
     func makeWebView() -> WKWebView {
-        let preferences = WKPreferences()
-        preferences.javaScriptEnabled = true
-        
-        let config = WKWebViewConfiguration()
-        let handler = JSMessageHandler(delegate: self)
-        config.userContentController.add(handler, name: "callback_name")
-        config.preferences = preferences
-        
-        let view = WKWebView(frame: .zero, configuration: config)
+        let view = WKWebView(frame: .zero, configuration: WKWebViewConfiguration())
         view.navigationDelegate = self
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
