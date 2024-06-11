@@ -87,16 +87,16 @@ final class EmulatorViewController: UIViewController {
             .disposed(by: disposeBag)
     }
     
-    override var shouldAutorotate: Bool {
-        true
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        (UIApplication.shared.delegate as? AppDelegate)?.restrictRotation = .landscape
     }
     
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        .landscape
-    }
-    
-    override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
-        .landscapeRight
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        (UIApplication.shared.delegate as? AppDelegate)?.restrictRotation = .portrait
     }
 }
 

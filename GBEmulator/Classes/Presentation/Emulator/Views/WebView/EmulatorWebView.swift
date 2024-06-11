@@ -53,7 +53,8 @@ final class EmulatorWebView: UIView {
 // MARK: Public
 extension EmulatorWebView {
     func request(url: URL) {
-        let request = URLRequest(url: url)
+        var request = URLRequest(url: url)
+        request.cachePolicy = .reloadIgnoringLocalAndRemoteCacheData
         webView.load(request)
     }
     
@@ -84,7 +85,13 @@ private extension EmulatorWebView {
 // MARK: Lazy initialization
 private extension EmulatorWebView {
     func makeWebView() -> WKWebView {
-        let view = WKWebView(frame: .zero, configuration: WKWebViewConfiguration())
+        let preferences = WKPreferences()
+        preferences.javaScriptEnabled = true
+        
+        let webViewConfig = WKWebViewConfiguration()
+        webViewConfig.preferences = preferences
+        
+        let view = WKWebView(frame: .zero, configuration: webViewConfig)
         view.navigationDelegate = self
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)

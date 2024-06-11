@@ -30,7 +30,6 @@
 		DE16F2982C15D30800C04C58 /* GameCountriesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE16F2972C15D30800C04C58 /* GameCountriesCollectionView.swift */; };
 		DE16F29C2C15E03600C04C58 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE16F29B2C15E03600C04C58 /* RatingView.swift */; };
 		DE16F2A02C15EC3A00C04C58 /* Cartridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE16F29F2C15EC3A00C04C58 /* Cartridge.swift */; };
-		DE16F2A42C15F4FF00C04C58 /* Pokemon - Emerald Version (U).gba in Resources */ = {isa = PBXBuildFile; fileRef = DE16F2A32C15F4F800C04C58 /* Pokemon - Emerald Version (U).gba */; };
 		DE16F2A62C170AB600C04C58 /* EmulatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE16F2A52C170AB600C04C58 /* EmulatorViewModel.swift */; };
 		DE16F2A82C170DB800C04C58 /* UploadGameRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE16F2A72C170DB800C04C58 /* UploadGameRequest.swift */; };
 		DE16F2AB2C170ED900C04C58 /* UploadGameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE16F2AA2C170ED900C04C58 /* UploadGameResponse.swift */; };
@@ -196,7 +195,6 @@
 		DE16F2972C15D30800C04C58 /* GameCountriesCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCountriesCollectionView.swift; sourceTree = "<group>"; };
 		DE16F29B2C15E03600C04C58 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		DE16F29F2C15EC3A00C04C58 /* Cartridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cartridge.swift; sourceTree = "<group>"; };
-		DE16F2A32C15F4F800C04C58 /* Pokemon - Emerald Version (U).gba */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pokemon - Emerald Version (U).gba"; sourceTree = "<group>"; };
 		DE16F2A52C170AB600C04C58 /* EmulatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmulatorViewModel.swift; sourceTree = "<group>"; };
 		DE16F2A72C170DB800C04C58 /* UploadGameRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGameRequest.swift; sourceTree = "<group>"; };
 		DE16F2AA2C170ED900C04C58 /* UploadGameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGameResponse.swift; sourceTree = "<group>"; };
@@ -537,7 +535,6 @@
 		DE664D3D2BD681C800956E9F /* GBEmulator */ = {
 			isa = PBXGroup;
 			children = (
-				DE16F2A32C15F4F800C04C58 /* Pokemon - Emerald Version (U).gba */,
 				DE664E912BD6866100956E9F /* Classes */,
 				DE664D522BD681D100956E9F /* Resource */,
 			);
@@ -1205,7 +1202,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE16F2A42C15F4FF00C04C58 /* Pokemon - Emerald Version (U).gba in Resources */,
 				DEDF90002BD68A07004340C0 /* RobotoMono-Medium.ttf in Resources */,
 				DEDF90012BD68A07004340C0 /* RobotoMono-Regular.ttf in Resources */,
 				DEDF90022BD68A07004340C0 /* RobotoMono-SemiBold.ttf in Resources */,
@@ -1575,8 +1571,7 @@
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "The access is required for saving wallpapers to your device";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1614,8 +1609,7 @@
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "The access is required for saving wallpapers to your device";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

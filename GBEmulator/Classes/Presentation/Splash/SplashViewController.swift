@@ -26,18 +26,6 @@ final class SplashViewController: UIViewController {
             self?.goNext()
         }
     }
-    
-    override var shouldAutorotate: Bool {
-        true
-    }
-
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        .portrait
-    }
-
-    override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
-        .portrait
-    }
 }
 
 // MARK: Make
