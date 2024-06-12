@@ -53,8 +53,7 @@ final class EmulatorWebView: UIView {
 // MARK: Public
 extension EmulatorWebView {
     func request(url: URL) {
-        var request = URLRequest(url: url)
-        request.cachePolicy = .reloadIgnoringLocalAndRemoteCacheData
+        let request = URLRequest(url: url)
         webView.load(request)
     }
     
